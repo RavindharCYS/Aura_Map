@@ -1,139 +1,122 @@
+# 🛡️ Enhanced Nmap GUI Tool
+
+A powerful, project-based, web-frontend for the Nmap network scanner. This tool provides an intuitive graphical interface to simplify network scanning, organize results, and streamline security assessments.
+
+It is designed for security professionals, network administrators, and cybersecurity enthusiasts who want to leverage the power of Nmap without constantly managing command-line flags and raw output files.
+
+## ✨ Key Features
+
+*   **🚀 Real-Time Scanning:** View scan progress, live results, and host status in real-time as Nmap runs.
+*   **📂 Project-Based Organization:** Group scans into projects with associated metadata (e.g., Project Manager, Assessment Type). Load and review historical scan data at any time.
+*   **🎯 Flexible Target Input:** Supports multiple target formats:
+    *   Single IPs (`192.168.1.1`)
+    *   CIDR notation (`192.168.1.0/24`)
+    *   IP Ranges (`192.168.1.10-20`)
+    *   IPs with specific ports (`10.0.0.1:80,443`)
+    *   File upload for bulk targets (`.txt`, `.csv`).
+*   **⚙️ Comprehensive Scan Configuration:** Easily configure complex Nmap scans through a simple UI, including:
+    *   Scan templates (Fast, Comprehensive, Vulnerability, etc.)
+    *   Timing templates (T0-T5)
+    *   Service & OS detection, script scanning, and more.
+*   **👁️ Live Command Preview:** See the exact Nmap command that will be executed before you start the scan.
+*   **📊 Interactive Results Dashboard:**
+    *   **Summary View:** Get a high-level overview of hosts up/down, open ports, and discovered services.
+    *   **Detailed View:** Dive into host-specific results, including open ports, services, versions, and script output.
+    *   **Dynamic Filtering:** Instantly filter results by IP, service, port state, or host status.
+*   **💾 Template Management:** Save your favorite scan configurations as custom templates for repeatable assessments.
+*   **▶️ Scan Resume:** Load incomplete projects and resume scanning the remaining targets with the original settings.
+*   **📤 Easy Exporting:** Export aggregated project results to JSON for integration with other tools.
+
+##  Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+1.  **Python:** Version 3.8 or higher.
+2.  **Nmap:** The core scanning engine.
+
+## 🛠️ Installation
+
+Installation is straightforward using the provided scripts.
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/enhanced-nmap-gui.git
+    cd enhanced-nmap-gui
+    ```
+
+2.  **Run the installation script for your OS:**
+
+    *   **Windows:**
+        Double-click `install.bat` or run it from the command prompt:
+        ```cmd
+        install.bat
+        ```
+
+    *   **Linux / macOS:**
+        Make the script executable and run it:
+        ```sh
+        chmod +x install.sh
+        bash install.sh
+        ```
+    The script will create a Python virtual environment (`venv`), activate it, and install all the necessary dependencies.
+
+### Manual Installation (Alternative)
+
+If you prefer to install manually:```sh
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate.bat
+
+# Install dependencies
+pip install -r requirements.txt```
+
+## 🚀 How to Use
+
+1.  **Start the Application:**
+    *   **Windows:** Double-click the `start.py` file.
+    *   **Linux / macOS:** Run the start script from your terminal:
+        ```sh
+        python3 start.py
+        ```
+    The script will start the backend server, and your default web browser should automatically open to `http://localhost:5000`.
+
+2.  **Perform Your First Scan (Quick Start):**
+    *   **Enter Targets:** In the "Target Input" section on the left, type your target IPs into the "Manual" tab (e.g., `scanme.nmap.org` or `192.168.1.0/24`).
+    *   **Create a Project:** In the "Project Configuration" section, give your scan a unique "Project Name".
+    *   **Configure Scan:** In the "Scan Configuration" section, select a "Scan Template" (e.g., "Comprehensive Scan") or customize the options as needed.
+    *   **Start Scan:** Click the big "Start Scan" button.
+    *   **View Results:** Watch the results appear in real-time on the right-hand panel!
+
+## 📁 Project Structure
+
+The project is organized into a clean client-server architecture.
+
+```
 enhanced-nmap-gui/
-├── backend/
+├── backend/                # Flask server, API, and Nmap logic
 │   ├── __init__.py
-│   ├── app.py
-│   ├── config.py
-│   ├── nmap_scanner.py
-│   └── analyser.py (Note: currently empty)
-├── frontend/
-│   ├── index.html
+│   ├── app.py              # Main Flask app, API routes, WebSockets
+│   ├── config.py           # Configuration management
+│   ├── nmap_scanner.py     # Nmap process wrapper and XML parser
+│   └── analyser.py         # (Placeholder for future analysis)
+├── frontend/               # All UI files (HTML, CSS, JS)
+│   ├── index.html          # The single-page application layout
 │   ├── css/
-│   │   ├── main.css
-│   │   └── components.css
 │   └── js/
-│       ├── main.js
-│       ├── projects.js
-│       ├── results.js
-│       ├── scanner.js
-│       └── utils.js
-├── data/  (Created by the backend at runtime)
-│   ├── projects/
-│   ├── templates/
-│   └── exports/
-├── plugins/ (Created by the backend at runtime)
-├── start.py
-└── requirements.txt```
+│       ├── main.js         # Core app initialization, global state
+│       ├── projects.js     # Project and template management
+│       ├── results.js      # Rendering and filtering scan results
+│       ├── scanner.js      # Scan configuration and execution logic
+│       └── utils.js        # Shared helper functions
+├── data/                   # (Created at runtime) Stores projects, templates
+├── install.bat             # Installation script for Windows
+├── install.sh              # Installation script for Linux/macOS
+├── start.py                # Main application entry point
+└── requirements.txt        # Python dependencies
+```
 
----
+## 💻 Technology Stack
 
-### File Responsibilities and Operations
-
-Here is a detailed list of what each file does within the application.
-
-### Backend (Python)
-
-The backend is responsible for all server-side logic, including running Nmap scans, managing projects on the file system, and communicating with the frontend.
-
-**`backend/app.py`**
-*   **Primary Role:** This is the core of the backend. It's the Flask web server that runs the entire application, serves the frontend, and provides the API for all operations.
-*   **Key Operations:**
-    *   **Web Server:** Hosts the Flask application and serves the `index.html` and other static files (CSS, JS).
-    *   **API Endpoints:** Defines all the API routes that the frontend calls, such as:
-        *   `/api/projects`: For creating, listing, and managing projects.
-        *   `/api/scan/start`: To initiate a new scan.
-        *   `/api/scan/cancel`: To stop a running scan.
-        *   `/api/scan/process-input`: To parse and validate target IPs from user input.
-        *   `/api/templates`: To manage scan templates.
-        *   `/api/system/info`: To provide information about the server environment and Nmap installation.
-    *   **WebSocket Management:** Uses Flask-SocketIO to handle real-time communication with the frontend for live scan progress, results, and status updates.
-    *   **Business Logic:** Orchestrates the other backend modules (`ProjectManager`, `NmapScanner`, `IPProcessor`) to handle requests.
-
-**`backend/nmap_scanner.py`**
-*   **Primary Role:** A dedicated wrapper for interacting with the Nmap command-line tool. It abstracts the complexity of running and parsing Nmap scans.
-*   **Key Operations:**
-    *   **Command Building:** Dynamically constructs Nmap command strings based on the options selected by the user in the UI (e.g., scan type, timing, scripts).
-    *   **Scan Execution:** Runs Nmap as a separate subprocess, capturing its output in real-time.
-    *   **Process Management:** Keeps track of active scans, allowing them to be cancelled.
-    *   **XML Parsing:** Parses the XML output from Nmap into a structured Python dictionary (JSON format), making the data easy to use for both the backend and frontend.
-    *   **File Management:** Manages the output files generated by Nmap (`.xml`, `.nmap`, `.gnmap`) within the correct project folder.
-
-**`backend/config.py`**
-*   **Primary Role:** Manages all application configuration from a central place.
-*   **Key Operations:**
-    *   **Configuration Loading:** Reads settings from a `config.json` file.
-    *   **Default Settings:** Provides default values if the configuration file is missing or incomplete.
-    *   **Directory Management:** Defines and ensures the creation of necessary data directories (`projects`, `templates`, `exports`).
-    *   **Security Validation:** Contains logic to validate scan targets and block potentially dangerous Nmap options.
-
-**`backend/analyser.py`**
-*   **Primary Role:** This file is currently empty. It serves as a placeholder for future functionality, likely related to advanced analysis of scan results, such as vulnerability correlation, reporting, or integration with external security databases.
-
-**`backend/__init__.py`**
-*   **Primary Role:** A standard Python file that marks the `backend` directory as a Python package, allowing for modular imports between the files.
-
-### Frontend (HTML/JavaScript)
-
-The frontend is what the user sees and interacts with in their web browser. It's a single-page application that communicates with the backend via API calls and WebSockets.
-
-**`frontend/index.html`**
-*   **Primary Role:** The main and only HTML page. It defines the complete structure and layout of the user interface.
-*   **Key Operations:**
-    *   **UI Structure:** Contains all the HTML for the input panels, configuration sections, results dashboard, modals, and status bars.
-    *   **Resource Linking:** Includes all the necessary CSS files for styling and all the JavaScript files that provide the application's functionality.
-
-**`frontend/js/main.js`**
-*   **Primary Role:** The main entry point for the frontend JavaScript. It initializes the application and manages global state and behavior.
-*   **Key Operations:**
-    *   **Application Initialization:** Runs when the DOM is loaded to set up all other modules.
-    *   **UI State Management:** Manages the overall state, such as whether a scan is currently running (`AppState.isScanning`).
-    *   **Panel Resizing:** Implements the logic for the draggable divider between the left and right panels.
-    *   **Global Event Listeners:** Sets up global keyboard shortcuts (e.g., Ctrl+Enter to start a scan) and handles global events like network connection loss.
-
-**`frontend/js/scanner.js`**
-*   **Primary Role:** Manages everything related to configuring and running a scan from the user's perspective.
-*   **Key Operations:**
-    *   **Input Handling:** Manages the different target input methods (manual, file, IP range).
-    *   **Command Preview:** Dynamically generates and updates the Nmap command preview as the user changes scan options.
-    *   **WebSocket Communication:** Connects to the backend via Socket.IO and listens for real-time events (`scan_started`, `scan_progress`, `host_result`, `scan_completed`).
-    *   **UI Updates:** Updates the progress bar, live log, and status indicators during a scan.
-    *   **Scan Control:** Handles the "Start Scan" and "Cancel Scan" button clicks, sending the appropriate requests to the backend.
-
-**`frontend/js/results.js`**
-*   **Primary Role:** Responsible for rendering, filtering, and interacting with the scan results.
-*   **Key Operations:**
-    *   **Result Display:** Dynamically creates and displays the host result cards in the UI.
-    *   **View Modes:** Implements the logic to switch between "Summary View" and "Detailed View".
-    *   **Filtering:** Provides the functionality to filter results by IP, service, host status, and port state.
-    *   **Data Interaction:** Handles actions on results, such as expanding details, copying host information, and initiating a service vulnerability analysis.
-    *   **Exporting:** Manages the "Export Results" and "Open Project Folder" button actions.
-
-**`frontend/js/projects.js`**
-*   **Primary Role:** Handles all project management and scan template functionality within the UI.
-*   **Key Operations:**
-    *   **Project Management:** Fetches the list of existing projects from the backend and allows the user to create new ones or select an existing one.
-    *   **Load Results:** Loads all historical scan results for a selected project.
-    *   **Resume Scan:** Implements the logic to prepare the UI for resuming an incomplete scan by loading the remaining targets and previous settings.
-    *   **Template Management:** Loads scan templates from the backend, allows the user to apply a template to the current configuration, and handles saving the current settings as a new template.
-
-**`frontend/js/utils.js`**
-*   **Primary Role:** A collection of shared utility and helper functions used across the other JavaScript files to avoid code duplication.
-*   **Key Operations:**
-    *   **Notifications:** Displays the success, error, and info pop-up notifications.
-    *   **Data Formatting:** Contains functions to format data for display (e.g., `formatBytes`, `formatDuration`).
-    *   **DOM Interaction:** Provides helper functions for modals (`openModal`, `closeModal`).
-    *   **Clipboard:** Includes the `copyToClipboard` function.
-    *   **UI Helpers:** Contains functions to parse scan options from the UI and calculate statistics from scan results.
-
-### Root Directory
-
-**`start.py`**
-*   **Primary Role:** The main executable script to launch the entire application.
-*   **Key Operations:**
-    *   **Dependency Check:** Verifies that the required Python libraries are installed.
-    *   **Server Launch:** Imports and runs the `app` and `socketio` objects from `backend/app.py`.
-    *   **Browser Launch:** Automatically opens the user's default web browser to the application's URL.
-
-**`requirements.txt`**
-*   **Primary Role:** A standard Python project file that lists all the necessary backend dependencies.
-*   **Key Operations:**
-    *   Allows for easy installation of all required libraries using the command `pip install -r requirements.txt`.
+*   **Backend:** Python, Flask, Flask-SocketIO, Eventlet
+*   **Frontend:** Vanilla JavaScript (ES6), HTML5, CSS3, Socket.IO-Client
+*   **Core Engine:** Nmap
