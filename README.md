@@ -1,4 +1,4 @@
-# 🛡️ Enhanced Nmap GUI Tool
+# 🛡️ Aura Map
 
 A powerful, project-based, web-frontend for the Nmap network scanner. This tool provides an intuitive graphical interface to simplify network scanning, organize results, and streamline security assessments.
 
@@ -92,7 +92,7 @@ pip install -r requirements.txt```
 The project is organized into a clean client-server architecture.
 
 ```
-enhanced-nmap-gui/
+Aura_Map/
 ├── backend/                # Flask server, API, and Nmap logic
 │   ├── __init__.py
 │   ├── app.py              # Main Flask app, API routes, WebSockets
