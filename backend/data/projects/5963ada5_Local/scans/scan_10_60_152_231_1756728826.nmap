@@ -1,0 +1,9 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:43:46 2025 as: nmap -F -T3 -oX scan_10_60_152_231_1756728826.xml -oN scan_10_60_152_231_1756728826.nmap -oG scan_10_60_152_231_1756728826.gnmap 10.60.152.231
+Nmap scan report for 10.60.152.231
+Host is up (0.0057s latency).
+Not shown: 99 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+5357/tcp open  wsdapi
+MAC Address: 0C:54:15:8C:31:6A (Intel Corporate)
+
+# Nmap done at Mon Sep  1 17:43:49 2025 -- 1 IP address (1 host up) scanned in 3.08 seconds

@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:36:25 2025 as: nmap -F -T3 -oX scan_10_60_152_31_1756728385.xml -oN scan_10_60_152_31_1756728385.nmap -oG scan_10_60_152_31_1756728385.gnmap 10.60.152.31
+Nmap scan report for 10.60.152.31
+Host is up (0.0069s latency).
+Not shown: 95 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+5357/tcp open  wsdapi
+7070/tcp open  realserver
+MAC Address: 04:D9:F5:CC:4C:BD (ASUSTek Computer)
+
+# Nmap done at Mon Sep  1 17:36:26 2025 -- 1 IP address (1 host up) scanned in 0.53 seconds

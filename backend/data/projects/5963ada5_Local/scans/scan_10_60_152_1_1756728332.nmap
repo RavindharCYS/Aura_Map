@@ -1,0 +1,12 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:35:32 2025 as: nmap -F -T3 -oX scan_10_60_152_1_1756728332.xml -oN scan_10_60_152_1_1756728332.nmap -oG scan_10_60_152_1_1756728332.gnmap 10.60.152.1
+Nmap scan report for 10.60.152.1
+Host is up (0.21s latency).
+Not shown: 96 closed tcp ports (reset)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+23/tcp  open  telnet
+80/tcp  open  http
+443/tcp open  https
+MAC Address: 54:77:8A:4C:47:A2 (Hewlett Packard Enterprise – WW Corporate Headquarters)
+
+# Nmap done at Mon Sep  1 17:35:33 2025 -- 1 IP address (1 host up) scanned in 1.45 seconds

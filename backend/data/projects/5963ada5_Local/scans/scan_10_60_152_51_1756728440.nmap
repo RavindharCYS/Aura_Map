@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:37:20 2025 as: nmap -F -T3 -oX scan_10_60_152_51_1756728440.xml -oN scan_10_60_152_51_1756728440.nmap -oG scan_10_60_152_51_1756728440.gnmap 10.60.152.51
+Nmap scan report for 10.60.152.51
+Host is up (0.010s latency).
+Not shown: 95 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+5357/tcp open  wsdapi
+7070/tcp open  realserver
+MAC Address: 10:02:B5:BD:E1:4C (Intel Corporate)
+
+# Nmap done at Mon Sep  1 17:37:20 2025 -- 1 IP address (1 host up) scanned in 0.42 seconds

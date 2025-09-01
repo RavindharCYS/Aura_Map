@@ -1,0 +1,8 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:37:20 2025 as: nmap -F -T3 -oX scan_10_60_152_52_1756728440.xml -oN scan_10_60_152_52_1756728440.nmap -oG scan_10_60_152_52_1756728440.gnmap 10.60.152.52
+Nmap scan report for 10.60.152.52
+Host is up (0.0040s latency).
+All 100 scanned ports on 10.60.152.52 are in ignored states.
+Not shown: 100 filtered tcp ports (no-response)
+MAC Address: DC:8B:28:2D:03:25 (Intel Corporate)
+
+# Nmap done at Mon Sep  1 17:37:24 2025 -- 1 IP address (1 host up) scanned in 3.62 seconds

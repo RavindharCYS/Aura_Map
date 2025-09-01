@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.24",
+  "scan_result": {
+    "target_ip": "10.60.152.24",
+    "status": "completed",
+    "start_time": "2025-09-01T17:36:13.550145",
+    "end_time": "2025-09-01T17:36:14.166714",
+    "duration": "0:00:00.616569",
+    "xml_file": "scan_10_60_152_24_1756728373.xml",
+    "nmap_file": "scan_10_60_152_24_1756728373.nmap",
+    "gnmap_file": "scan_10_60_152_24_1756728373.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 17:36 India Standard Time\nNmap scan report for 10.60.152.24\nHost is up (0.013s latency).\nAll 100 scanned ports on 10.60.152.24 are in ignored states.\nNot shown: 100 closed tcp ports (reset)\nMAC Address: 70:BB:E9:5F:B2:88 (Xiaomi Communications)\n\nNmap done: 1 IP address (1 host up) scanned in 0.56 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_24_1756728373.xml -oN scan_10_60_152_24_1756728373.nmap -oG scan_10_60_152_24_1756728373.gnmap 10.60.152.24",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "0.56",
+      "timestr": "Mon Sep  1 17:36:14 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T17:36:14.167359"
+}

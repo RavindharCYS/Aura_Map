@@ -1,0 +1,12 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:38:37 2025 as: nmap -F -T3 -oX scan_10_60_152_84_1756728517.xml -oN scan_10_60_152_84_1756728517.nmap -oG scan_10_60_152_84_1756728517.gnmap 10.60.152.84
+Nmap scan report for 10.60.152.84
+Host is up (0.0093s latency).
+Not shown: 96 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3389/tcp open  ms-wbt-server
+MAC Address: 00:E0:4C:2D:C0:5A (Realtek Semiconductor)
+
+# Nmap done at Mon Sep  1 17:38:39 2025 -- 1 IP address (1 host up) scanned in 2.05 seconds

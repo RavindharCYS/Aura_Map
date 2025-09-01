@@ -1,0 +1,76 @@
+{
+  "target_ip": "10.60.152.162",
+  "scan_result": {
+    "target_ip": "10.60.152.162",
+    "status": "completed",
+    "start_time": "2025-09-01T17:41:30.716707",
+    "end_time": "2025-09-01T17:41:33.300148",
+    "duration": "0:00:02.583441",
+    "xml_file": "scan_10_60_152_162_1756728690.xml",
+    "nmap_file": "scan_10_60_152_162_1756728690.nmap",
+    "gnmap_file": "scan_10_60_152_162_1756728690.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 17:41 India Standard Time\nNmap scan report for 10.60.152.162\nHost is up (0.0062s latency).\nNot shown: 96 filtered tcp ports (no-response)\nPORT     STATE SERVICE\n135/tcp  open  msrpc\n139/tcp  open  netbios-ssn\n445/tcp  open  microsoft-ds\n5357/tcp open  wsdapi\nMAC Address: 04:D9:F5:CC:12:0A (ASUSTek Computer)\n\nNmap done: 1 IP address (1 host up) scanned in 2.53 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_162_1756728690.xml -oN scan_10_60_152_162_1756728690.nmap -oG scan_10_60_152_162_1756728690.gnmap 10.60.152.162",
+    "host_status": "up",
+    "open_ports": 4,
+    "services": [
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "445",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "microsoft-ds",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "wsdapi",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "2.53",
+      "timestr": "Mon Sep  1 17:41:33 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T17:41:33.300596"
+}

@@ -1,0 +1,12 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:41:35 2025 as: nmap -F -T3 -oX scan_10_60_152_165_1756728695.xml -oN scan_10_60_152_165_1756728695.nmap -oG scan_10_60_152_165_1756728695.gnmap 10.60.152.165
+Nmap scan report for 10.60.152.165
+Host is up (0.053s latency).
+Not shown: 96 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+443/tcp  open  https
+3306/tcp open  mysql
+5357/tcp open  wsdapi
+MAC Address: 54:14:F3:57:9B:7B (Intel Corporate)
+
+# Nmap done at Mon Sep  1 17:41:39 2025 -- 1 IP address (1 host up) scanned in 3.75 seconds

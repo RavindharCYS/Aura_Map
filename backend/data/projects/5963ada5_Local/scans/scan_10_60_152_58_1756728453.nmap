@@ -1,0 +1,9 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:37:33 2025 as: nmap -F -T3 -oX scan_10_60_152_58_1756728453.xml -oN scan_10_60_152_58_1756728453.nmap -oG scan_10_60_152_58_1756728453.gnmap 10.60.152.58
+Nmap scan report for 10.60.152.58
+Host is up (0.0074s latency).
+Not shown: 99 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+5357/tcp open  wsdapi
+MAC Address: 9C:B6:D0:60:7A:B9 (Rivet Networks)
+
+# Nmap done at Mon Sep  1 17:37:36 2025 -- 1 IP address (1 host up) scanned in 2.74 seconds

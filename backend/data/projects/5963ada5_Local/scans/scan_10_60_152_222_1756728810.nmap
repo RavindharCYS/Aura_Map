@@ -1,0 +1,8 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:43:30 2025 as: nmap -F -T3 -oX scan_10_60_152_222_1756728810.xml -oN scan_10_60_152_222_1756728810.nmap -oG scan_10_60_152_222_1756728810.gnmap 10.60.152.222
+Nmap scan report for 10.60.152.222
+Host is up (0.0087s latency).
+All 100 scanned ports on 10.60.152.222 are in ignored states.
+Not shown: 100 closed tcp ports (reset)
+MAC Address: 4A:DE:07:14:55:12 (Unknown)
+
+# Nmap done at Mon Sep  1 17:43:31 2025 -- 1 IP address (1 host up) scanned in 0.39 seconds

@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:35:53 2025 as: nmap -F -T3 -oX scan_10_60_152_14_1756728353.xml -oN scan_10_60_152_14_1756728353.nmap -oG scan_10_60_152_14_1756728353.gnmap 10.60.152.14
+Host: 10.60.152.14 ()	Status: Up
+Host: 10.60.152.14 ()	Ports: 	Ignored State: closed (100)
+# Nmap done at Mon Sep  1 17:35:54 2025 -- 1 IP address (1 host up) scanned in 0.90 seconds

@@ -1,0 +1,76 @@
+{
+  "target_ip": "10.60.152.165",
+  "scan_result": {
+    "target_ip": "10.60.152.165",
+    "status": "completed",
+    "start_time": "2025-09-01T17:41:35.337906",
+    "end_time": "2025-09-01T17:41:39.142982",
+    "duration": "0:00:03.805076",
+    "xml_file": "scan_10_60_152_165_1756728695.xml",
+    "nmap_file": "scan_10_60_152_165_1756728695.nmap",
+    "gnmap_file": "scan_10_60_152_165_1756728695.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 17:41 India Standard Time\nNmap scan report for 10.60.152.165\nHost is up (0.053s latency).\nNot shown: 96 filtered tcp ports (no-response)\nPORT     STATE SERVICE\n80/tcp   open  http\n443/tcp  open  https\n3306/tcp open  mysql\n5357/tcp open  wsdapi\nMAC Address: 54:14:F3:57:9B:7B (Intel Corporate)\n\nNmap done: 1 IP address (1 host up) scanned in 3.75 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_165_1756728695.xml -oN scan_10_60_152_165_1756728695.nmap -oG scan_10_60_152_165_1756728695.gnmap 10.60.152.165",
+    "host_status": "up",
+    "open_ports": 4,
+    "services": [
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "443",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "https",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "3306",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "mysql",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "wsdapi",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "3.75",
+      "timestr": "Mon Sep  1 17:41:39 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T17:41:39.143440"
+}

@@ -1,0 +1,11 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:44:11 2025 as: nmap -F -T3 -oX scan_10_60_152_244_1756728851.xml -oN scan_10_60_152_244_1756728851.nmap -oG scan_10_60_152_244_1756728851.gnmap 10.60.152.244
+Nmap scan report for 10.60.152.244
+Host is up (0.026s latency).
+Not shown: 97 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+MAC Address: 2C:3B:70:57:68:69 (AzureWave Technology)
+
+# Nmap done at Mon Sep  1 17:44:13 2025 -- 1 IP address (1 host up) scanned in 2.22 seconds

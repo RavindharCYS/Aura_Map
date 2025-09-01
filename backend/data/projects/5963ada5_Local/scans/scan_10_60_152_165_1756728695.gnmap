@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:41:35 2025 as: nmap -F -T3 -oX scan_10_60_152_165_1756728695.xml -oN scan_10_60_152_165_1756728695.nmap -oG scan_10_60_152_165_1756728695.gnmap 10.60.152.165
+Host: 10.60.152.165 ()	Status: Up
+Host: 10.60.152.165 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 3306/open/tcp//mysql///, 5357/open/tcp//wsdapi///	Ignored State: filtered (96)
+# Nmap done at Mon Sep  1 17:41:39 2025 -- 1 IP address (1 host up) scanned in 3.75 seconds

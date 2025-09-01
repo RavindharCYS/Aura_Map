@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Nmap GUI Tool</title>
+    <title>Aura Map</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
@@ -246,12 +247,13 @@
         <header class="app-header">
             <div class="header-content">
                 <h1>
-                    <span class="logo">🛡️</span>
-                    Auriseg Map
+                    <img src="assets/logo.png" alt="Auriseg Logo" class="logo" />
+                    Aura Map
                 </h1>
                 <div class="header-actions">
                     <button id="systemInfoBtn" class="btn-secondary">System Info</button>
                     <button id="loadProjectBtn" class="btn-secondary">Load Project</button>
+                    <button id="closeSessionBtn" class="btn-danger" style="display:none;">Close Session</button>
                     <span class="connection-status" id="connectionStatus">Connecting...</span>
                 </div>
             </div>
@@ -329,7 +331,7 @@
                     
                     <div class="form-group">
                         <label>Project PMO</label>
-                        <input type="text" id="projectPMO" placeholder="Project Manager/Owner">
+                        <input type="text" id="projectPMO" placeholder="Project Manager/Owner (or) Client Name">
                     </div>
                     
                     <div class="form-group">

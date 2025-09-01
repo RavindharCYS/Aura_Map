@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.58",
+  "scan_result": {
+    "target_ip": "10.60.152.58",
+    "status": "completed",
+    "start_time": "2025-09-01T17:37:33.899111",
+    "end_time": "2025-09-01T17:37:36.687771",
+    "duration": "0:00:02.788660",
+    "xml_file": "scan_10_60_152_58_1756728453.xml",
+    "nmap_file": "scan_10_60_152_58_1756728453.nmap",
+    "gnmap_file": "scan_10_60_152_58_1756728453.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 17:37 India Standard Time\nNmap scan report for 10.60.152.58\nHost is up (0.0074s latency).\nNot shown: 99 filtered tcp ports (no-response)\nPORT     STATE SERVICE\n5357/tcp open  wsdapi\nMAC Address: 9C:B6:D0:60:7A:B9 (Rivet Networks)\n\nNmap done: 1 IP address (1 host up) scanned in 2.74 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_58_1756728453.xml -oN scan_10_60_152_58_1756728453.nmap -oG scan_10_60_152_58_1756728453.gnmap 10.60.152.58",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "wsdapi",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "2.74",
+      "timestr": "Mon Sep  1 17:37:36 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T17:37:36.688188"
+}

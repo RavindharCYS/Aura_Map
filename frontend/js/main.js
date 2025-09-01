@@ -1,6 +1,6 @@
 /**
  * Enhanced Nmap GUI Tool - Main Application
- * Core initialization and event coordination
+ * Core initialization and event coordination with session management
  */
 
 // Application state
@@ -25,12 +25,59 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeKeyboardShortcuts();
     checkNmapAvailability();
     
+    // Restore active scan session if exists
+    restoreActiveScanSession();
+    
     // Load saved preferences
     loadUserPreferences();
     
     // Set initial UI state
     updateUIState();
 });
+
+// Restore active scan session on page load
+async function restoreActiveScanSession() {
+    const activeSessionId = sessionStorage.getItem('activeScanSessionId');
+    const activeProjectId = sessionStorage.getItem('activeProjectId');
+
+    if (activeSessionId && activeProjectId) {
+        console.log(`Found active scan session: ${activeSessionId}`);
+        Utils.showNotification('Restoring active scan session...', 'info');
+
+        // 1. Put the UI into a "scanning" state immediately
+        AppState.isScanning = true;
+        scanManager.setScanningUI(true);
+        scanManager.currentScanSession = activeSessionId;
+
+        // 2. Fetch the results that have already completed for this project
+        try {
+            await projectManager.loadProjectResults(activeProjectId, 'Restored Session');
+            window.currentProjectId = activeProjectId;
+        } catch (error) {
+            console.error('Failed to load project results during restoration:', error);
+        }
+
+        // 3. Re-join the WebSocket room to get live updates for the rest of the scan
+        if (scanManager.socket && scanManager.socket.connected) {
+            scanManager.socket.emit('join_scan_session', {
+                scan_session_id: activeSessionId
+            });
+        } else {
+            // Wait for socket connection
+            scanManager.socket.on('connect', () => {
+                scanManager.socket.emit('join_scan_session', {
+                    scan_session_id: activeSessionId
+                });
+            });
+        }
+        
+        // 4. Start the timer (from current time since we don't know original start)
+        scanManager.scanStartTime = Date.now();
+        scanManager.startScanTimer();
+        
+        Utils.showNotification('Scan session restored successfully', 'success');
+    }
+}
 
 // Panel resize functionality
 function initializePanelResize() {
@@ -237,7 +284,10 @@ function loadUserPreferences() {
     // Auto-scroll preference
     const autoScroll = localStorage.getItem('autoScroll') !== 'false';
     if (!autoScroll) {
-        document.getElementById('toggleAutoScroll').click();
+        const toggleBtn = document.getElementById('toggleAutoScroll');
+        if (toggleBtn) {
+            toggleBtn.click();
+        }
     }
 }
 
@@ -250,6 +300,12 @@ function updateUIState() {
         el.disabled = isScanning;
     });
     
+    // Show or hide the "Close Session" button
+    const closeBtn = document.getElementById('closeSessionBtn');
+    if (closeBtn) {
+        closeBtn.style.display = isScanning ? 'inline-block' : 'none';
+    }
+    
     // Update status indicators
     if (isScanning) {
         document.body.classList.add('scanning');
@@ -258,10 +314,37 @@ function updateUIState() {
     }
 }
 
-// --- START OF MODIFICATION ---
 // Load Project button functionality
 document.getElementById('loadProjectBtn').addEventListener('click', () => {
     projectManager.showProjectModal();
+});
+
+// Handle the new "Close Session" button
+document.getElementById('closeSessionBtn').addEventListener('click', () => {
+    if (confirm('Are you sure you want to close this session? This will cancel the currently running scan.')) {
+        // Cancel the scan on the backend
+        scanManager.cancelScan();
+        
+        // Clear the session from storage
+        sessionStorage.removeItem('activeScanSessionId');
+        sessionStorage.removeItem('activeProjectId');
+        
+        // Update UI state
+        AppState.isScanning = false;
+        updateUIState();
+        
+        // Reload the page to get a clean state
+        window.location.reload();
+    }
+});
+
+// Warn user before leaving the page if a scan is active
+window.addEventListener('beforeunload', (e) => {
+    const activeSessionId = sessionStorage.getItem('activeScanSessionId');
+    if (AppState.isScanning || activeSessionId) {
+        e.preventDefault();
+        e.returnValue = 'A scan is currently in progress. Are you sure you want to leave? The scan will continue in the background.';
+    }
 });
 
 // Global error handler
@@ -279,8 +362,212 @@ window.addEventListener('online', () => {
     Utils.showNotification('Connection restored', 'success');
 });
 
+// Modal management functions
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('modal-open');
+        // Focus management for accessibility
+        const firstInput = modal.querySelector('input, select, textarea, button');
+        if (firstInput) {
+            setTimeout(() => firstInput.focus(), 100);
+        }
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        modal.classList.remove('modal-open');
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+        e.target.classList.remove('modal-open');
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const openModal = document.querySelector('.modal[style*="flex"]');
+        if (openModal) {
+            openModal.style.display = 'none';
+            openModal.classList.remove('modal-open');
+        }
+    }
+});
+
+// Initialize notification system
+function initializeNotifications() {
+    // Create notification container if it doesn't exist
+    if (!document.getElementById('notificationContainer')) {
+        const container = document.createElement('div');
+        container.id = 'notificationContainer';
+        container.className = 'notification-container';
+        document.body.appendChild(container);
+    }
+}
+
+// Session management utilities
+const SessionManager = {
+    save: (key, value) => {
+        try {
+            sessionStorage.setItem(key, value);
+        } catch (error) {
+            console.error('Failed to save to session storage:', error);
+        }
+    },
+    
+    get: (key) => {
+        try {
+            return sessionStorage.getItem(key);
+        } catch (error) {
+            console.error('Failed to read from session storage:', error);
+            return null;
+        }
+    },
+    
+    remove: (key) => {
+        try {
+            sessionStorage.removeItem(key);
+        } catch (error) {
+            console.error('Failed to remove from session storage:', error);
+        }
+    },
+    
+    clear: () => {
+        try {
+            sessionStorage.removeItem('activeScanSessionId');
+            sessionStorage.removeItem('activeProjectId');
+        } catch (error) {
+            console.error('Failed to clear session storage:', error);
+        }
+    },
+    
+    isActiveSession: () => {
+        return SessionManager.get('activeScanSessionId') !== null;
+    }
+};
+
+// Enhanced UI state management
+function updateUIState() {
+    const isScanning = AppState.isScanning || SessionManager.isActiveSession();
+    
+    // Update scanning-related UI elements
+    document.querySelectorAll('.scan-sensitive').forEach(el => {
+        el.disabled = isScanning;
+    });
+    
+    // Show or hide the "Close Session" button
+    const closeBtn = document.getElementById('closeSessionBtn');
+    if (closeBtn) {
+        closeBtn.style.display = isScanning ? 'inline-block' : 'none';
+    }
+    
+    // Update connection status styling
+    const connectionStatus = document.getElementById('connectionStatus');
+    if (connectionStatus) {
+        connectionStatus.classList.toggle('scanning', isScanning);
+    }
+    
+    // Update status indicators
+    if (isScanning) {
+        document.body.classList.add('scanning');
+    } else {
+        document.body.classList.remove('scanning');
+    }
+    
+    // Update AppState
+    AppState.isScanning = isScanning;
+}
+
+// Theme management
+function toggleTheme() {
+    const currentTheme = document.body.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    Utils.showNotification(`Switched to ${newTheme} theme`, 'info');
+}
+
+// Performance monitoring
+const PerformanceMonitor = {
+    start: (operation) => {
+        performance.mark(`${operation}-start`);
+    },
+    
+    end: (operation) => {
+        try {
+            performance.mark(`${operation}-end`);
+            performance.measure(operation, `${operation}-start`, `${operation}-end`);
+            const measure = performance.getEntriesByName(operation)[0];
+            console.log(`${operation} took ${measure.duration.toFixed(2)}ms`);
+        } catch (error) {
+            console.error('Performance monitoring error:', error);
+        }
+    }
+};
+
+// Initialize tooltips
+function initializeTooltips() {
+    document.querySelectorAll('[title]').forEach(element => {
+        element.addEventListener('mouseenter', (e) => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = e.target.title;
+            document.body.appendChild(tooltip);
+            
+            const rect = e.target.getBoundingClientRect();
+            tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
+            tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+            
+            e.target.tooltip = tooltip;
+            e.target.removeAttribute('title'); // Prevent default tooltip
+        });
+        
+        element.addEventListener('mouseleave', (e) => {
+            if (e.target.tooltip) {
+                e.target.tooltip.remove();
+                e.target.title = e.target.tooltip.textContent; // Restore title
+                e.target.tooltip = null;
+            }
+        });
+    });
+}
+
+// Initialize after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializeNotifications();
+    initializeTooltips();
+});
+
 // Export global functions for use in onclick attributes
 window.openModal = openModal;
 window.closeModal = closeModal;
 window.resultsManager = resultsManager;
 window.projectManager = projectManager;
+window.scanManager = scanManager;
+window.SessionManager = SessionManager;
+window.updateUIState = updateUIState;
+window.toggleTheme = toggleTheme;
+
+// Cleanup on page unload
+window.addEventListener('unload', () => {
+    // Cleanup any timers or intervals
+    if (scanManager && scanManager.scanTimer) {
+        clearInterval(scanManager.scanTimer);
+    }
+    
+    // Close socket connection
+    if (scanManager && scanManager.socket) {
+        scanManager.socket.disconnect();
+    }
+});

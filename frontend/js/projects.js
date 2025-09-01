@@ -1,6 +1,6 @@
 /**
  * Enhanced Nmap GUI Tool - Projects Module
- * Handles project management and selection
+ * Handles project management, selection, and vulnerability analysis integration
  */
 
 class ProjectManager {
@@ -190,9 +190,14 @@ class ProjectManager {
             `Last scan: ${new Date(project.last_scan).toLocaleDateString()}` : 
             'No scans yet';
         
+        // Determine scan status
+        const scanStatus = project.scan_status || 'complete';
+        const statusIndicator = scanStatus === 'incomplete' ? 
+            '<span class="incomplete-indicator">⚠️ Incomplete</span>' : '';
+        
         card.innerHTML = `
             <div class="project-card-header">
-                <h4>${project.name}</h4>
+                <h4>${project.name} ${statusIndicator}</h4>
                 <span class="project-id">#${project.id}</span>
             </div>
             <div class="project-card-body">
@@ -206,15 +211,19 @@ class ProjectManager {
                 ${project.description ? `<p class="project-description">${project.description}</p>` : ''}
             </div>
             <div class="project-card-actions">
-                <button class="btn-primary" onclick="projectManager.loadProjectResults('${project.id}', '${Utils.escapeHtml(project.name)}')">Load Results</button>
+                <button class="btn-primary" onclick="projectManager.loadProjectResults('${project.id}', '${Utils.escapeHtml(project.name)}', '${scanStatus}')">Load Results</button>
                 <button class="btn-secondary" onclick="projectManager.selectProjectFromModal('${project.id}')">Set as Active</button>
+                ${scanStatus === 'incomplete' ? 
+                    `<button class="btn-warning" onclick="projectManager.resumeProjectScan('${project.id}')">Resume Scan</button>` : 
+                    ''
+                }
             </div>
         `;
         
         return card;
     }
 
-    async loadProjectResults(projectId, projectName) {
+    async loadProjectResults(projectId, projectName, scanStatus = 'complete') {
         Utils.showNotification(`Loading results for project: ${projectName}...`, 'info');
         closeModal('projectModal');
 
@@ -267,9 +276,10 @@ class ProjectManager {
                     // Clear loading message
                     resultsContainer.innerHTML = '';
                     
-                    // Update results manager
+                    // Update results manager with scan status
                     resultsManager.results = scanResults;
                     resultsManager.filteredResults = scanResults;
+                    resultsManager.scanStatus = scanStatus;
                     
                     // Set view mode to detailed and render
                     const viewModeSelect = document.getElementById('viewMode');
@@ -293,7 +303,8 @@ class ProjectManager {
                     // Set the current project ID for other operations
                     window.currentProjectId = projectId;
                     
-                    Utils.showNotification(`Successfully loaded ${scanResults.length} scan results.`, 'success');
+                    const statusText = scanStatus === 'incomplete' ? ' (Incomplete scan)' : '';
+                    Utils.showNotification(`Successfully loaded ${scanResults.length} scan results${statusText}.`, 'success');
                 } else {
                     resultsManager.showEmptyState('No valid scan results found for this project.');
                     Utils.showNotification('No valid scan results to display.', 'warning');
@@ -307,6 +318,49 @@ class ProjectManager {
             console.error('Error loading project results:', error);
             resultsManager.showEmptyState('Error loading scan results. Check console for details.');
             Utils.showNotification(`Could not load project results: ${error.message}`, 'error');
+        }
+    }
+
+    async resumeProjectScan(projectId) {
+        if (confirm('Resume the incomplete scan for this project?')) {
+            try {
+                // Get project details to determine where to resume
+                const response = await fetch(`/api/projects/${projectId}/scan-status`);
+                const scanData = await response.json();
+                
+                if (scanData.success && scanData.last_completed_target !== undefined) {
+                    // Load the project's target list and resume from the next target
+                    Utils.showNotification('Preparing to resume scan...', 'info');
+                    
+                    // This would integrate with your scanner to resume from the correct point
+                    // You'd need to implement this in your backend
+                    const resumeResponse = await fetch(`/api/projects/${projectId}/resume-scan`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            resume_from: scanData.last_completed_target + 1
+                        })
+                    });
+                    
+                    const result = await resumeResponse.json();
+                    if (result.success) {
+                        closeModal('projectModal');
+                        Utils.showNotification('Scan resumed successfully', 'success');
+                        
+                        // Update UI to show scanning state
+                        if (window.scanManager) {
+                            window.scanManager.setScanningUI(true);
+                        }
+                    } else {
+                        Utils.showNotification(result.error || 'Failed to resume scan', 'error');
+                    }
+                } else {
+                    Utils.showNotification('Cannot determine resume point for this scan', 'error');
+                }
+            } catch (error) {
+                console.error('Resume scan error:', error);
+                Utils.showNotification('Failed to resume scan', 'error');
+            }
         }
     }
 
@@ -328,13 +382,52 @@ class ProjectManager {
             const response = await fetch(`/api/projects/${projectId}/scans`);
             const scans = await response.json();
             
-            // TODO: Show project details in a modal or separate view
-            console.log('Project scans:', scans);
-            Utils.showNotification('Project details view coming soon', 'info');
+            // Create detailed project view modal
+            this.showProjectDetailsModal(projectId, scans);
             
         } catch (error) {
             Utils.showNotification('Failed to load project details', 'error');
         }
+    }
+
+    showProjectDetailsModal(projectId, scans) {
+        const modal = document.createElement('div');
+        modal.className = 'modal project-details-modal';
+        modal.style.display = 'flex';
+        
+        modal.innerHTML = `
+            <div class="modal-content modal-large">
+                <div class="modal-header">
+                    <h3>Project Details</h3>
+                    <button class="modal-close" onclick="this.parentElement.parentElement.parentElement.remove()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <h4>Scan History</h4>
+                        <div class="scan-history">
+                            ${scans.map(scan => `
+                                <div class="scan-entry">
+                                    <div class="scan-info">
+                                        <span class="scan-date">${new Date(scan.created_at).toLocaleString()}</span>
+                                        <span class="scan-status ${scan.status}">${scan.status}</span>
+                                        <span class="scan-targets">${scan.target_count} targets</span>
+                                    </div>
+                                    <div class="scan-actions">
+                                        <button onclick="projectManager.loadScanResults('${scan.id}')" class="btn-sm">Load</button>
+                                        ${scan.status === 'incomplete' ? 
+                                            `<button onclick="projectManager.resumeScan('${scan.id}')" class="btn-sm resume">Resume</button>` : 
+                                            ''
+                                        }
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
     }
 
     getAssessmentTypeLabel(type) {
@@ -347,6 +440,90 @@ class ProjectManager {
         };
         
         return labels[type] || type;
+    }
+
+    /**
+     * Enhanced analysis integration for services
+     */
+    async analyzeProjectServices(projectId) {
+        try {
+            Utils.showNotification('Analyzing all services in project...', 'info');
+            
+            const response = await fetch(`/api/projects/${projectId}/analyze-services`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                this.showServiceAnalysisReport(result.analysis);
+            } else {
+                Utils.showNotification(result.error || 'Analysis failed', 'error');
+            }
+        } catch (error) {
+            console.error('Service analysis error:', error);
+            Utils.showNotification('Failed to analyze services', 'error');
+        }
+    }
+
+    showServiceAnalysisReport(analysisData) {
+        const modal = document.createElement('div');
+        modal.className = 'modal analysis-report-modal';
+        modal.style.display = 'flex';
+        
+        const criticalCount = analysisData.filter(item => item.risk_level === 'Critical').length;
+        const highCount = analysisData.filter(item => item.risk_level === 'High').length;
+        
+        modal.innerHTML = `
+            <div class="modal-content modal-large">
+                <div class="modal-header">
+                    <h3>Project Security Analysis Report</h3>
+                    <button class="modal-close" onclick="this.parentElement.parentElement.parentElement.remove()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="analysis-summary">
+                        <div class="risk-overview">
+                            <div class="risk-card critical">
+                                <div class="risk-count">${criticalCount}</div>
+                                <div class="risk-label">Critical Issues</div>
+                            </div>
+                            <div class="risk-card high">
+                                <div class="risk-count">${highCount}</div>
+                                <div class="risk-label">High Risk Issues</div>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-analysis">
+                            ${analysisData.map(item => `
+                                <div class="analysis-item ${item.risk_level.toLowerCase()}">
+                                    <div class="item-header">
+                                        <span class="service-info">${item.ip}:${item.port} - ${item.service} ${item.version}</span>
+                                        <span class="risk-badge ${item.risk_level.toLowerCase()}">${item.risk_level}</span>
+                                    </div>
+                                    <div class="item-details">
+                                        <p><strong>Issues Found:</strong> ${item.issues_count}</p>
+                                        <p><strong>EOL Status:</strong> ${item.eol_status}</p>
+                                        <div class="recommendations">
+                                            <strong>Recommendations:</strong>
+                                            <ul>
+                                                ${item.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="report-actions">
+                            <button onclick="Utils.downloadAnalysisReport()" class="btn-primary">Download Report</button>
+                            <button onclick="Utils.copyAnalysisReport()" class="btn-secondary">Copy Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
     }
 }
 
@@ -430,10 +607,45 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('customPorts').value = options.custom_ports;
                 }
                 
+                if (options.custom_flags) {
+                    document.getElementById('customOptions').value = options.custom_flags;
+                }
+                
+                // Update command preview
+                if (window.scanManager) {
+                    const preview = document.getElementById('commandPreview');
+                    if (preview) {
+                        preview.textContent = scanManager.generateCommandPreview();
+                    }
+                }
+                
                 Utils.showNotification(`Applied template: ${selectedOption.textContent}`, 'success');
             } catch (error) {
                 console.error('Error applying template:', error);
             }
         }
     });
+
+    // Initialize command preview updates
+    const updateCommandPreview = () => {
+        if (window.scanManager) {
+            const preview = document.getElementById('commandPreview');
+            if (preview) {
+                preview.textContent = scanManager.generateCommandPreview();
+            }
+        }
+    };
+
+    // Add listeners for real-time command preview updates
+    document.querySelectorAll('#scanPreset, #timingTemplate, #customPorts, #customOptions').forEach(el => {
+        el.addEventListener('change', updateCommandPreview);
+        el.addEventListener('input', updateCommandPreview);
+    });
+
+    document.querySelectorAll('#enableScripts, #versionDetection, #osDetection, #skipPing, #pingOnly, #aggressive, #verbose').forEach(el => {
+        el.addEventListener('change', updateCommandPreview);
+    });
+    
+    // Initial command preview update
+    setTimeout(updateCommandPreview, 100);
 });

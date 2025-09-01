@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:36:38 2025 as: nmap -F -T3 -oX scan_10_60_152_39_1756728398.xml -oN scan_10_60_152_39_1756728398.nmap -oG scan_10_60_152_39_1756728398.gnmap 10.60.152.39
+Host: 10.60.152.39 ()	Status: Up
+Host: 10.60.152.39 ()	Ports: 135/open/tcp//msrpc///, 139/open/tcp//netbios-ssn///, 445/open/tcp//microsoft-ds///, 3389/open/tcp//ms-wbt-server///, 7070/open/tcp//realserver///	Ignored State: closed (95)
+# Nmap done at Mon Sep  1 17:36:38 2025 -- 1 IP address (1 host up) scanned in 0.41 seconds

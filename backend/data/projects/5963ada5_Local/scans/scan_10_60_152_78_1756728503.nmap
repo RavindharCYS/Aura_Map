@@ -1,0 +1,9 @@
+# Nmap 7.95 scan initiated Mon Sep  1 17:38:23 2025 as: nmap -F -T3 -oX scan_10_60_152_78_1756728503.xml -oN scan_10_60_152_78_1756728503.nmap -oG scan_10_60_152_78_1756728503.gnmap 10.60.152.78
+Nmap scan report for 10.60.152.78
+Host is up (0.011s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT   STATE SERVICE
+23/tcp open  telnet
+MAC Address: 00:17:61:11:C2:37 (Private)
+
+# Nmap done at Mon Sep  1 17:38:23 2025 -- 1 IP address (1 host up) scanned in 0.47 seconds

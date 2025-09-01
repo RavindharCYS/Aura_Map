@@ -1,0 +1,58 @@
+{
+  "target_ip": "10.60.152.36",
+  "scan_result": {
+    "target_ip": "10.60.152.36",
+    "status": "completed",
+    "start_time": "2025-09-01T17:36:34.021769",
+    "end_time": "2025-09-01T17:36:34.541399",
+    "duration": "0:00:00.519630",
+    "xml_file": "scan_10_60_152_36_1756728394.xml",
+    "nmap_file": "scan_10_60_152_36_1756728394.nmap",
+    "gnmap_file": "scan_10_60_152_36_1756728394.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 17:36 India Standard Time\nNmap scan report for 10.60.152.36\nHost is up (0.013s latency).\nNot shown: 98 closed tcp ports (reset)\nPORT      STATE SERVICE\n80/tcp    open  http\n10000/tcp open  snet-sensor-mgmt\nMAC Address: A4:86:DB:73:AF:EC (Guangdong Juan Intelligent Technology Joint Stock)\n\nNmap done: 1 IP address (1 host up) scanned in 0.46 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_36_1756728394.xml -oN scan_10_60_152_36_1756728394.nmap -oG scan_10_60_152_36_1756728394.gnmap 10.60.152.36",
+    "host_status": "up",
+    "open_ports": 2,
+    "services": [
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "10000",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "snet-sensor-mgmt",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "0.46",
+      "timestr": "Mon Sep  1 17:36:34 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T17:36:34.541835"
+}

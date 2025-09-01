@@ -63,7 +63,6 @@ class ResultsManager {
     }
 
     loadAndDisplayResults(resultsData, scanStatus = 'complete') {
-        // Extract the scan_result object from each item and filter out invalid results
         const processedResults = resultsData
             .map(item => item.scan_result)
             .filter(result => result && result.host_status && result.target_ip); 
@@ -73,17 +72,15 @@ class ResultsManager {
         this.scanStatus = scanStatus;
         
         const container = document.getElementById('resultsContainer');
-        container.innerHTML = ''; // Clear any "loading..." message
+        container.innerHTML = '';
 
         if (this.filteredResults.length === 0) {
             this.showEmptyState('No valid scan results found for this project.');
             return;
         }
 
-        // Use the detailed view to render all results
         this.renderDetailedView();
 
-        // Enable the action buttons
         document.getElementById('openProjectFolder').disabled = false;
         document.getElementById('exportResults').disabled = false;
         document.getElementById('viewResults').style.display = 'none';
@@ -93,13 +90,12 @@ class ResultsManager {
         const container = document.getElementById('resultsContainer');
         const emptyState = document.getElementById('emptyState');
         
-        container.innerHTML = ''; // Clear everything
+        container.innerHTML = '';
         if (emptyState) {
             emptyState.querySelector('h3').textContent = message;
             emptyState.style.display = 'block';
         }
 
-        // Disable action buttons
         document.getElementById('openProjectFolder').disabled = true;
         document.getElementById('exportResults').disabled = true;
     }
@@ -189,15 +185,20 @@ class ResultsManager {
                 const stateClass = `state-${service.state || 'unknown'}`;
                 const serviceIcon = Utils.getServiceIcon(service.service || '');
                 
+                // Enhanced version info parsing
+                const versionInfo = this.parseVersionInfo(service);
+                
                 detailsHTML += `
                     <tr>
                         <td><strong>${service.port || '?'}</strong></td>
                         <td>${service.protocol || 'tcp'}</td>
                         <td><span class="port-state ${stateClass}">${service.state || 'unknown'}</span></td>
                         <td>${serviceIcon} ${service.service || 'unknown'}</td>
-                        <td>${service.version || ''} ${service.product || ''}</td>
+                        <td class="version-info">${versionInfo.display}</td>
                         <td>
-                            <button class="btn-sm" onclick="resultsManager.analyzeServiceVulnerabilities('${result.target_ip}', '${service.port}', '${service.service || 'unknown'}', '${service.version || 'unknown'}')">Analyze</button>
+                            <button class="btn-sm analyze-btn" onclick="resultsManager.analyzeServiceVulnerabilities('${result.target_ip}', '${service.port}', '${service.service || 'unknown'}', '${Utils.escapeHtml(versionInfo.full)}', '${Utils.escapeHtml(service.product || '')}', '${Utils.escapeHtml(service.extrainfo || '')}')">
+                                <span class="analyze-icon">🔍</span> Analyze
+                            </button>
                         </td>
                     </tr>
                 `;
@@ -258,6 +259,30 @@ class ResultsManager {
         return detailsHTML;
     }
 
+    parseVersionInfo(service) {
+        const parts = [];
+        const fullParts = [];
+        
+        if (service.product && service.product.trim()) {
+            parts.push(service.product.trim());
+            fullParts.push(service.product.trim());
+        }
+        
+        if (service.version && service.version.trim()) {
+            parts.push(service.version.trim());
+            fullParts.push(service.version.trim());
+        }
+        
+        if (service.extrainfo && service.extrainfo.trim()) {
+            fullParts.push(service.extrainfo.trim());
+        }
+        
+        const display = parts.length > 0 ? parts.join(' ') : '';
+        const full = fullParts.length > 0 ? fullParts.join(' ') : '';
+        
+        return { display, full };
+    }
+
     toggleHostDetails(ip) {
         const detailsId = `details-${ip.replace(/\./g, '_')}`;
         const detailsElement = document.getElementById(detailsId);
@@ -298,84 +323,183 @@ class ResultsManager {
         Utils.showNotification('Rescan feature coming soon', 'info');
     }
 
-    // Enhanced analyze service with vulnerability research
-    async analyzeServiceVulnerabilities(ip, port, service, version) {
-        const analysisModal = this.createAnalysisModal(ip, port, service, version);
+    async analyzeServiceVulnerabilities(ip, port, service, version, product, extrainfo) {
+        const analysisModal = this.createAnalysisModal(ip, port, service, version, product, extrainfo);
         document.body.appendChild(analysisModal);
         
-        // Show loading state
         const contentDiv = analysisModal.querySelector('.analysis-content');
-        contentDiv.innerHTML = '<div class="loading">Analyzing service vulnerabilities...</div>';
+        contentDiv.innerHTML = '<div class="analysis-loading"><div class="spinner"></div><p>Loading analysis options...</p></div>';
         
         try {
-            // Search for vulnerabilities and service information
-            const searchQuery = `${service} ${version} vulnerabilities CVE end of life`;
-            const analysis = await this.performVulnerabilityAnalysis(searchQuery, service, version);
-            
+            const analysis = await this.performVulnerabilityAnalysis(service, version, product, extrainfo);
             contentDiv.innerHTML = analysis;
         } catch (error) {
-            contentDiv.innerHTML = '<div class="error-message">Failed to analyze service vulnerabilities</div>';
+            contentDiv.innerHTML = '<div class="analysis-error"><span class="error-icon">❌</span><p>Failed to load analysis options</p></div>';
             console.error('Analysis error:', error);
         }
     }
 
-    async performVulnerabilityAnalysis(searchQuery, service, version) {
-        // This would integrate with your backend API to search for vulnerabilities
-        // For now, returning a mock analysis structure
+    async performVulnerabilityAnalysis(service, version, product, extrainfo) {
+        const baseUrl = "https://www.perplexity.ai/search?q=";
+        
+        // Build comprehensive service context
+        const serviceParts = [];
+        
+        // Primary service name
+        if (service && service !== 'unknown') {
+            serviceParts.push(service);
+        }
+        
+        // Product information
+        if (product && product !== 'unknown' && product.trim()) {
+            serviceParts.push(product.trim());
+        }
+        
+        // Version information
+        if (version && version !== 'unknown' && version.trim()) {
+            serviceParts.push(version.trim());
+        }
+        
+        // Extra information (if relevant)
+        if (extrainfo && extrainfo.trim() && extrainfo !== 'unknown') {
+            const cleanExtraInfo = extrainfo.trim();
+            // Only include if it looks like useful version/product info
+            if (cleanExtraInfo.length < 50 && !cleanExtraInfo.includes('(')) {
+                serviceParts.push(cleanExtraInfo);
+            }
+        }
+        
+        const serviceContext = serviceParts.join(' ').trim();
+        const displayContext = serviceContext || service || 'unknown service';
+        
+        // Clean up display context for better presentation
+        const cleanDisplayContext = this.cleanServiceContext(displayContext);
+
         return `
-            <div class="vulnerability-analysis">
+            <div class="analysis-options">
                 <div class="service-header">
-                    <h4>${service} ${version}</h4>
-                    <div class="severity-badge high">High Risk</div>
-                </div>
-                
-                <div class="analysis-section">
-                    <h5>End of Life Status</h5>
-                    <p class="eol-warning">⚠️ This version reached end-of-life. Consider upgrading.</p>
-                </div>
-                
-                <div class="analysis-section">
-                    <h5>Known Vulnerabilities</h5>
-                    <div class="vulnerability-list">
-                        <div class="vuln-item">
-                            <span class="cve-id">CVE-2023-XXXX</span>
-                            <span class="vuln-severity critical">Critical</span>
-                            <p>Remote code execution vulnerability</p>
+                    <div class="service-icon">${Utils.getServiceIcon(service)}</div>
+                    <div class="service-details">
+                        <h4>Choose Analysis Type for <span class="service-highlight">${cleanDisplayContext}</span></h4>
+                        <div class="service-meta">
+                            <span class="service-badge">${service || 'unknown'}</span>
+                            ${version && version !== 'unknown' ? `<span class="version-badge">${version}</span>` : ''}
+                            ${product && product !== 'unknown' ? `<span class="product-badge">${product}</span>` : ''}
                         </div>
                     </div>
                 </div>
                 
-                <div class="analysis-section">
-                    <h5>Recommendations</h5>
-                    <ul>
-                        <li>Upgrade to latest stable version</li>
-                        <li>Apply security patches</li>
-                        <li>Review configuration settings</li>
-                    </ul>
+                <div class="analysis-grid">
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' End of Life status EOL')}" target="_blank" class="analysis-option eol">
+                        <div class="option-icon">📅</div>
+                        <div class="option-content">
+                            <div class="option-title">End Of Life Status</div>
+                            <div class="option-desc">Check if this version is still supported</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent('What is ' + serviceContext + ' service overview')}" target="_blank" class="analysis-option info">
+                        <div class="option-icon">ℹ️</div>
+                        <div class="option-content">
+                            <div class="option-title">Service Information</div>
+                            <div class="option-desc">Learn about this service and version</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' vulnerabilities CVE security flaws')}" target="_blank" class="analysis-option vulnerabilities">
+                        <div class="option-icon">⚠️</div>
+                        <div class="option-content">
+                            <div class="option-title">Vulnerabilities</div>
+                            <div class="option-desc">Search for known security vulnerabilities</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' exploits metasploit payload')}" target="_blank" class="analysis-option exploits">
+                        <div class="option-icon">💣</div>
+                        <div class="option-content">
+                            <div class="option-title">Exploits</div>
+                            <div class="option-desc">Find available exploits and payloads</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' hardening security configuration best practices')}" target="_blank" class="analysis-option hardening">
+                        <div class="option-icon">🔧</div>
+                        <div class="option-content">
+                            <div class="option-title">Hardening Guides</div>
+                            <div class="option-desc">Security configuration recommendations</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' red team attack techniques')}" target="_blank" class="analysis-option redteam">
+                        <div class="option-icon">🛡️</div>
+                        <div class="option-content">
+                            <div class="option-title">Red Team Use Cases</div>
+                            <div class="option-desc">Attack techniques and methodologies</div>
+                        </div>
+                    </a>
+                    
+                    <a href="${baseUrl + encodeURIComponent(serviceContext + ' penetration testing VAPT methodology')}" target="_blank" class="analysis-option vapt">
+                        <div class="option-icon">🔍</div>
+                        <div class="option-content">
+                            <div class="option-title">VAPT Testing Strategies</div>
+                            <div class="option-desc">Penetration testing approaches</div>
+                        </div>
+                    </a>
                 </div>
                 
-                <div class="analysis-actions">
-                    <button onclick="window.open('https://nvd.nist.gov/vuln/search/results?query=${encodeURIComponent(service + ' ' + version)}', '_blank')" class="btn-secondary">
-                        Search NVD
-                    </button>
-                    <button onclick="this.searchExploitDB('${service}', '${version}')" class="btn-secondary">
-                        Search ExploitDB
-                    </button>
+                <div class="analysis-footer">
+                    <div class="search-alternatives">
+                        <h5>Additional Search Options:</h5>
+                        <div class="search-links">
+                            <a href="${baseUrl + encodeURIComponent(serviceContext + ' configuration files')}" target="_blank" class="search-link">
+                                📄 Configuration Files
+                            </a>
+                            <a href="${baseUrl + encodeURIComponent(serviceContext + ' default credentials')}" target="_blank" class="search-link">
+                                🔑 Default Credentials
+                            </a>
+                            <a href="${baseUrl + encodeURIComponent(serviceContext + ' port scanning techniques')}" target="_blank" class="search-link">
+                                🎯 Scanning Techniques
+                            </a>
+                            <a href="${baseUrl + encodeURIComponent(serviceContext + ' OSINT reconnaissance')}" target="_blank" class="search-link">
+                                🕵️ OSINT Methods
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
     }
 
-    createAnalysisModal(ip, port, service, version) {
+    cleanServiceContext(context) {
+        // Remove common unnecessary words and clean up the context
+        return context
+            .replace(/\b(unknown|tcp|udp)\b/gi, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    createAnalysisModal(ip, port, service, version, product, extrainfo) {
         const modal = document.createElement('div');
         modal.className = 'modal analysis-modal';
+        
+        // Build service info for header
+        const serviceInfo = [];
+        if (service && service !== 'unknown') serviceInfo.push(service);
+        if (product && product !== 'unknown') serviceInfo.push(product);
+        if (version && version !== 'unknown') serviceInfo.push(version);
+        
+        const serviceTitle = serviceInfo.length > 0 ? serviceInfo.join(' ') : 'Unknown Service';
+        
         modal.innerHTML = `
-            <div class="modal-content modal-large">
-                <div class="modal-header">
-                    <h3>Service Analysis: ${ip}:${port}</h3>
+            <div class="modal-content modal-analysis">
+                <div class="modal-header analysis-header">
+                    <div class="analysis-title">
+                        <h3>Service Analysis: <span class="target-info">${ip}:${port}</span></h3>
+                        <div class="service-subtitle">${serviceTitle}</div>
+                    </div>
                     <button class="modal-close" onclick="this.parentElement.parentElement.parentElement.remove()">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body analysis-body">
                     <div class="analysis-content"></div>
                 </div>
             </div>
@@ -806,3 +930,334 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Enhanced CSS styles for the analysis modal
+const analysisStyles = `
+<style>
+/* Analysis Modal Styles */
+.modal-analysis {
+    max-width: 900px;
+    width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analysis-header {
+    background: linear-gradient(135deg, #0f3460 0%, #16537e 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    border-radius: 12px 12px 0 0;
+}
+
+.analysis-title h3 {
+    color: #ffffff;
+    font-size: 1.4em;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.target-info {
+    color: #4fc3f7;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+}
+
+.service-subtitle {
+    color: #b3e5fc;
+    font-size: 0.95em;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.analysis-body {
+    padding: 0;
+    background: #1a1a2e;
+}
+
+.analysis-loading, .analysis-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+    color: #b3e5fc;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(79, 195, 247, 0.3);
+    border-top: 3px solid #4fc3f7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.analysis-error .error-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.analysis-options {
+    padding: 30px;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(79, 195, 247, 0.1) 0%, rgba(33, 150, 243, 0.1) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+}
+
+.service-icon {
+    font-size: 2.5em;
+    margin-right: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.service-details h4 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.service-highlight {
+    color: #4fc3f7;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.service-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.service-badge, .version-badge, .product-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-badge {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+}
+
+.version-badge {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: white;
+}
+
+.product-badge {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.analysis-option {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.analysis-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.analysis-option:hover::before {
+    left: 100%;
+}
+
+.analysis-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+.analysis-option.eol:hover { border-color: rgba(255, 193, 7, 0.6); }
+.analysis-option.info:hover { border-color: rgba(33, 150, 243, 0.6); }
+.analysis-option.vulnerabilities:hover { border-color: rgba(255, 152, 0, 0.6); }
+.analysis-option.exploits:hover { border-color: rgba(244, 67, 54, 0.6); }
+.analysis-option.hardening:hover { border-color: rgba(76, 175, 80, 0.6); }
+.analysis-option.redteam:hover { border-color: rgba(156, 39, 176, 0.6); }
+.analysis-option.vapt:hover { border-color: rgba(96, 125, 139, 0.6); }
+
+.option-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    flex-shrink: 0;
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.option-desc {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+.analysis-footer {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analysis-footer h5 {
+    color: #b3e5fc;
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.search-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.search-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #b3e5fc;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.search-link:hover {
+    background: rgba(79, 195, 247, 0.1);
+    border-color: rgba(79, 195, 247, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Enhanced table styles for better version display */
+.ports-table .version-info {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 0.9em;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.analyze-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #1976d2, #1565c0);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.analyze-btn:hover {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.analyze-icon {
+    font-size: 1.1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .modal-analysis {
+        width: 95vw;
+        max-height: 90vh;
+    }
+    
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .service-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Dark theme enhancements */
+@media (prefers-color-scheme: dark) {
+    .analysis-option {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    }
+    
+    .service-header {
+        background: linear-gradient(135deg, rgba(79, 195, 247, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+    }
+}
+</style>
+`;
+
+// Inject styles if not already present
+if (!document.getElementById('analysis-styles')) {
+    const styleElement = document.createElement('div');
+    styleElement.id = 'analysis-styles';
+    styleElement.innerHTML = analysisStyles;
+    document.head.appendChild(styleElement);
+}
