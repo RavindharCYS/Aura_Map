@@ -62,13 +62,17 @@ Installation is straightforward using the provided scripts.
 
 ### Manual Installation (Alternative)
 
-If you prefer to install manually:```sh
+If you prefer to install manually:
 # Create and activate a virtual environment
+```sh
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate.bat
+```
 
 # Install dependencies
-pip install -r requirements.txt```
+```sh
+pip install -r requirements.txt
+```
 
 ## 🚀 How to Use
 
