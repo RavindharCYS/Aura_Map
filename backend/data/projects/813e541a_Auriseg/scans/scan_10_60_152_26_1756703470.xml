@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:41:10 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_26_1756703470.xml -oN scan_10_60_152_26_1756703470.nmap -oG scan_10_60_152_26_1756703470.gnmap 10.60.152.26 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_26_1756703470.xml -oN scan_10_60_152_26_1756703470.nmap -oG scan_10_60_152_26_1756703470.gnmap 10.60.152.26" start="1756703470" startstr="Mon Sep  1 10:41:10 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756703470"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.26" addrtype="ipv4"/>
+<address addr="40:FA:FE:EF:8D:12" addrtype="mac" vendor="Motorola Mobility, a Lenovo Company"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756703471" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756703471"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756703471"/>
+<taskbegin task="SYN Stealth Scan" time="1756703471"/>
+<taskprogress task="SYN Stealth Scan" time="1756703502" percent="28.76" remaining="77" etc="1756703579"/>
+<taskprogress task="SYN Stealth Scan" time="1756703532" percent="63.16" remaining="36" etc="1756703568"/>
+<taskend task="SYN Stealth Scan" time="1756703566" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756703566"/>
+<taskbegin task="NSE" time="1756703566"/>
+<taskend task="NSE" time="1756703566"/>
+<taskbegin task="NSE" time="1756703566"/>
+<taskend task="NSE" time="1756703566"/>
+<host starttime="1756703471" endtime="1756703566"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.26" addrtype="ipv4"/>
+<address addr="40:FA:FE:EF:8D:12" addrtype="mac" vendor="Motorola Mobility, a Lenovo Company"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65535">
+<extrareasons reason="reset" count="65535" proto="tcp" ports="1-65535"/>
+</extraports>
+</ports>
+<times srtt="10437" rttvar="4699" to="100000"/>
+</host>
+<runstats><finished time="1756703566" timestr="Mon Sep  1 10:42:46 2025" summary="Nmap done at Mon Sep  1 10:42:46 2025; 1 IP address (1 host up) scanned in 96.61 seconds" elapsed="96.61" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

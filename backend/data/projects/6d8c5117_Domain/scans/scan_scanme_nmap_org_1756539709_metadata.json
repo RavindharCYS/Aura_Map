@@ -1,0 +1,30 @@
+{
+  "target_ip": "scanme.nmap.org",
+  "scan_result": {
+    "target_ip": "scanme.nmap.org",
+    "status": "failed",
+    "start_time": "2025-08-30T13:11:45.902784",
+    "end_time": "2025-08-30T13:11:49.434426",
+    "duration": "0:00:03.531642",
+    "xml_file": "scan_scanme_nmap_org_1756539705.xml",
+    "nmap_file": "scan_scanme_nmap_org_1756539705.nmap",
+    "gnmap_file": "scan_scanme_nmap_org_1756539705.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-30 13:11 India Standard Time\n",
+    "stderr": "",
+    "return_code": 1,
+    "nmap_command": "nmap -F -sC -sV -O -T3 -oX scan_scanme_nmap_org_1756539705.xml -oN scan_scanme_nmap_org_1756539705.nmap -oG scan_scanme_nmap_org_1756539705.gnmap scanme.nmap.org",
+    "parse_error": "no element found: line 15, column 0"
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-08-30T13:11:49.435154"
+}

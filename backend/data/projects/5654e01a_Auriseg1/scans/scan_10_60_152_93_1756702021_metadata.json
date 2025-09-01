@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.93",
+  "scan_result": {
+    "target_ip": "10.60.152.93",
+    "status": "completed",
+    "start_time": "2025-09-01T10:16:47.382561",
+    "end_time": "2025-09-01T10:17:01.876958",
+    "duration": "0:00:14.494397",
+    "xml_file": "scan_10_60_152_93_1756702007.xml",
+    "nmap_file": "scan_10_60_152_93_1756702007.nmap",
+    "gnmap_file": "scan_10_60_152_93_1756702007.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:16 India Standard Time\nNmap scan report for 10.60.152.93\nHost is up (0.0048s latency).\nNot shown: 99 filtered tcp ports (no-response)\nPORT     STATE SERVICE VERSION\n5357/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\nMAC Address: DC:FB:48:62:13:35 (Intel Corporate)\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 14.43 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_93_1756702007.xml -oN scan_10_60_152_93_1756702007.nmap -oG scan_10_60_152_93_1756702007.gnmap 10.60.152.93",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP"
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "14.43",
+      "timestr": "Mon Sep  1 10:17:01 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:17:01.877410"
+}

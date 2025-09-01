@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 12:06:45 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756708604.xml -oN scan_auriseg_com_1756708604.nmap -oG scan_auriseg_com_1756708604.gnmap auriseg.com -->
+<nmaprun scanner="nmap" args="nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756708604.xml -oN scan_auriseg_com_1756708604.nmap -oG scan_auriseg_com_1756708604.gnmap auriseg.com" start="1756708605" startstr="Mon Sep  1 12:06:45 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="76.76.21.21" addrtype="ipv4"/>
+<hostnames>
+<hostname name="auriseg.com" type="user"/>
+</hostnames>
+</hosthint>

@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.155",
+  "scan_result": {
+    "target_ip": "10.60.152.155",
+    "status": "completed",
+    "start_time": "2025-09-01T10:20:45.577575",
+    "end_time": "2025-09-01T10:20:53.100707",
+    "duration": "0:00:07.523132",
+    "xml_file": "scan_10_60_152_155_1756702245.xml",
+    "nmap_file": "scan_10_60_152_155_1756702245.nmap",
+    "gnmap_file": "scan_10_60_152_155_1756702245.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:20 India Standard Time\nNmap scan report for 10.60.152.155\nHost is up (0.083s latency).\nNot shown: 99 filtered tcp ports (no-response)\nPORT     STATE SERVICE VERSION\n3306/tcp open  mysql   MySQL (unauthorized)\nMAC Address: 7C:70:DB:54:1F:AF (Intel Corporate)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 7.47 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_155_1756702245.xml -oN scan_10_60_152_155_1756702245.nmap -oG scan_10_60_152_155_1756702245.gnmap 10.60.152.155",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "3306",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "mysql",
+        "version": "",
+        "product": "MySQL",
+        "extrainfo": "unauthorized"
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "7.47",
+      "timestr": "Mon Sep  1 10:20:53 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:20:53.101234"
+}

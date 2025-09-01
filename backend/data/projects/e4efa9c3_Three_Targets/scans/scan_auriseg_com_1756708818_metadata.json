@@ -1,0 +1,30 @@
+{
+  "target_ip": "auriseg.com",
+  "scan_result": {
+    "target_ip": "auriseg.com",
+    "status": "failed",
+    "start_time": "2025-09-01T12:06:44.659831",
+    "end_time": "2025-09-01T12:10:18.771452",
+    "duration": "0:03:34.111621",
+    "xml_file": "scan_auriseg_com_1756708604.xml",
+    "nmap_file": "scan_auriseg_com_1756708604.nmap",
+    "gnmap_file": "scan_auriseg_com_1756708604.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 12:06 India Standard Time\n",
+    "stderr": "",
+    "return_code": 1,
+    "nmap_command": "nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756708604.xml -oN scan_auriseg_com_1756708604.nmap -oG scan_auriseg_com_1756708604.gnmap auriseg.com",
+    "parse_error": "no element found: line 15, column 0"
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T12:10:18.773755"
+}

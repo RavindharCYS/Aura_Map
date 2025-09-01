@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.28",
+  "scan_result": {
+    "target_ip": "10.60.152.28",
+    "status": "completed",
+    "start_time": "2025-09-01T10:42:49.367958",
+    "end_time": "2025-09-01T10:47:02.875064",
+    "duration": "0:04:13.507106",
+    "xml_file": "scan_10_60_152_28_1756703569.xml",
+    "nmap_file": "scan_10_60_152_28_1756703569.nmap",
+    "gnmap_file": "scan_10_60_152_28_1756703569.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:42 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:42\nScanning 10.60.152.28 [1 port]\nCompleted ARP Ping Scan at 10:42, 0.41s elapsed (1 total hosts)\nInitiating Parallel DNS resolution of 1 host. at 10:42\nCompleted Parallel DNS resolution of 1 host. at 10:42, 0.01s elapsed\nInitiating SYN Stealth Scan at 10:42\nScanning 10.60.152.28 [65535 ports]\nSYN Stealth Scan Timing: About 27.95% done; ETC: 10:44 (0:01:20 remaining)\nDiscovered open port 46888/tcp on 10.60.152.28\nSYN Stealth Scan Timing: About 59.60% done; ETC: 10:44 (0:00:41 remaining)\nCompleted SYN Stealth Scan at 10:44, 98.14s elapsed (65535 total ports)\nInitiating Service scan at 10:44\nScanning 1 service on 10.60.152.28\nCompleted Service scan at 10:47, 152.50s elapsed (1 service on 1 host)\nNSE: Script scanning 10.60.152.28.\nInitiating NSE at 10:47\nCompleted NSE at 10:47, 0.03s elapsed\nInitiating NSE at 10:47\nCompleted NSE at 10:47, 1.10s elapsed\nNmap scan report for 10.60.152.28\nHost is up (0.011s latency).\nNot shown: 65534 closed tcp ports (reset)\nPORT      STATE SERVICE VERSION\n46888/tcp open  unknown\n1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :\nSF-Port46888-TCP:V=7.95%I=7%D=9/1%Time=68B52BBA%P=i686-pc-windows-windows%\nSF:r(NULL,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F287039\\x20\\r\\x01\\\nSF:0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x0\nSF:7OnePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\\\nSF:xf8\\.\\]R\")%r(GenericLines,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F7\nSF:3F287039\\x20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x\nSF:06\\x06EB2101\\x07\\x07OnePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x\nSF:0c\\x0c\\r\\x01\\x0eJ_\\xf8\\.\\]R\")%r(GetRequest,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858\nSF:CF078BBDEB3A272F73F287039\\x20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x\nSF:04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x07OnePlus\\x08\\x0eOnePlus\\x20Nord\\x20\nSF:2\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\\xf8\\.\\]R\")%r(HTTPOptions,6C,\"\\0j\\x0\nSF:1\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F287039\\x20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\nSF:\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x07OnePlus\\x08\\x0eO\nSF:nePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\\xf8\\.\\]R\")%r(RTSP\nSF:Request,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F287039\\x20\\r\\x01\nSF:\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x\nSF:07OnePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\nSF:\\xf8\\.\\]R\")%r(RPCCheck,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F2\nSF:87039\\x20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\\nSF:x06EB2101\\x07\\x07OnePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\\nSF:x0c\\r\\x01\\x0eJ_\\xf8\\.\\]R\")%r(DNSVersionBindReqTCP,6C,\"\\0j\\x01\\0\\x01OAFP\nSF:_B7E858CF078BBDEB3A272F73F287039\\x20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x0\nSF:3\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x07OnePlus\\x08\\x0eOnePlus\\x20N\nSF:ord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\\xf8\\.\\]R\")%r(DNSStatusReques\nSF:tTCP,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F287039\\x20\\r\\x01\\0\\\nSF:x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB2101\\x07\\x07O\nSF:nePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x01\\x0eJ_\\xf\nSF:8\\.\\]R\")%r(Help,6C,\"\\0j\\x01\\0\\x01OAFP_B7E858CF078BBDEB3A272F73F287039\\x\nSF:20\\r\\x01\\0\\x02\\0\\0\\x02\\xff\\xf5\\x03\\x03\\xfe\\x04'\\x10\\x05\\0\\n\\x06\\x06EB21\nSF:01\\x07\\x07OnePlus\\x08\\x0eOnePlus\\x20Nord\\x202\\n\\x08\\x0b\\x01\\x0c\\x0c\\r\\x\nSF:01\\x0eJ_\\xf8\\.\\]R\");\nMAC Address: D2:66:3A:0F:AE:FE (Unknown)\n\nRead data files from: C:\\Program Files (x86)\\Nmap\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 253.24 seconds\n           Raw packets sent: 65537 (2.884MB) | Rcvd: 65539 (2.622MB)\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_28_1756703569.xml -oN scan_10_60_152_28_1756703569.nmap -oG scan_10_60_152_28_1756703569.gnmap 10.60.152.28",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "46888",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "253.24",
+      "timestr": "Mon Sep  1 10:47:02 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:47:02.879562"
+}

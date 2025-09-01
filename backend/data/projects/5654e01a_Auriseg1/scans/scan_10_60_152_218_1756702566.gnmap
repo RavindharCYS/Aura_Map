@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:26:06 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_218_1756702566.xml -oN scan_10_60_152_218_1756702566.nmap -oG scan_10_60_152_218_1756702566.gnmap 10.60.152.218
+Host: 10.60.152.218 ()	Status: Up
+Host: 10.60.152.218 ()	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds?///, 5800/open/tcp//vnc-http//TightVNC (user: acpl-vapt-004; VNC TCP port: 5900)/, 5900/open/tcp//vnc//VNC (protocol 3.8)/	Ignored State: closed (95)
+# Nmap done at Mon Sep  1 10:26:16 2025 -- 1 IP address (1 host up) scanned in 9.80 seconds

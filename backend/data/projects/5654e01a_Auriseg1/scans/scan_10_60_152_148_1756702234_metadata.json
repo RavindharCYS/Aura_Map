@@ -1,0 +1,112 @@
+{
+  "target_ip": "10.60.152.148",
+  "scan_result": {
+    "target_ip": "10.60.152.148",
+    "status": "completed",
+    "start_time": "2025-09-01T10:20:09.940460",
+    "end_time": "2025-09-01T10:20:34.512231",
+    "duration": "0:00:24.571771",
+    "xml_file": "scan_10_60_152_148_1756702209.xml",
+    "nmap_file": "scan_10_60_152_148_1756702209.nmap",
+    "gnmap_file": "scan_10_60_152_148_1756702209.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:20 India Standard Time\nNmap scan report for 10.60.152.148\nHost is up (0.012s latency).\nNot shown: 92 closed tcp ports (reset)\nPORT     STATE SERVICE     VERSION\n80/tcp   open  tcpwrapped\n135/tcp  open  msrpc       Microsoft Windows RPC\n139/tcp  open  netbios-ssn Microsoft Windows netbios-ssn\n443/tcp  open  tcpwrapped\n5357/tcp open  http        Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\n5432/tcp open  postgresql  PostgreSQL DB 9.6.0 or later\n5800/tcp open  vnc-http    TightVNC (user: pentester; VNC TCP port: 5900)\n5900/tcp open  vnc         VNC (protocol 3.8)\nMAC Address: 84:FD:D1:D6:DC:33 (Intel Corporate)\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 24.50 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_148_1756702209.xml -oN scan_10_60_152_148_1756702209.nmap -oG scan_10_60_152_148_1756702209.gnmap 10.60.152.148",
+    "host_status": "up",
+    "open_ports": 8,
+    "services": [
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "tcpwrapped",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "Microsoft Windows netbios-ssn",
+        "extrainfo": ""
+      },
+      {
+        "port": "443",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "tcpwrapped",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP"
+      },
+      {
+        "port": "5432",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "postgresql",
+        "version": "9.6.0 or later",
+        "product": "PostgreSQL DB",
+        "extrainfo": ""
+      },
+      {
+        "port": "5800",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "vnc-http",
+        "version": "",
+        "product": "TightVNC",
+        "extrainfo": "user: pentester; VNC TCP port: 5900"
+      },
+      {
+        "port": "5900",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "vnc",
+        "version": "",
+        "product": "VNC",
+        "extrainfo": "protocol 3.8"
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "24.50",
+      "timestr": "Mon Sep  1 10:20:34 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:20:34.512863"
+}

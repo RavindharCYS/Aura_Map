@@ -1,0 +1,46 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:25:00 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_15_1756702500.xml -oN scan_10_60_152_15_1756702500.nmap -oG scan_10_60_152_15_1756702500.gnmap 10.60.152.15
+Nmap scan report for 10.60.152.15
+Host is up (0.0084s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT      STATE SERVICE    VERSION
+10150/tcp open  unknown
+10152/tcp open  tcpwrapped
+46888/tcp open  unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port46888-TCP:V=7.95%I=7%D=9/1%Time=68B52788%P=i686-pc-windows-windows%
+SF:r(GetRequest,71,"\0o\x01\0\nOAFP_BCB9C561B0550D4529B85785F03D43B\x20\r\
+SF:x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06\x07CPH2613\x
+SF:07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r\x01
+SF:\x0e\x03\0\0\0\0\0\0\0")%r(HTTPOptions,71,"\0o\x01\0\nOAFP_BCB9C561B055
+SF:0D4529B85785F03D43B\x20\r\x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x1
+SF:0\x05\0\n\x06\x07CPH2613\x07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n
+SF:\x08\x0b\x01\x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\0\0")%r(RTSPRequest,71,"\0
+SF:o\x01\0\nOAFP_BCB9C561B0550D4529B85785F03D43B\x20\r\x01\0\x10\0\0\x02\x
+SF:ff\xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06\x07CPH2613\x07\x07OnePlus\x08\x
+SF:10OnePlus\x20Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\
+SF:0\0")%r(RPCCheck,71,"\0o\x01\0\nOAFP_BCB9C561B0550D4529B85785F03D43B\x2
+SF:0\r\x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06\x07CPH26
+SF:13\x07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r
+SF:\x01\x0e\x03\0\0\0\0\0\0\0")%r(DNSVersionBindReqTCP,71,"\0o\x01\0\nOAFP
+SF:_BCB9C561B0550D4529B85785F03D43B\x20\r\x01\0\x10\0\0\x02\xff\xf5\x03\x0
+SF:3\xfe\x04'\x10\x05\0\n\x06\x07CPH2613\x07\x07OnePlus\x08\x10OnePlus\x20
+SF:Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\0\0")%r(DNSSt
+SF:atusRequestTCP,71,"\0o\x01\0\nOAFP_BCB9C561B0550D4529B85785F03D43B\x20\
+SF:r\x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06\x07CPH2613
+SF:\x07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r\x
+SF:01\x0e\x03\0\0\0\0\0\0\0")%r(Help,71,"\0o\x01\0\nOAFP_BCB9C561B0550D452
+SF:9B85785F03D43B\x20\r\x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x10\x05
+SF:\0\n\x06\x07CPH2613\x07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n\x08\
+SF:x0b\x01\x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\0\0")%r(SSLSessionReq,71,"\0o\x
+SF:01\0\nOAFP_BCB9C561B0550D4529B85785F03D43B\x20\r\x01\0\x10\0\0\x02\xff\
+SF:xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06\x07CPH2613\x07\x07OnePlus\x08\x10O
+SF:nePlus\x20Nord\x20CE4\n\x08\x0b\x01\x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\0\0
+SF:")%r(TerminalServerCookie,71,"\0o\x01\0\nOAFP_BCB9C561B0550D4529B85785F
+SF:03D43B\x20\r\x01\0\x10\0\0\x02\xff\xf5\x03\x03\xfe\x04'\x10\x05\0\n\x06
+SF:\x07CPH2613\x07\x07OnePlus\x08\x10OnePlus\x20Nord\x20CE4\n\x08\x0b\x01\
+SF:x0c\x1b\r\x01\x0e\x03\0\0\0\0\0\0\0");
+MAC Address: 86:FD:84:CB:0F:BE (Unknown)
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:28:59 2025 -- 1 IP address (1 host up) scanned in 239.39 seconds

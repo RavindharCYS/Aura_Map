@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:47:33 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_33_1756703853.xml -oN scan_10_60_152_33_1756703853.nmap -oG scan_10_60_152_33_1756703853.gnmap 10.60.152.33
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)

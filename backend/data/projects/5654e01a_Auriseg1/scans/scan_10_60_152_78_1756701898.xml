@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:14:58 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_78_1756701898.xml -oN scan_10_60_152_78_1756701898.nmap -oG scan_10_60_152_78_1756701898.gnmap 10.60.152.78 -->
+<nmaprun scanner="nmap" args="nmap -F -sV -Pn -T3 -oX scan_10_60_152_78_1756701898.xml -oN scan_10_60_152_78_1756701898.nmap -oG scan_10_60_152_78_1756701898.gnmap 10.60.152.78" start="1756701898" startstr="Mon Sep  1 10:14:58 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="100" services="7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.78" addrtype="ipv4"/>
+<address addr="00:17:61:11:C2:37" addrtype="mac" vendor="Private"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1756701898" endtime="1756701945"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.78" addrtype="ipv4"/>
+<address addr="00:17:61:11:C2:37" addrtype="mac" vendor="Private"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="99">
+<extrareasons reason="reset" count="99" proto="tcp" ports="7,9,13,21-22,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157"/>
+</extraports>
+<port protocol="tcp" portid="23"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="telnet" servicefp="SF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B524D0%P=i686-pc-windows-windows%r(NULL,5C,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\(none\)\x20login:\x20&quot;)%r(GenericLines,7C,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\(none\)\x20login:\x20\r\n\r\n\(none\)\x20login:\x20\(none\)\x20login:\x20&quot;)%r(tn3270,6D,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\^@IBM-3279-4-E\xfb\^Y\(none\)\x20login:\x20&quot;)%r(GetRequest,6E,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rGET\x20/\x20HTTP/1\.0\r\n\r\n\(none\)\x20login:\x20&quot;)%r(RPCCheck,58,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\x80\^@\^@\(r\xfe\^\]&quot;)%r(Help,62,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rHELP\r\n\(none\)\x20login:\x20&quot;)%r(SIPOptions,13B,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rOPTIONS\x20sip:nm\x20SIP/2\.0\r\nVia:\x20SIP/2\.0/TCP\x20nm;branch=foo\r\nFrom:\x20&lt;sip:nm@nm&gt;;tag=root\r\nTo:\x20&lt;sip:nm2@nm2&gt;\r\nCall-ID:\x2050000\r\nCSeq:\x2042\x20OPTIONS\r\nMax-Forwards:\x2070\r\nContent-Length:\x200\r\nContact:\x20&lt;sip:nm@nm&gt;\r\nAccept:\x20application/sdp\r\n\r\n\(none\)\x20login:\x20&quot;)%r(NCP,88,&quot;\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rDmdT\^@\^@\^@\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\^@\^@\^@\^A\^@\^@\^@\^@\^@&quot;);" method="probed" conf="10"/></port>
+</ports>
+<times srtt="4443" rttvar="3432" to="100000"/>
+</host>
+<runstats><finished time="1756701945" timestr="Mon Sep  1 10:15:45 2025" summary="Nmap done at Mon Sep  1 10:15:45 2025; 1 IP address (1 host up) scanned in 46.89 seconds" elapsed="46.89" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

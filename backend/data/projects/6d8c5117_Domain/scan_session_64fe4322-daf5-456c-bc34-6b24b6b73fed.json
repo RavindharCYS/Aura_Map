@@ -1,0 +1,27 @@
+{
+  "scan_session_id": "64fe4322-daf5-456c-bc34-6b24b6b73fed",
+  "project_id": "6d8c5117",
+  "targets": [
+    {
+      "ip": "scanme.nmap.org",
+      "ports": []
+    }
+  ],
+  "options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "start_time": "2025-08-30T13:11:45.899669",
+  "status": "completed",
+  "completed_targets": 1,
+  "total_targets": 1,
+  "progress": 100.0,
+  "end_time": "2025-08-30T13:11:49.453305"
+}

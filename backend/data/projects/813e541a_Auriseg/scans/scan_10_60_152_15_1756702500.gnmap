@@ -1,0 +1,5 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:25:00 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_15_1756702500.xml -oN scan_10_60_152_15_1756702500.nmap -oG scan_10_60_152_15_1756702500.gnmap 10.60.152.15
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.60.152.15 ()	Status: Up
+Host: 10.60.152.15 ()	Ports: 10150/open/tcp/////, 10152/open/tcp//tcpwrapped///, 46888/open/tcp//unknown///	Ignored State: closed (65532)
+# Nmap done at Mon Sep  1 10:28:59 2025 -- 1 IP address (1 host up) scanned in 239.39 seconds

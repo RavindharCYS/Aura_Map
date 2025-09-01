@@ -1,0 +1,76 @@
+{
+  "target_ip": "10.60.152.165",
+  "scan_result": {
+    "target_ip": "10.60.152.165",
+    "status": "completed",
+    "start_time": "2025-09-01T10:23:12.958825",
+    "end_time": "2025-09-01T10:23:29.945213",
+    "duration": "0:00:16.986388",
+    "xml_file": "scan_10_60_152_165_1756702392.xml",
+    "nmap_file": "scan_10_60_152_165_1756702392.nmap",
+    "gnmap_file": "scan_10_60_152_165_1756702392.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:23 India Standard Time\nNmap scan report for 10.60.152.165\nHost is up (0.076s latency).\nNot shown: 96 filtered tcp ports (no-response)\nPORT     STATE SERVICE  VERSION\n80/tcp   open  http     Apache httpd 2.4.58 ((Win64) OpenSSL/3.1.3 PHP/8.2.12)\n443/tcp  open  ssl/http Apache httpd 2.4.58 ((Win64) OpenSSL/3.1.3 PHP/8.2.12)\n3306/tcp open  mysql    MariaDB 10.3.23 or earlier (unauthorized)\n5357/tcp open  http     Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\nMAC Address: 54:14:F3:57:9B:7B (Intel Corporate)\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 16.92 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_165_1756702392.xml -oN scan_10_60_152_165_1756702392.nmap -oG scan_10_60_152_165_1756702392.gnmap 10.60.152.165",
+    "host_status": "up",
+    "open_ports": 4,
+    "services": [
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.4.58",
+        "product": "Apache httpd",
+        "extrainfo": "(Win64) OpenSSL/3.1.3 PHP/8.2.12"
+      },
+      {
+        "port": "443",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.4.58",
+        "product": "Apache httpd",
+        "extrainfo": "(Win64) OpenSSL/3.1.3 PHP/8.2.12"
+      },
+      {
+        "port": "3306",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "mysql",
+        "version": "10.3.23 or earlier",
+        "product": "MariaDB",
+        "extrainfo": "unauthorized"
+      },
+      {
+        "port": "5357",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP"
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "16.92",
+      "timestr": "Mon Sep  1 10:23:29 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:23:29.945686"
+}

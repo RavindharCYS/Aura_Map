@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:22:16 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_11_1756702336.xml -oN scan_10_60_152_11_1756702336.nmap -oG scan_10_60_152_11_1756702336.gnmap 10.60.152.11 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_11_1756702336.xml -oN scan_10_60_152_11_1756702336.nmap -oG scan_10_60_152_11_1756702336.gnmap 10.60.152.11" start="1756702336" startstr="Mon Sep  1 10:22:16 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756702336"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.11" addrtype="ipv4"/>
+<address addr="9C:A3:A9:E5:E7:EB" addrtype="mac" vendor="Guangzhou Juan Optical and Electronical Tech Joint Stock"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756702336" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756702336"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756702336"/>
+<taskbegin task="SYN Stealth Scan" time="1756702336"/>
+<taskend task="SYN Stealth Scan" time="1756702401" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756702401"/>
+<taskend task="Service scan" time="1756702428" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1756702428"/>
+<taskend task="NSE" time="1756702438"/>
+<taskbegin task="NSE" time="1756702438"/>
+<taskend task="NSE" time="1756702438"/>
+<host starttime="1756702336" endtime="1756702438"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.11" addrtype="ipv4"/>
+<address addr="9C:A3:A9:E5:E7:EB" addrtype="mac" vendor="Guangzhou Juan Optical and Electronical Tech Joint Stock"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="reset" count="65533" proto="tcp" ports="1-79,81-9999,10001-65535"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service></port>
+<port protocol="tcp" portid="10000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="snet-sensor-mgmt" servicefp="SF-Port10000-TCP:V=7.95%I=7%D=9/1%Time=68B526D6%P=i686-pc-windows-windows%r(RPCCheck,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(DNSVersionBindReqTCP,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(DNSStatusRequestTCP,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(Help,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(SSLSessionReq,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(TerminalServerCookie,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(TLSSessionReq,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(Kerberos,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(SMBProgNeg,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(X11Probe,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(LPDString,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(LDAPSearchReq,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(LDAPBindReq,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;)%r(SIPOptions,6D,&quot;HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;403&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;);" method="table" conf="3"/></port>
+</ports>
+<times srtt="15579" rttvar="6923" to="100000"/>
+</host>
+<runstats><finished time="1756702438" timestr="Mon Sep  1 10:23:58 2025" summary="Nmap done at Mon Sep  1 10:23:58 2025; 1 IP address (1 host up) scanned in 102.71 seconds" elapsed="102.71" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

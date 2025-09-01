@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.121",
+  "scan_result": {
+    "target_ip": "10.60.152.121",
+    "status": "completed",
+    "start_time": "2025-09-01T10:19:00.906889",
+    "end_time": "2025-09-01T10:19:01.802074",
+    "duration": "0:00:00.895185",
+    "xml_file": "scan_10_60_152_121_1756702140.xml",
+    "nmap_file": "scan_10_60_152_121_1756702140.nmap",
+    "gnmap_file": "scan_10_60_152_121_1756702140.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:19 India Standard Time\nNmap scan report for 10.60.152.121\nHost is up (0.020s latency).\nNot shown: 99 closed tcp ports (reset)\nPORT      STATE SERVICE    VERSION\n49152/tcp open  tcpwrapped\nMAC Address: AE:FE:CC:ED:69:E7 (Unknown)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 0.83 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_121_1756702140.xml -oN scan_10_60_152_121_1756702140.nmap -oG scan_10_60_152_121_1756702140.gnmap 10.60.152.121",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "49152",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "tcpwrapped",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "0.83",
+      "timestr": "Mon Sep  1 10:19:01 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:19:01.802565"
+}

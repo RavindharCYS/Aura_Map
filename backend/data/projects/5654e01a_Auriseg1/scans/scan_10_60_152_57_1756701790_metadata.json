@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.57",
+  "scan_result": {
+    "target_ip": "10.60.152.57",
+    "status": "completed",
+    "start_time": "2025-09-01T10:13:06.736558",
+    "end_time": "2025-09-01T10:13:10.621880",
+    "duration": "0:00:03.885322",
+    "xml_file": "scan_10_60_152_57_1756701786.xml",
+    "nmap_file": "scan_10_60_152_57_1756701786.nmap",
+    "gnmap_file": "scan_10_60_152_57_1756701786.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:13 India Standard Time\nNmap scan report for 10.60.152.57\nHost is up (0.0040s latency).\nAll 100 scanned ports on 10.60.152.57 are in ignored states.\nNot shown: 100 filtered tcp ports (no-response)\nMAC Address: 48:68:4A:D4:EE:DC (Intel Corporate)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 3.82 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_57_1756701786.xml -oN scan_10_60_152_57_1756701786.nmap -oG scan_10_60_152_57_1756701786.gnmap 10.60.152.57",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "3.82",
+      "timestr": "Mon Sep  1 10:13:10 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:13:10.622301"
+}

@@ -1,0 +1,76 @@
+{
+  "target_ip": "10.60.152.84",
+  "scan_result": {
+    "target_ip": "10.60.152.84",
+    "status": "completed",
+    "start_time": "2025-09-01T10:16:23.255885",
+    "end_time": "2025-09-01T10:16:32.092011",
+    "duration": "0:00:08.836126",
+    "xml_file": "scan_10_60_152_84_1756701983.xml",
+    "nmap_file": "scan_10_60_152_84_1756701983.nmap",
+    "gnmap_file": "scan_10_60_152_84_1756701983.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:16 India Standard Time\nNmap scan report for 10.60.152.84\nHost is up (0.0021s latency).\nNot shown: 96 filtered tcp ports (no-response)\nPORT     STATE SERVICE       VERSION\n135/tcp  open  msrpc         Microsoft Windows RPC\n139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn\n445/tcp  open  microsoft-ds?\n3389/tcp open  ms-wbt-server Microsoft Terminal Services\nMAC Address: 00:E0:4C:2D:C0:5A (Realtek Semiconductor)\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 8.77 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_84_1756701983.xml -oN scan_10_60_152_84_1756701983.nmap -oG scan_10_60_152_84_1756701983.gnmap 10.60.152.84",
+    "host_status": "up",
+    "open_ports": 4,
+    "services": [
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "Microsoft Windows netbios-ssn",
+        "extrainfo": ""
+      },
+      {
+        "port": "445",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "microsoft-ds",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "3389",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "ms-wbt-server",
+        "version": "",
+        "product": "Microsoft Terminal Services",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "8.77",
+      "timestr": "Mon Sep  1 10:16:32 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:16:32.092731"
+}

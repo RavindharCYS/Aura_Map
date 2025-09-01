@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sat Aug 30 13:07:57 2025 as: nmap -F -sC -sV -O -T3 -oX scan_10_60_152_164_1756539476.xml -oN scan_10_60_152_164_1756539476.nmap -oG scan_10_60_152_164_1756539476.gnmap 10.60.152.164
+Host: 10.60.152.164 ()	Status: Up
+Host: 10.60.152.164 ()	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds?///, 554/open/tcp//rtsp?///, 5000/open/tcp//upnp?///	Ignored State: closed (95)	Seq Index: 259	IP ID Seq: Incremental
+# Nmap done at Sat Aug 30 13:10:14 2025 -- 1 IP address (1 host up) scanned in 137.92 seconds

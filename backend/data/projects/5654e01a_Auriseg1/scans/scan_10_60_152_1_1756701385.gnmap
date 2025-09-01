@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:06:25 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_1_1756701385.xml -oN scan_10_60_152_1_1756701385.nmap -oG scan_10_60_152_1_1756701385.gnmap 10.60.152.1
+Host: 10.60.152.1 ()	Status: Up
+Host: 10.60.152.1 ()	Ports: 22/open/tcp//ssh//HP Comware switch sshd 7.1.070 (protocol 2.0)/, 23/open/tcp//telnet///, 80/open/tcp//http//HTTPD/, 443/open/tcp//ssl|https//HTTPD/	Ignored State: closed (96)
+# Nmap done at Mon Sep  1 10:09:11 2025 -- 1 IP address (1 host up) scanned in 165.51 seconds

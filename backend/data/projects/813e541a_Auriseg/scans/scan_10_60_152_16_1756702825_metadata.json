@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.16",
+  "scan_result": {
+    "target_ip": "10.60.152.16",
+    "status": "completed",
+    "start_time": "2025-09-01T10:28:59.919960",
+    "end_time": "2025-09-01T10:30:25.287744",
+    "duration": "0:01:25.367784",
+    "xml_file": "scan_10_60_152_16_1756702739.xml",
+    "nmap_file": "scan_10_60_152_16_1756702739.nmap",
+    "gnmap_file": "scan_10_60_152_16_1756702739.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:28 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:29\nScanning 10.60.152.16 [1 port]\nCompleted ARP Ping Scan at 10:29, 0.30s elapsed (1 total hosts)\nInitiating Parallel DNS resolution of 1 host. at 10:29\nCompleted Parallel DNS resolution of 1 host. at 10:29, 0.01s elapsed\nInitiating SYN Stealth Scan at 10:29\nScanning 10.60.152.16 [65535 ports]\nSYN Stealth Scan Timing: About 37.14% done; ETC: 10:30 (0:00:52 remaining)\nCompleted SYN Stealth Scan at 10:30, 83.56s elapsed (65535 total ports)\nInitiating Service scan at 10:30\nNSE: Script scanning 10.60.152.16.\nInitiating NSE at 10:30\nCompleted NSE at 10:30, 0.00s elapsed\nInitiating NSE at 10:30\nCompleted NSE at 10:30, 0.00s elapsed\nNmap scan report for 10.60.152.16\nHost is up (0.0092s latency).\nAll 65535 scanned ports on 10.60.152.16 are in ignored states.\nNot shown: 65535 closed tcp ports (reset)\nMAC Address: 46:5A:84:D9:48:F0 (Unknown)\n\nRead data files from: C:\\Program Files (x86)\\Nmap\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 85.21 seconds\n           Raw packets sent: 65582 (2.886MB) | Rcvd: 65539 (2.622MB)\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_16_1756702739.xml -oN scan_10_60_152_16_1756702739.nmap -oG scan_10_60_152_16_1756702739.gnmap 10.60.152.16",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "85.21",
+      "timestr": "Mon Sep  1 10:30:25 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:30:25.289165"
+}

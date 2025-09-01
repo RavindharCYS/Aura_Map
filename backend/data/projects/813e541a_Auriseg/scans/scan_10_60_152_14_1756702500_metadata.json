@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.14",
+  "scan_result": {
+    "target_ip": "10.60.152.14",
+    "status": "completed",
+    "start_time": "2025-09-01T10:24:02.909130",
+    "end_time": "2025-09-01T10:25:00.327537",
+    "duration": "0:00:57.418407",
+    "xml_file": "scan_10_60_152_14_1756702442.xml",
+    "nmap_file": "scan_10_60_152_14_1756702442.nmap",
+    "gnmap_file": "scan_10_60_152_14_1756702442.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:24 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:24\nScanning 10.60.152.14 [1 port]\nCompleted ARP Ping Scan at 10:24, 0.09s elapsed (1 total hosts)\nInitiating Parallel DNS resolution of 1 host. at 10:24\nCompleted Parallel DNS resolution of 1 host. at 10:24, 0.00s elapsed\nInitiating SYN Stealth Scan at 10:24\nScanning 10.60.152.14 [65535 ports]\nCompleted SYN Stealth Scan at 10:25, 56.72s elapsed (65535 total ports)\nInitiating Service scan at 10:25\nNSE: Script scanning 10.60.152.14.\nInitiating NSE at 10:25\nCompleted NSE at 10:25, 0.00s elapsed\nInitiating NSE at 10:25\nCompleted NSE at 10:25, 0.00s elapsed\nNmap scan report for 10.60.152.14\nHost is up (0.010s latency).\nAll 65535 scanned ports on 10.60.152.14 are in ignored states.\nNot shown: 65535 closed tcp ports (reset)\nMAC Address: 2A:B3:5F:14:E5:68 (Unknown)\n\nRead data files from: C:\\Program Files (x86)\\Nmap\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 57.34 seconds\n           Raw packets sent: 65622 (2.887MB) | Rcvd: 65620 (2.625MB)\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_14_1756702442.xml -oN scan_10_60_152_14_1756702442.nmap -oG scan_10_60_152_14_1756702442.gnmap 10.60.152.14",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "57.34",
+      "timestr": "Mon Sep  1 10:25:00 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:25:00.328240"
+}

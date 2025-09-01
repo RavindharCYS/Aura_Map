@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 14:14:09 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756716249.xml -oN scan_auriseg_com_1756716249.nmap -oG scan_auriseg_com_1756716249.gnmap auriseg.com -->
+<nmaprun scanner="nmap" args="nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756716249.xml -oN scan_auriseg_com_1756716249.nmap -oG scan_auriseg_com_1756716249.gnmap auriseg.com" start="1756716249" startstr="Mon Sep  1 14:14:09 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="76.76.21.21" addrtype="ipv4"/>
+<hostnames>
+<hostname name="auriseg.com" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1756716251" endtime="1756716631"><status state="up" reason="echo-reply" reason_ttl="248"/>
+<address addr="76.76.21.21" addrtype="ipv4"/>
+<hostnames>
+<hostname name="auriseg.com" type="user"/>
+</hostnames>
+<ports><extraports state="filtered" count="65529">
+<extrareasons reason="no-response" count="65529" proto="tcp" ports="1-79,81-112,114-442,444-1999,2001-5059,5061-8019,8021-65535"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="247"/><service name="http" product="Vercel" servicefp="SF-Port80-TCP:V=7.95%I=7%D=9/1%Time=68B55D98%P=i686-pc-windows-windows%r(GetRequest,8A,&quot;HTTP/1\.0\x20308\x20Permanent\x20Redirect\r\nContent-Type:\x20text/plain\r\nLocation:\x20https:///\r\nRefresh:\x200;url=https:///\r\nserver:\x20Vercel\r\n\r\nRedirecting\.\.\.&quot;)%r(HTTPOptions,8A,&quot;HTTP/1\.0\x20308\x20Permanent\x20Redirect\r\nContent-Type:\x20text/plain\r\nLocation:\x20https:///\r\nRefresh:\x200;url=https:///\r\nserver:\x20Vercel\r\n\r\nRedirecting\.\.\.&quot;)%r(FourOhFourRequest,D0,&quot;HTTP/1\.0\x20308\x20Permanent\x20Redirect\r\nContent-Type:\x20text/plain\r\nLocation:\x20https:///nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nRefresh:\x200;url=https:///nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nserver:\x20Vercel\r\n\r\nRedirecting\.\.\.&quot;);" method="probed" conf="10"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 308 Permanent Redirect&#xa;    Content-Type: text/plain&#xa;    Location: https:///nice%20ports%2C/Tri%6Eity.txt%2ebak&#xa;    Refresh: 0;url=https:///nice%20ports%2C/Tri%6Eity.txt%2ebak&#xa;    server: Vercel&#xa;    Redirecting...&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 308 Permanent Redirect&#xa;    Content-Type: text/plain&#xa;    Location: https:///&#xa;    Refresh: 0;url=https:///&#xa;    server: Vercel&#xa;    Redirecting..."><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 308 Permanent Redirect&#xa;    Content-Type: text/plain&#xa;    Location: https:///nice%20ports%2C/Tri%6Eity.txt%2ebak&#xa;    Refresh: 0;url=https:///nice%20ports%2C/Tri%6Eity.txt%2ebak&#xa;    server: Vercel&#xa;    Redirecting...</elem>
+<elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 308 Permanent Redirect&#xa;    Content-Type: text/plain&#xa;    Location: https:///&#xa;    Refresh: 0;url=https:///&#xa;    server: Vercel&#xa;    Redirecting...</elem>
+</script><script id="http-server-header" output="Vercel"><elem>Vercel</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/plain)."></script></port>
+<port protocol="tcp" portid="113"><state state="closed" reason="reset" reason_ttl="63"/><service name="ident" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="247"/><service name="http" product="Golang net/http server" servicefp="SF-Port443-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B55D9E%P=i686-pc-windows-windows%r(GetRequest,1B3,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nCache-Control:\x20public,\x20max-age=0,\x20must-revalidate\r\nContent-Length:\x20107\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2008:47:27\x20GMT\r\nServer:\x20Vercel\r\nStrict-Transport-Security:\x20max-age=63072000\r\nX-Vercel-Error:\x20DEPLOYMENT_NOT_FOUND\r\nX-Vercel-Id:\x20bom1::25f2r-1756716447085-afe5d28c140e\r\n\r\nThe\x20deployment\x20could\x20not\x20be\x20found\x20on\x20Vercel\.\n\nDEPLOYMENT_NOT_FOUND\n\nbom1::25f2r-1756716447085-afe5d28c140e\n&quot;)%r(HTTPOptions,1B3,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nCache-Control:\x20public,\x20max-age=0,\x20must-revalidate\r\nContent-Length:\x20107\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2008:47:27\x20GMT\r\nServer:\x20Vercel\r\nStrict-Transport-Security:\x20max-age=63072000\r\nX-Vercel-Error:\x20DEPLOYMENT_NOT_FOUND\r\nX-Vercel-Id:\x20bom1::54fgx-1756716447232-fce8fbcef1e8\r\n\r\nThe\x20deployment\x20could\x20not\x20be\x20found\x20on\x20Vercel\.\n\nDEPLOYMENT_NOT_FOUND\n\nbom1::54fgx-1756716447232-fce8fbcef1e8\n&quot;)%r(FourOhFourRequest,1B3,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nCache-Control:\x20public,\x20max-age=0,\x20must-revalidate\r\nContent-Length:\x20107\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2008:47:27\x20GMT\r\nServer:\x20Vercel\r\nStrict-Transport-Security:\x20max-age=63072000\r\nX-Vercel-Error:\x20DEPLOYMENT_NOT_FOUND\r\nX-Vercel-Id:\x20bom1::m9xr2-1756716447369-df024d63d1f5\r\n\r\nThe\x20deployment\x20could\x20not\x20be\x20found\x20on\x20Vercel\.\n\nDEPLOYMENT_NOT_FOUND\n\nbom1::m9xr2-1756716447369-df024d63d1f5\n&quot;)%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:golang:go</cpe></service><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::m9xr2-1756716447369-df024d63d1f5&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::m9xr2-1756716447369-df024d63d1f5&#xa;  GenericLines, Help, RTSPRequest: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::25f2r-1756716447085-afe5d28c140e&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::25f2r-1756716447085-afe5d28c140e&#xa;  HTTPOptions: &#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::54fgx-1756716447232-fce8fbcef1e8&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::54fgx-1756716447232-fce8fbcef1e8"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::m9xr2-1756716447369-df024d63d1f5&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::m9xr2-1756716447369-df024d63d1f5</elem>
+<elem key="GenericLines, Help, RTSPRequest">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::25f2r-1756716447085-afe5d28c140e&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::25f2r-1756716447085-afe5d28c140e</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 404 Not Found&#xa;    Cache-Control: public, max-age=0, must-revalidate&#xa;    Content-Length: 107&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Date: Mon, 01 Sep 2025 08:47:27 GMT&#xa;    Server: Vercel&#xa;    Strict-Transport-Security: max-age=63072000&#xa;    X-Vercel-Error: DEPLOYMENT_NOT_FOUND&#xa;    X-Vercel-Id: bom1::54fgx-1756716447232-fce8fbcef1e8&#xa;    deployment could not be found on Vercel.&#xa;    DEPLOYMENT_NOT_FOUND&#xa;    bom1::54fgx-1756716447232-fce8fbcef1e8</elem>
+</script><script id="ssl-cert" output="Subject: commonName=auriseg.com&#xa;Subject Alternative Name: DNS:auriseg.com&#xa;Not valid before: 2025-07-20T07:23:09&#xa;Not valid after:  2025-10-18T07:23:08"><table key="subject">
+<elem key="commonName">auriseg.com</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">R11</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">Let&apos;s Encrypt</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">DA258290C547988C2C6AA5ADE1FA876D340E7D5AA5FC8F3650B67F56720CD25C9D24FAE09755998814021592052A47DB63B08DF07665073EE2B103C0754ADF9D73C7738722656D6A5753AE9017F30D03A68C06F33DAAD8F2EDB892F6A6DC8D7564DD40912A6B34C1D7564C8AA7F6C133F6EFACFC741526DDCE190EF809396DADDCFF5154AE1B099F6A34A3A0F5C840590556B32DF2FAF5A48131B52E9CE52CC5D2CF99E093363C30C38F6B97673EF681C041B7BF6E627FB910A336B0CBF08008034977B70127193ED6CED25D71687871AC32A3B946C1914445CAB546E811C86DA806F4DE7665F66059EA68226F8A622FA5D7379CAB15EF4E2AB616E05CFA4A19</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">43:0E:D3:66:3F:01:BD:DD:C9:5A:6F:99:3F:46:E3:58:61:56:A8:CD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">C5:CF:46:A4:EA:F4:C3:C0:7A:6C:95:C4:2D:B0:5E:92:2F:26:E3:B9</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://r11.i.lencr.org/</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:auriseg.com</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.1</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:http://r11.c.lencr.org/50.crl</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : ED:3C:4B:D6:E8:06:C2:A4:A2:00:57:DB:CB:24:E2:38:&#xa;                01:DF:51:2F:ED:C4:86:C5:70:0F:20:DD:B7:3E:3F:E0&#xa;    Timestamp : Jul 20 08:21:39.788 2025 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:76:27:59:94:5E:69:4C:24:F1:2D:84:52:&#xa;                4F:44:96:B9:DB:78:38:5B:96:11:AB:98:9F:C8:09:FE:&#xa;                F1:55:D6:A1:02:20:13:2C:C0:73:FD:77:49:95:72:C7:&#xa;                21:C4:E3:50:77:23:C6:30:6A:3E:12:91:36:B2:6F:20:&#xa;                CC:C0:9B:4A:55:E3&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : DD:DC:CA:34:95:D7:E1:16:05:E7:95:32:FA:C7:9F:F8:&#xa;                3D:1C:50:DF:DB:00:3A:14:12:76:0A:2C:AC:BB:C8:2A&#xa;    Timestamp : Jul 20 08:21:39.864 2025 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:AC:D5:8C:86:8B:AD:5D:AB:EB:D3:7A:&#xa;                6B:79:D5:FD:71:FD:D2:95:B4:02:CF:2A:A2:54:31:B7:&#xa;                2A:D9:DA:E5:E8:02:21:00:9E:7C:93:C1:A5:7C:53:F5:&#xa;                4F:86:EE:49:0F:B5:0C:B5:49:0C:EE:39:30:19:71:94:&#xa;                BD:85:99:62:E2:88:09:6A</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2025-07-20T07:23:09</elem>
+<elem key="notAfter">2025-10-18T07:23:08</elem>
+</table>
+<elem key="md5">4570a060c8631c38348551f0d08c1e7f</elem>
+<elem key="sha1">0a46d040a5559467e1ecc5b67b56b3a43cd1e73f</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIE8jCCA9qgAwIBAgISBYVHwtK3hqYaKXptFRDw31ExMA0GCSqGSIb3DQEBCwUA&#xa;MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD&#xa;EwNSMTEwHhcNMjUwNzIwMDcyMzA5WhcNMjUxMDE4MDcyMzA4WjAWMRQwEgYDVQQD&#xa;EwthdXJpc2VnLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANol&#xa;gpDFR5iMLGqlreH6h200Dn1apfyPNlC2f1ZyDNJcnST64JdVmYgUAhWSBSpH22Ow&#xa;jfB2ZQc+4rEDwHVK351zx3OHImVtaldTrpAX8w0DpowG8z2q2PLtuJL2ptyNdWTd&#xa;QJEqazTB11ZMiqf2wTP276z8dBUm3c4ZDvgJOW2t3P9RVK4bCZ9qNKOg9chAWQVW&#xa;sy3y+vWkgTG1LpzlLMXSz5ngkzY8MMOPa5dnPvaBwEG3v25if7kQozawy/CACANJ&#xa;d7cBJxk+1s7SXXFoeHGsMqO5RsGRREXKtUboEchtqAb03nZl9mBZ6mgib4piL6XX&#xa;N5yrFe9OKrYW4Fz6ShkCAwEAAaOCAhswggIXMA4GA1UdDwEB/wQEAwIFoDAdBgNV&#xa;HSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADAdBgNVHQ4E&#xa;FgQUQw7TZj8Bvd3JWm+ZP0bjWGFWqM0wHwYDVR0jBBgwFoAUxc9GpOr0w8B6bJXE&#xa;LbBeki8m47kwMwYIKwYBBQUHAQEEJzAlMCMGCCsGAQUFBzAChhdodHRwOi8vcjEx&#xa;LmkubGVuY3Iub3JnLzAWBgNVHREEDzANggthdXJpc2VnLmNvbTATBgNVHSAEDDAK&#xa;MAgGBmeBDAECATAuBgNVHR8EJzAlMCOgIaAfhh1odHRwOi8vcjExLmMubGVuY3Iu&#xa;b3JnLzUwLmNybDCCAQQGCisGAQQB1nkCBAIEgfUEgfIA8AB1AO08S9boBsKkogBX&#xa;28sk4jgB31Ev7cSGxXAPIN23Pj/gAAABmCbspUwAAAQDAEYwRAIgdidZlF5pTCTx&#xa;LYRST0SWudt4OFuWEauYn8gJ/vFV1qECIBMswHP9d0mVcschxONQdyPGMGo+EpE2&#xa;sm8gzMCbSlXjAHcA3dzKNJXX4RYF55Uy+sef+D0cUN/bADoUEnYKLKy7yCoAAAGY&#xa;JuylmAAABAMASDBGAiEArNWMhoutXavr03predX9cf3SlbQCzyqiVDG3Ktna5egC&#xa;IQCefJPBpXxT9U+G7kkPtQy1SQzuOTAZcZS9hZli4ogJajANBgkqhkiG9w0BAQsF&#xa;AAOCAQEAOjdGPnF3cbRBUQ78zwakwNHOlrwaYUljnzjk/G6ZS9dPkW5LVMU2DdSK&#xa;IBkqxP45TlV293jg/C14NPrVc8N+jLqhSV3y6OWxKXL/kSSGUIg4vSNQbIoB5dza&#xa;nYY+ApBO9ErtDKe36qjxXxDytS7ojc4/v/qT2kbYfcqAdcsyCTbsYLdPZ1x2NOrG&#xa;zUmVwV57R0FVo/58XvofEPiVvg+hbiFSv16IfipivM2d+7ZKPuJrP+ddfHH0myHq&#xa;HwiKpSjhoW4N70i77Z1lTbAKdQsJBGpH/Xey8oBeMmpiFWrWIg/GcMlryUq8+WvZ&#xa;7vEPvnoGP9jT2k5L3rQ0KAlSTvItCQ==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-server-header" output="Vercel"><elem>Vercel</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/plain)."></script></port>
+<port protocol="tcp" portid="2000"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="cisco-sccp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5060"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="sip" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8020"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http-proxy" product="FortiGuard Web Filtering" method="probed" conf="10"/><script id="http-title" output="Web Filter Block Override"><elem key="title">Web Filter Block Override</elem>
+</script><script id="http-open-proxy" output="Potentially OPEN proxy.&#xa;Methods supported:CONNECTION"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="80"/>
+<portused state="closed" proto="tcp" portid="113"/>
+<osmatch name="Google Chromecast with Google TV (Android)" accuracy="87" line="34286">
+<osclass type="media device" vendor="Google" osfamily="Android" accuracy="87"><cpe>cpe:/o:google:android</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="39" lastboot="Mon Sep  1 14:19:52 2025"/>
+<tcpsequence index="260" difficulty="Good luck!" values="470A4CFB,38D4EA4E,FCF5F394,990B3BD4,507CFAFA,4C127E5D"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="other" values="100B991B,FDF16D9,105ECE98,108B4DC4,10367ACA,100B9B34"/>
+<times srtt="7825" rttvar="7492" to="100000"/>
+</host>
+<runstats><finished time="1756716631" timestr="Mon Sep  1 14:20:31 2025" summary="Nmap done at Mon Sep  1 14:20:31 2025; 1 IP address (1 host up) scanned in 382.71 seconds" elapsed="382.71" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

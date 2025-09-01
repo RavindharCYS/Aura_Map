@@ -1,0 +1,2 @@
+You cannot use -F (fast scan) with -p (explicit port selection) but see --top-ports and --port-ratio to fast scan a range of ports
+QUITTING!

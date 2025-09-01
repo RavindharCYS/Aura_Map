@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.22",
+  "scan_result": {
+    "target_ip": "10.60.152.22",
+    "status": "completed",
+    "start_time": "2025-09-01T10:10:30.687030",
+    "end_time": "2025-09-01T10:10:44.713755",
+    "duration": "0:00:14.026725",
+    "xml_file": "scan_10_60_152_22_1756701630.xml",
+    "nmap_file": "scan_10_60_152_22_1756701630.nmap",
+    "gnmap_file": "scan_10_60_152_22_1756701630.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:10 India Standard Time\nNmap scan report for 10.60.152.22\nHost is up (0.0090s latency).\nNot shown: 99 filtered tcp ports (no-response)\nPORT     STATE SERVICE         VERSION\n7070/tcp open  ssl/realserver?\nMAC Address: 94:BB:43:85:FC:B2 (AzureWave Technology)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 13.97 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_22_1756701630.xml -oN scan_10_60_152_22_1756701630.nmap -oG scan_10_60_152_22_1756701630.gnmap 10.60.152.22",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "7070",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "realserver",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "13.97",
+      "timestr": "Mon Sep  1 10:10:44 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:10:44.714181"
+}

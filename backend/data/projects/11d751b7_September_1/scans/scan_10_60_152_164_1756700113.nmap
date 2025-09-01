@@ -1,0 +1,143 @@
+# Nmap 7.95 scan initiated Mon Sep  1 09:45:13 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_10_60_152_164_1756700113.xml -oN scan_10_60_152_164_1756700113.nmap -oG scan_10_60_152_164_1756700113.gnmap 10.60.152.164
+Nmap scan report for 10.60.152.164
+Host is up (0.00028s latency).
+Not shown: 65516 closed tcp ports (reset)
+PORT      STATE    SERVICE            VERSION
+135/tcp   open     msrpc              Microsoft Windows RPC
+137/tcp   filtered netbios-ns
+139/tcp   open     netbios-ssn        Microsoft Windows netbios-ssn
+445/tcp   open     microsoft-ds?
+554/tcp   open     rtsp?
+623/tcp   open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739
+|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739
+| http-title: Intel&reg; Active Management Technology
+|_Requested resource was /logon.htm
+2869/tcp  open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5000/tcp  open     http               Ajenti http control panel
+|_http-title: Enhanced Nmap GUI Tool
+5040/tcp  open     unknown
+5568/tcp  open     http               Node.js Express framework
+|_http-title: Error
+8834/tcp  open     ssl/nessus-xmlrpc?
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 File not found
+|     Cache-Control: no-cache, no-store, must-revalidate
+|     X-Frame-Options: DENY
+|     Content-Type: application/json
+|     Connection: close
+|     X-XSS-Protection: 1; mode=block
+|     Server: NessusWWW
+|     X-Content-Type-Options: nosniff
+|     Date: Mon, 01 Sep 2025 04:16:32 GMT
+|     Content-Length: 45
+|     Content-Security-Policy: upgrade-insecure-requests; block-all-mixed-content; form-action 'self'; frame-ancestors 'none'; frame-src https://store.tenable.com www.youtube.com; default-src 'self'; connect-src 'self' data.nessus-telemetry.tenable.com content.nessus-telemetry.tenable.com api.tenable.com www.tenable.com; script-src 'self' content.nessus-telemetry.tenable.com www.tenable.com; img-src 'self' data: content.nessus-telemetry.tenable.com data.nessus-telemetry.tenable.com pendo-static-5689996938182656.storage.googleapis.com s.ytimg.com i.ytimg.com; style-src 'self' content.nessus-telemetry.te
+|   HTTPOptions: 
+|     HTTP/1.1 405 Method not Allowed
+|     Connection: close
+|     Date: Mon, 01 Sep 2025 04:15:52 GMT
+|     Content-Length: 0
+|     Server: NessusWWW
+|   Help: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|     Date: Mon, 01 Sep 2025 04:16:07 GMT
+|     Content-Length: 0
+|     Server: NessusWWW
+|   RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|     Date: Mon, 01 Sep 2025 04:15:52 GMT
+|     Content-Length: 0
+|     Server: NessusWWW
+|   SIPOptions: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|     Date: Mon, 01 Sep 2025 04:16:47 GMT
+|     Content-Length: 0
+|     Server: NessusWWW
+|   TerminalServerCookie: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|     Date: Mon, 01 Sep 2025 04:16:12 GMT
+|     Content-Length: 0
+|_    Server: NessusWWW
+| ssl-cert: Subject: commonName=DESKTOP-MLSK8OK/organizationName=Nessus Users United/stateOrProvinceName=NY/countryName=US
+| Not valid before: 2025-04-16T05:00:56
+|_Not valid after:  2029-04-15T05:00:56
+|_ssl-date: TLS randomness does not represent time
+10243/tcp open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+16992/tcp open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739
+|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739
+| http-title: Intel&reg; Active Management Technology
+|_Requested resource was /logon.htm
+49664/tcp open     msrpc              Microsoft Windows RPC
+49665/tcp open     msrpc              Microsoft Windows RPC
+49666/tcp open     msrpc              Microsoft Windows RPC
+49667/tcp open     msrpc              Microsoft Windows RPC
+49668/tcp open     msrpc              Microsoft Windows RPC
+49673/tcp open     msrpc              Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8834-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B51DF8%P=i686-pc-windows-win
+SF:dows%r(HTTPOptions,81,"HTTP/1\.1\x20405\x20Method\x20not\x20Allowed\r\n
+SF:Connection:\x20close\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:15:52\
+SF:x20GMT\r\nContent-Length:\x200\r\nServer:\x20NessusWWW\r\n\r\n")%r(RTSP
+SF:Request,7A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\
+SF:r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:15:52\x20GMT\r\nContent-Len
+SF:gth:\x200\r\nServer:\x20NessusWWW\r\n\r\n")%r(Help,7A,"HTTP/1\.1\x20400
+SF:\x20Bad\x20Request\r\nConnection:\x20close\r\nDate:\x20Mon,\x2001\x20Se
+SF:p\x202025\x2004:16:07\x20GMT\r\nContent-Length:\x200\r\nServer:\x20Ness
+SF:usWWW\r\n\r\n")%r(TerminalServerCookie,7A,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nConnection:\x20close\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2
+SF:004:16:12\x20GMT\r\nContent-Length:\x200\r\nServer:\x20NessusWWW\r\n\r\
+SF:n")%r(FourOhFourRequest,4BE,"HTTP/1\.1\x20404\x20File\x20not\x20found\r
+SF:\nCache-Control:\x20no-cache,\x20no-store,\x20must-revalidate\r\nX-Fram
+SF:e-Options:\x20DENY\r\nContent-Type:\x20application/json\r\nConnection:\
+SF:x20close\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:\x20NessusW
+SF:WW\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Mon,\x2001\x20Sep\
+SF:x202025\x2004:16:32\x20GMT\r\nContent-Length:\x2045\r\nContent-Security
+SF:-Policy:\x20upgrade-insecure-requests;\x20block-all-mixed-content;\x20f
+SF:orm-action\x20'self';\x20frame-ancestors\x20'none';\x20frame-src\x20htt
+SF:ps://store\.tenable\.com\x20www\.youtube\.com;\x20default-src\x20'self'
+SF:;\x20connect-src\x20'self'\x20data\.nessus-telemetry\.tenable\.com\x20c
+SF:ontent\.nessus-telemetry\.tenable\.com\x20api\.tenable\.com\x20www\.ten
+SF:able\.com;\x20script-src\x20'self'\x20content\.nessus-telemetry\.tenabl
+SF:e\.com\x20www\.tenable\.com;\x20img-src\x20'self'\x20data:\x20content\.
+SF:nessus-telemetry\.tenable\.com\x20data\.nessus-telemetry\.tenable\.com\
+SF:x20pendo-static-5689996938182656\.storage\.googleapis\.com\x20s\.ytimg\
+SF:.com\x20i\.ytimg\.com;\x20style-src\x20'self'\x20content\.nessus-teleme
+SF:try\.te")%r(SIPOptions,7A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnec
+SF:tion:\x20close\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:16:47\x20GMT
+SF:\r\nContent-Length:\x200\r\nServer:\x20NessusWWW\r\n\r\n");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=9/1%OT=135%CT=1%CU=37078%PV=Y%DS=0%DC=L%G=Y%TM=68B51E7
+OS:E%P=i686-pc-windows-windows)SEQ(SP=103%GCD=1%ISR=106%TI=I%CI=I%II=I%SS=S
+OS:%TS=A)SEQ(SP=104%GCD=1%ISR=109%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1
+OS:%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1%ISR=10D%TI=I%CI=I%II=
+OS:I%SS=S%TS=A)SEQ(SP=108%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=MFF
+OS:D7NW8ST11%O2=MFFD7NW8ST11%O3=MFFD7NW8NNT11%O4=MFFD7NW8ST11%O5=MFFD7NW8ST
+OS:11%O6=MFFD7ST11)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(
+OS:R=Y%DF=Y%T=80%W=FFFF%O=MFFD7NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%
+OS:W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+OS:T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A
+OS:=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%D
+OS:F=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=8
+OS:0%CD=Z)
+
+Network Distance: 0 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:11.8.97.4739
+
+Host script results:
+| smb2-time: 
+|   date: 2025-09-01T04:17:51
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 09:48:06 2025 -- 1 IP address (1 host up) scanned in 173.15 seconds

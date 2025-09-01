@@ -1,0 +1,11 @@
+# Nmap 7.95 scan initiated Sat Aug 30 13:00:22 2025 as: nmap -F -T4 -oX scan_127_0_0_1_1756539022.xml -oN scan_127_0_0_1_1756539022.nmap -oG scan_127_0_0_1_1756539022.gnmap 127.0.0.1
+Nmap scan report for 127.0.0.1
+Host is up (0.00098s latency).
+Not shown: 96 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+445/tcp  open  microsoft-ds
+554/tcp  open  rtsp
+5000/tcp open  upnp
+
+# Nmap done at Sat Aug 30 13:00:22 2025 -- 1 IP address (1 host up) scanned in 0.26 seconds

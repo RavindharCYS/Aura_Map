@@ -1,0 +1,16 @@
+{
+  "name": "-F -Pn",
+  "description": "",
+  "options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "created_at": "2025-09-01T12:10:42.420833"
+}

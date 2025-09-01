@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.18",
+  "scan_result": {
+    "target_ip": "10.60.152.18",
+    "status": "completed",
+    "start_time": "2025-09-01T10:30:27.893372",
+    "end_time": "2025-09-01T10:30:30.841906",
+    "duration": "0:00:02.948534",
+    "xml_file": "scan_10_60_152_18_1756702827.xml",
+    "nmap_file": "scan_10_60_152_18_1756702827.nmap",
+    "gnmap_file": "scan_10_60_152_18_1756702827.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:30 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:30\nScanning 10.60.152.18 [1 port]\nCompleted ARP Ping Scan at 10:30, 1.51s elapsed (1 total hosts)\nNmap scan report for 10.60.152.18 [host down]\nRead data files from: C:\\Program Files (x86)\\Nmap\nNmap done: 1 IP address (0 hosts up) scanned in 2.70 seconds\n           Raw packets sent: 2 (56B) | Rcvd: 0 (0B)\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_18_1756702827.xml -oN scan_10_60_152_18_1756702827.nmap -oG scan_10_60_152_18_1756702827.gnmap 10.60.152.18",
+    "host_status": "down",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "2.70",
+      "timestr": "Mon Sep  1 10:30:30 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:30:30.844240"
+}

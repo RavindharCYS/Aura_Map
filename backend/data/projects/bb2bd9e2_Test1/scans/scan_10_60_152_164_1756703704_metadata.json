@@ -1,0 +1,85 @@
+{
+  "target_ip": "10.60.152.164",
+  "scan_result": {
+    "target_ip": "10.60.152.164",
+    "status": "completed",
+    "start_time": "2025-09-01T10:45:03.902482",
+    "end_time": "2025-09-01T10:45:04.537284",
+    "duration": "0:00:00.634802",
+    "xml_file": "scan_10_60_152_164_1756703703.xml",
+    "nmap_file": "scan_10_60_152_164_1756703703.nmap",
+    "gnmap_file": "scan_10_60_152_164_1756703703.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:45 India Standard Time\nNmap scan report for 10.60.152.164\nHost is up (0.0012s latency).\nNot shown: 95 closed tcp ports (reset)\nPORT     STATE SERVICE\n135/tcp  open  msrpc\n139/tcp  open  netbios-ssn\n445/tcp  open  microsoft-ds\n554/tcp  open  rtsp\n5000/tcp open  upnp\n\nNmap done: 1 IP address (1 host up) scanned in 0.51 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -T3 -oX scan_10_60_152_164_1756703703.xml -oN scan_10_60_152_164_1756703703.nmap -oG scan_10_60_152_164_1756703703.gnmap 10.60.152.164",
+    "host_status": "up",
+    "open_ports": 5,
+    "services": [
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "445",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "microsoft-ds",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "554",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "rtsp",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "5000",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "upnp",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "0.51",
+      "timestr": "Mon Sep  1 10:45:04 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": false,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:45:04.538401"
+}

@@ -1,0 +1,5 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:30:38 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_22_1756702838.xml -oN scan_10_60_152_22_1756702838.nmap -oG scan_10_60_152_22_1756702838.gnmap 10.60.152.22
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.60.152.22 ()	Status: Up
+Host: 10.60.152.22 ()	Ports: 7070/open/tcp//ssl|realserver?///, 7680/open/tcp//pando-pub?///, 50725/open/tcp//unknown///, 50726/open/tcp//unknown///, 50727/open/tcp//unknown///, 50728/open/tcp//unknown///, 50729/open/tcp//unknown///, 50730/open/tcp//unknown///	Ignored State: filtered (65527)
+# Nmap done at Mon Sep  1 10:38:34 2025 -- 1 IP address (1 host up) scanned in 475.90 seconds

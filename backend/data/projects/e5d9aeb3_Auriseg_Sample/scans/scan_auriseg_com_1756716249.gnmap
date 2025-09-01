@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 14:14:09 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756716249.xml -oN scan_auriseg_com_1756716249.nmap -oG scan_auriseg_com_1756716249.gnmap auriseg.com
+Host: 76.76.21.21 ()	Status: Up
+Host: 76.76.21.21 ()	Ports: 80/open/tcp//http//Vercel/, 113/closed/tcp//ident///, 443/open/tcp//ssl|http//Golang net|http server/, 2000/open/tcp//cisco-sccp?///, 5060/open/tcp//sip?///, 8020/open/tcp//http-proxy//FortiGuard Web Filtering/	Ignored State: filtered (65529)	Seq Index: 260	IP ID Seq: All zeros
+# Nmap done at Mon Sep  1 14:20:31 2025 -- 1 IP address (1 host up) scanned in 382.71 seconds

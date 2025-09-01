@@ -1,0 +1,263 @@
+{
+  "target_ip": "10.60.152.164",
+  "scan_result": {
+    "target_ip": "10.60.152.164",
+    "status": "completed",
+    "start_time": "2025-09-01T09:45:13.661242",
+    "end_time": "2025-09-01T09:48:06.957773",
+    "duration": "0:02:53.296531",
+    "xml_file": "scan_10_60_152_164_1756700113.xml",
+    "nmap_file": "scan_10_60_152_164_1756700113.nmap",
+    "gnmap_file": "scan_10_60_152_164_1756700113.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 09:45 India Standard Time\nNmap scan report for 10.60.152.164\nHost is up (0.00028s latency).\nNot shown: 65516 closed tcp ports (reset)\nPORT      STATE    SERVICE            VERSION\n135/tcp   open     msrpc              Microsoft Windows RPC\n137/tcp   filtered netbios-ns\n139/tcp   open     netbios-ssn        Microsoft Windows netbios-ssn\n445/tcp   open     microsoft-ds?\n554/tcp   open     rtsp?\n623/tcp   open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739\n|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739\n| http-title: Intel&reg; Active Management Technology\n|_Requested resource was /logon.htm\n2869/tcp  open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\n5000/tcp  open     http               Ajenti http control panel\n|_http-title: Enhanced Nmap GUI Tool\n5040/tcp  open     unknown\n5568/tcp  open     http               Node.js Express framework\n|_http-title: Error\n8834/tcp  open     ssl/nessus-xmlrpc?\n| fingerprint-strings: \n|   FourOhFourRequest: \n|     HTTP/1.1 404 File not found\n|     Cache-Control: no-cache, no-store, must-revalidate\n|     X-Frame-Options: DENY\n|     Content-Type: application/json\n|     Connection: close\n|     X-XSS-Protection: 1; mode=block\n|     Server: NessusWWW\n|     X-Content-Type-Options: nosniff\n|     Date: Mon, 01 Sep 2025 04:16:32 GMT\n|     Content-Length: 45\n|     Content-Security-Policy: upgrade-insecure-requests; block-all-mixed-content; form-action 'self'; frame-ancestors 'none'; frame-src https://store.tenable.com www.youtube.com; default-src 'self'; connect-src 'self' data.nessus-telemetry.tenable.com content.nessus-telemetry.tenable.com api.tenable.com www.tenable.com; script-src 'self' content.nessus-telemetry.tenable.com www.tenable.com; img-src 'self' data: content.nessus-telemetry.tenable.com data.nessus-telemetry.tenable.com pendo-static-5689996938182656.storage.googleapis.com s.ytimg.com i.ytimg.com; style-src 'self' content.nessus-telemetry.te\n|   HTTPOptions: \n|     HTTP/1.1 405 Method not Allowed\n|     Connection: close\n|     Date: Mon, 01 Sep 2025 04:15:52 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   Help: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Mon, 01 Sep 2025 04:16:07 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   RTSPRequest: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Mon, 01 Sep 2025 04:15:52 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   SIPOptions: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Mon, 01 Sep 2025 04:16:47 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   TerminalServerCookie: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Mon, 01 Sep 2025 04:16:12 GMT\n|     Content-Length: 0\n|_    Server: NessusWWW\n| ssl-cert: Subject: commonName=DESKTOP-MLSK8OK/organizationName=Nessus Users United/stateOrProvinceName=NY/countryName=US\n| Not valid before: 2025-04-16T05:00:56\n|_Not valid after:  2029-04-15T05:00:56\n|_ssl-date: TLS randomness does not represent time\n10243/tcp open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\n|_http-server-header: Microsoft-HTTPAPI/2.0\n|_http-title: Not Found\n16992/tcp open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739\n|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739\n| http-title: Intel&reg; Active Management Technology\n|_Requested resource was /logon.htm\n49664/tcp open     msrpc              Microsoft Windows RPC\n49665/tcp open     msrpc              Microsoft Windows RPC\n49666/tcp open     msrpc              Microsoft Windows RPC\n49667/tcp open     msrpc              Microsoft Windows RPC\n49668/tcp open     msrpc              Microsoft Windows RPC\n49673/tcp open     msrpc              Microsoft Windows RPC\n1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :\nSF-Port8834-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B51DF8%P=i686-pc-windows-win\nSF:dows%r(HTTPOptions,81,\"HTTP/1\\.1\\x20405\\x20Method\\x20not\\x20Allowed\\r\\n\nSF:Connection:\\x20close\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:15:52\\\nSF:x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\")%r(RTSP\nSF:Request,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20Request\\r\\nConnection:\\x20close\\\nSF:r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:15:52\\x20GMT\\r\\nContent-Len\nSF:gth:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\")%r(Help,7A,\"HTTP/1\\.1\\x20400\nSF:\\x20Bad\\x20Request\\r\\nConnection:\\x20close\\r\\nDate:\\x20Mon,\\x2001\\x20Se\nSF:p\\x202025\\x2004:16:07\\x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20Ness\nSF:usWWW\\r\\n\\r\\n\")%r(TerminalServerCookie,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20R\nSF:equest\\r\\nConnection:\\x20close\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2\nSF:004:16:12\\x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\\nSF:n\")%r(FourOhFourRequest,4BE,\"HTTP/1\\.1\\x20404\\x20File\\x20not\\x20found\\r\nSF:\\nCache-Control:\\x20no-cache,\\x20no-store,\\x20must-revalidate\\r\\nX-Fram\nSF:e-Options:\\x20DENY\\r\\nContent-Type:\\x20application/json\\r\\nConnection:\\\nSF:x20close\\r\\nX-XSS-Protection:\\x201;\\x20mode=block\\r\\nServer:\\x20NessusW\nSF:WW\\r\\nX-Content-Type-Options:\\x20nosniff\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\\nSF:x202025\\x2004:16:32\\x20GMT\\r\\nContent-Length:\\x2045\\r\\nContent-Security\nSF:-Policy:\\x20upgrade-insecure-requests;\\x20block-all-mixed-content;\\x20f\nSF:orm-action\\x20'self';\\x20frame-ancestors\\x20'none';\\x20frame-src\\x20htt\nSF:ps://store\\.tenable\\.com\\x20www\\.youtube\\.com;\\x20default-src\\x20'self'\nSF:;\\x20connect-src\\x20'self'\\x20data\\.nessus-telemetry\\.tenable\\.com\\x20c\nSF:ontent\\.nessus-telemetry\\.tenable\\.com\\x20api\\.tenable\\.com\\x20www\\.ten\nSF:able\\.com;\\x20script-src\\x20'self'\\x20content\\.nessus-telemetry\\.tenabl\nSF:e\\.com\\x20www\\.tenable\\.com;\\x20img-src\\x20'self'\\x20data:\\x20content\\.\nSF:nessus-telemetry\\.tenable\\.com\\x20data\\.nessus-telemetry\\.tenable\\.com\\\nSF:x20pendo-static-5689996938182656\\.storage\\.googleapis\\.com\\x20s\\.ytimg\\\nSF:.com\\x20i\\.ytimg\\.com;\\x20style-src\\x20'self'\\x20content\\.nessus-teleme\nSF:try\\.te\")%r(SIPOptions,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20Request\\r\\nConnec\nSF:tion:\\x20close\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:16:47\\x20GMT\nSF:\\r\\nContent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\");\nNo exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).\nTCP/IP fingerprint:\nOS:SCAN(V=7.95%E=4%D=9/1%OT=135%CT=1%CU=37078%PV=Y%DS=0%DC=L%G=Y%TM=68B51E7\nOS:E%P=i686-pc-windows-windows)SEQ(SP=103%GCD=1%ISR=106%TI=I%CI=I%II=I%SS=S\nOS:%TS=A)SEQ(SP=104%GCD=1%ISR=109%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1\nOS:%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1%ISR=10D%TI=I%CI=I%II=\nOS:I%SS=S%TS=A)SEQ(SP=108%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=MFF\nOS:D7NW8ST11%O2=MFFD7NW8ST11%O3=MFFD7NW8NNT11%O4=MFFD7NW8ST11%O5=MFFD7NW8ST\nOS:11%O6=MFFD7ST11)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(\nOS:R=Y%DF=Y%T=80%W=FFFF%O=MFFD7NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A\nOS:S%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%\nOS:W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)\nOS:T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A\nOS:=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%D\nOS:F=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=8\nOS:0%CD=Z)\n\nNetwork Distance: 0 hops\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:11.8.97.4739\n\nHost script results:\n| smb2-time: \n|   date: 2025-09-01T04:17:51\n|_  start_date: N/A\n| smb2-security-mode: \n|   3:1:1: \n|_    Message signing enabled but not required\n\nOS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 173.15 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sC -sV -O -T3 -oX scan_10_60_152_164_1756700113.xml -oN scan_10_60_152_164_1756700113.nmap -oG scan_10_60_152_164_1756700113.gnmap 10.60.152.164",
+    "host_status": "up",
+    "open_ports": 18,
+    "services": [
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "137",
+        "protocol": "tcp",
+        "state": "filtered",
+        "service": "netbios-ns",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "Microsoft Windows netbios-ssn",
+        "extrainfo": ""
+      },
+      {
+        "port": "445",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "microsoft-ds",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "554",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "rtsp",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "623",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "11.8.97.4739",
+        "product": "Intel Active Management Technology User Notification Service httpd",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Intel(R) Active Management Technology 11.8.97.4739"
+          },
+          {
+            "id": "http-title",
+            "output": "Intel&reg; Active Management Technology\nRequested resource was /logon.htm"
+          }
+        ]
+      },
+      {
+        "port": "2869",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP"
+      },
+      {
+        "port": "5000",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "Ajenti http control panel",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-title",
+            "output": "Enhanced Nmap GUI Tool"
+          }
+        ]
+      },
+      {
+        "port": "5040",
+        "protocol": "tcp",
+        "state": "open"
+      },
+      {
+        "port": "5568",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "Node.js Express framework",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-title",
+            "output": "Error"
+          }
+        ]
+      },
+      {
+        "port": "8834",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "nessus-xmlrpc",
+        "version": "",
+        "product": "",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "fingerprint-strings",
+            "output": "\n  FourOhFourRequest: \n    HTTP/1.1 404 File not found\n    Cache-Control: no-cache, no-store, must-revalidate\n    X-Frame-Options: DENY\n    Content-Type: application/json\n    Connection: close\n    X-XSS-Protection: 1; mode=block\n    Server: NessusWWW\n    X-Content-Type-Options: nosniff\n    Date: Mon, 01 Sep 2025 04:16:32 GMT\n    Content-Length: 45\n    Content-Security-Policy: upgrade-insecure-requests; block-all-mixed-content; form-action 'self'; frame-ancestors 'none'; frame-src https://store.tenable.com www.youtube.com; default-src 'self'; connect-src 'self' data.nessus-telemetry.tenable.com content.nessus-telemetry.tenable.com api.tenable.com www.tenable.com; script-src 'self' content.nessus-telemetry.tenable.com www.tenable.com; img-src 'self' data: content.nessus-telemetry.tenable.com data.nessus-telemetry.tenable.com pendo-static-5689996938182656.storage.googleapis.com s.ytimg.com i.ytimg.com; style-src 'self' content.nessus-telemetry.te\n  HTTPOptions: \n    HTTP/1.1 405 Method not Allowed\n    Connection: close\n    Date: Mon, 01 Sep 2025 04:15:52 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  Help: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Mon, 01 Sep 2025 04:16:07 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  RTSPRequest: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Mon, 01 Sep 2025 04:15:52 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  SIPOptions: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Mon, 01 Sep 2025 04:16:47 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  TerminalServerCookie: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Mon, 01 Sep 2025 04:16:12 GMT\n    Content-Length: 0\n    Server: NessusWWW"
+          },
+          {
+            "id": "ssl-cert",
+            "output": "Subject: commonName=DESKTOP-MLSK8OK/organizationName=Nessus Users United/stateOrProvinceName=NY/countryName=US\nNot valid before: 2025-04-16T05:00:56\nNot valid after:  2029-04-15T05:00:56"
+          },
+          {
+            "id": "ssl-date",
+            "output": "TLS randomness does not represent time"
+          }
+        ]
+      },
+      {
+        "port": "10243",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Microsoft-HTTPAPI/2.0"
+          },
+          {
+            "id": "http-title",
+            "output": "Not Found"
+          }
+        ]
+      },
+      {
+        "port": "16992",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "11.8.97.4739",
+        "product": "Intel Active Management Technology User Notification Service httpd",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Intel(R) Active Management Technology 11.8.97.4739"
+          },
+          {
+            "id": "http-title",
+            "output": "Intel&reg; Active Management Technology\nRequested resource was /logon.htm"
+          }
+        ]
+      },
+      {
+        "port": "49664",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49665",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49666",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49667",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49668",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49673",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "Microsoft Windows 10 1607 - 11 23H2",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "173.15",
+      "timestr": "Mon Sep  1 09:48:06 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T09:48:06.958829"
+}

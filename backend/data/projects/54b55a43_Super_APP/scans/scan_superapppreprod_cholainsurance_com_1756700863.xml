@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 09:57:43 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_superapppreprod_cholainsurance_com_1756700863.xml -oN scan_superapppreprod_cholainsurance_com_1756700863.nmap -oG scan_superapppreprod_cholainsurance_com_1756700863.gnmap superapppreprod.cholainsurance.com -->
+<nmaprun scanner="nmap" args="nmap -p- -sC -sV -O -T3 -oX scan_superapppreprod_cholainsurance_com_1756700863.xml -oN scan_superapppreprod_cholainsurance_com_1756700863.nmap -oG scan_superapppreprod_cholainsurance_com_1756700863.gnmap superapppreprod.cholainsurance.com" start="1756700863" startstr="Mon Sep  1 09:57:43 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="13.235.126.164" addrtype="ipv4"/>
+<hostnames>
+<hostname name="superapppreprod.cholainsurance.com" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1756700863" endtime="1756700975"><status state="up" reason="syn-ack" reason_ttl="244"/>
+<address addr="13.235.126.164" addrtype="ipv4"/>
+<hostnames>
+<hostname name="superapppreprod.cholainsurance.com" type="user"/>
+<hostname name="ec2-13-235-126-164.ap-south-1.compute.amazonaws.com" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65530">
+<extrareasons reason="reset" count="65530" proto="tcp" ports="1-79,81-442,444-1999,2001-5059,5061-8019,8021-65535"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="244"/><service name="http" product="AWS Elastic Load Balancing" method="probed" conf="10"/><script id="http-server-header" output="awselb/2.0"><elem>awselb/2.0</elem>
+</script><script id="http-title" output="Did not follow redirect to https://superapppreprod.cholainsurance.com:443/"><elem key="redirect_url">https://superapppreprod.cholainsurance.com:443/</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="244"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-server-header" output="&#xa;  awselb/2.0&#xa;  istio-envoy"><elem>awselb/2.0</elem>
+<elem>istio-envoy</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=*.cholainsurance.com/organizationName=Cholamandalam MS General Insurance Company Limited/stateOrProvinceName=Tamil N\xC4\x81du/countryName=IN&#xa;Subject Alternative Name: DNS:*.cholainsurance.com&#xa;Not valid before: 2025-08-21T00:00:00&#xa;Not valid after:  2026-09-21T23:59:59"><table key="subject">
+<elem key="commonName">*.cholainsurance.com</elem>
+<elem key="countryName">IN</elem>
+<elem key="organizationName">Cholamandalam MS General Insurance Company Limited</elem>
+<elem key="stateOrProvinceName">Tamil N\xC4\x81du</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Entrust OV TLS Issuing RSA CA 2</elem>
+<elem key="countryName">CA</elem>
+<elem key="organizationName">Entrust Limited</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">AB8D0A50C812EDE046F86F8FAF5ABEB0DFE20A4A5C4E7D31E44F33FC1925149EAAD871F3123E2B86D276A1B49ED8CF325C0F1A59FEF096E609B378099219BCC8B292BABAD55D8BBD8ADF4E0196505F3966FED25D64FF2AF1002FA495C303272F402ED1D017B068F2BD22A4CEDAF461DFBBC6DB0E29ECE6EE1A95FCA5C95360B4941F0524D2F5742800F0FBD681BFEB30DABB03EC7DDE2AC232B1C52C5E64435E31C1F40D8967CE29B7A00AA36EADD81BB7B2F97BDF99534914BD33E0F1CE4427D9D6D9596DDD456E8C7085F15CFE00D29C837DF703F417C907746792E2A1F7B816EEB23626973EDBBB11D14C8D2C13EFB780439253004384B030326AE41CC6C5</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">17:D1:AF:00:74:F9:55:FB:52:37:D8:84:76:0B:5B:12:8A:50:5A:C5</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">32:F5:8E:36:18:4C:67:C4:1D:4B:75:1A:8A:77:A4:F0:AA:12:D9:AF</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:http://crl.sectigo.com/EntrustOVTLSIssuingRSACA2.crl</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/EntrustOVTLSIssuingRSACA2.crt&#xa;OCSP - URI:http://ocsp.sectigo.com</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : D8:09:55:3B:94:4F:7A:FF:C8:16:19:6F:94:4F:85:AB:&#xa;                B0:F8:FC:5E:87:55:26:0F:15:D1:2E:72:BB:45:4B:14&#xa;    Timestamp : Aug 21 13:52:42.620 2025 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:7E:B4:BD:25:F9:FC:8A:AE:9C:4C:13:F1:&#xa;                76:24:37:CE:E3:26:2F:C4:DE:68:B7:63:28:76:A2:E9:&#xa;                81:5A:04:2B:02:20:76:86:BB:E3:1A:28:52:47:B2:E2:&#xa;                11:60:4F:A0:66:6A:C2:AF:42:A6:48:1A:FC:65:F5:64:&#xa;                76:A3:D1:4F:D6:95&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : AC:AB:30:70:6C:EB:EC:84:31:F4:13:D2:F4:91:5F:11:&#xa;                1E:42:24:43:B1:F2:A6:8C:4F:3C:2B:3B:A7:1E:02:C3&#xa;    Timestamp : Aug 21 13:52:42.508 2025 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:78:00:99:94:03:32:AC:45:10:D3:27:2B:&#xa;                C4:DA:8F:02:B7:AA:B0:FB:23:DC:F0:4E:BB:22:B0:48:&#xa;                4E:27:33:1E:02:20:25:E5:54:C3:BF:28:F5:1E:81:2B:&#xa;                50:E0:30:E2:80:44:76:5B:52:6D:50:87:5D:65:59:F0:&#xa;                F2:FA:0B:FC:0E:97&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : D7:6D:7D:10:D1:A7:F5:77:C2:C7:E9:5F:D7:00:BF:F9:&#xa;                82:C9:33:5A:65:E1:D0:B3:01:73:17:C0:C8:C5:69:77&#xa;    Timestamp : Aug 21 13:52:42.452 2025 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:DB:3C:B2:25:55:8D:25:B7:80:BF:E6:&#xa;                D1:DF:FD:2B:90:74:93:F3:48:98:E9:C0:75:F2:53:C9:&#xa;                A4:47:D5:E5:EA:02:20:4C:74:91:D9:B4:51:6C:09:E4:&#xa;                4E:A0:16:5A:CE:14:C2:AC:BA:E2:57:9F:3F:D1:4D:85:&#xa;                B7:8F:8F:C5:94:3C:76</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.cholainsurance.com</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2025-08-21T00:00:00</elem>
+<elem key="notAfter">2026-09-21T23:59:59</elem>
+</table>
+<elem key="md5">0edcd2fca686705baa6b2caefd6d3613</elem>
+<elem key="sha1">12ac8b8b3bd4ef7ed52016c6dae28b052ed46b1d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIG0jCCBTqgAwIBAgIRAKMiBkBR22bXP6PHvsEflz4wDQYJKoZIhvcNAQELBQAw&#xa;UTELMAkGA1UEBhMCQ0ExGDAWBgNVBAoTD0VudHJ1c3QgTGltaXRlZDEoMCYGA1UE&#xa;AxMfRW50cnVzdCBPViBUTFMgSXNzdWluZyBSU0EgQ0EgMjAeFw0yNTA4MjEwMDAw&#xa;MDBaFw0yNjA5MjEyMzU5NTlaMH8xCzAJBgNVBAYTAklOMRQwEgYDVQQIDAtUYW1p&#xa;bCBOxIFkdTE7MDkGA1UEChMyQ2hvbGFtYW5kYWxhbSBNUyBHZW5lcmFsIEluc3Vy&#xa;YW5jZSBDb21wYW55IExpbWl0ZWQxHTAbBgNVBAMMFCouY2hvbGFpbnN1cmFuY2Uu&#xa;Y29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq40KUMgS7eBG+G+P&#xa;r1q+sN/iCkpcTn0x5E8z/BklFJ6q2HHzEj4rhtJ2obSe2M8yXA8aWf7wluYJs3gJ&#xa;khm8yLKSurrVXYu9it9OAZZQXzlm/tJdZP8q8QAvpJXDAycvQC7R0BewaPK9IqTO&#xa;2vRh37vG2w4p7ObuGpX8pclTYLSUHwUk0vV0KADw+9aBv+sw2rsD7H3eKsIyscUs&#xa;XmRDXjHB9A2JZ84pt6AKo26t2Bu3svl735lTSRS9M+DxzkQn2dbZWW3dRW6McIXx&#xa;XP4A0pyDffcD9BfJB3RnkuKh97gW7rI2Jpc+27sR0UyNLBPvt4BDklMAQ4SwMDJq&#xa;5BzGxQIDAQABo4IC9TCCAvEwHwYDVR0jBBgwFoAUF9GvAHT5VftSN9iEdgtbEopQ&#xa;WsUwHQYDVR0OBBYEFDL1jjYYTGfEHUt1Gop3pPCqEtmvMA4GA1UdDwEB/wQEAwIF&#xa;oDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAT&#xa;BgNVHSAEDDAKMAgGBmeBDAECAjBFBgNVHR8EPjA8MDqgOKA2hjRodHRwOi8vY3Js&#xa;LnNlY3RpZ28uY29tL0VudHJ1c3RPVlRMU0lzc3VpbmdSU0FDQTIuY3JsMHUGCCsG&#xa;AQUFBwEBBGkwZzBABggrBgEFBQcwAoY0aHR0cDovL2NydC5zZWN0aWdvLmNvbS9F&#xa;bnRydXN0T1ZUTFNJc3N1aW5nUlNBQ0EyLmNydDAjBggrBgEFBQcwAYYXaHR0cDov&#xa;L29jc3Auc2VjdGlnby5jb20wggF8BgorBgEEAdZ5AgQCBIIBbASCAWgBZgB1ANgJ&#xa;VTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABmMznOnwAAAQDAEYwRAIg&#xa;frS9Jfn8iq6cTBPxdiQ3zuMmL8TeaLdjKHai6YFaBCsCIHaGu+MaKFJHsuIRYE+g&#xa;ZmrCr0KmSBr8ZfVkdqPRT9aVAHUArKswcGzr7IQx9BPS9JFfER5CJEOx8qaMTzwr&#xa;O6ceAsMAAAGYzOc6DAAABAMARjBEAiB4AJmUAzKsRRDTJyvE2o8Ct6qw+yPc8E67&#xa;IrBITiczHgIgJeVUw78o9R6BK1DgMOKARHZbUm1Qh11lWfDy+gv8DpcAdgDXbX0Q&#xa;0af1d8LH6V/XAL/5gskzWmXh0LMBcxfAyMVpdwAAAZjM5znUAAAEAwBHMEUCIQDb&#xa;PLIlVY0lt4C/5tHf/SuQdJPzSJjpwHXyU8mkR9Xl6gIgTHSR2bRRbAnkTqAWWs4U&#xa;wqy64lefP9FNhbePj8WUPHYwHwYDVR0RBBgwFoIUKi5jaG9sYWluc3VyYW5jZS5j&#xa;b20wDQYJKoZIhvcNAQELBQADggGBACnrWPrahWs8wukNaOlWXXS84tHEm6/j4ktG&#xa;d9ii3e5u5OAjW5ZABVV+qAf1g87+tNmmM7bjGVHMDSWEaFc1nHO7qQVudnaCbDHS&#xa;aHfE0paUITWuZIRxhxX5+fx8mxIhtUhzBuRdUoHR793Dnz6eDTr278Ch6ZDhRF27&#xa;fMpDTSOp5NqTbhyZCuU07Fqh/4e02sy8CmXCW9v9/SbDPpIZEsHoumEW9jHyo43B&#xa;/ZEXUFxNQxlUj4lxBr8Q0naUqhWkkGyczT7k7DGtzSjWbN6Yprd4GgDdyU58iDqm&#xa;RL14V7DQ1d9Ug6meeR/qW2o3IwSWYxZnrbY/rq4fcF2V/ushyIk78NiI4DN2GkS4&#xa;AuiyBUX2EufQX+eOFxN4dHIR58ZJN3dXUBVCFlALrjxifUklhroVqwVRWsnycxq0&#xa;zckx0qr8jHCLNVpLW3qRDa8xjPDoUdrDhlc9Iit+nBlDOZCSMb+xHKOYLvc3FkVg&#xa;6oe8nxa7aAnCXhEIIGIE3Hn6iDuOfg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-title" output="CholaMS Admin Master"><elem key="title">CholaMS Admin Master</elem>
+</script></port>
+<port protocol="tcp" portid="2000"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="5060"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="8020"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http-proxy" product="FortiGuard Web Filtering" method="probed" conf="10"/><script id="http-title" output="Web Filter Block Override"><elem key="title">Web Filter Block Override</elem>
+</script><script id="http-open-proxy" output="Potentially OPEN proxy.&#xa;Methods supported:CONNECTION"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="80"/>
+<portused state="closed" proto="tcp" portid="1"/>
+</os>
+<uptime seconds="11" lastboot="Mon Sep  1 09:59:24 2025"/>
+<tcpsequence index="261" difficulty="Good luck!" values="83524198,D2D97D3A,F3967C5F,7D6D6159,1E59D3A8,188F271C"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="other" values="437ECAA0,437ECB08,437ECB6B,95AAA8E6,437ECC55,95AAA9D0"/>
+<times srtt="27492" rttvar="3244" to="100000"/>
+</host>
+<runstats><finished time="1756700975" timestr="Mon Sep  1 09:59:35 2025" summary="Nmap done at Mon Sep  1 09:59:35 2025; 1 IP address (1 host up) scanned in 112.79 seconds" elapsed="112.79" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

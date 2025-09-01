@@ -1,0 +1,268 @@
+{
+  "target_ip": "10.60.152.164",
+  "scan_result": {
+    "target_ip": "10.60.152.164",
+    "status": "completed",
+    "start_time": "2025-08-30T12:42:20.699676",
+    "end_time": "2025-08-30T12:45:09.773051",
+    "duration": "0:02:49.073375",
+    "xml_file": "scan_10_60_152_164_1756537940.xml",
+    "nmap_file": "scan_10_60_152_164_1756537940.nmap",
+    "gnmap_file": "scan_10_60_152_164_1756537940.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-30 12:42 India Standard Time\nStats: 0:00:00 elapsed; 0 hosts completed (0 up), 0 undergoing Script Pre-Scan\nNSE Timing: About 0.00% done\nNmap scan report for 10.60.152.164\nHost is up (0.00035s latency).\nNot shown: 65515 closed tcp ports (reset)\nPORT      STATE    SERVICE            VERSION\n135/tcp   open     msrpc              Microsoft Windows RPC\n137/tcp   filtered netbios-ns\n139/tcp   open     netbios-ssn        Microsoft Windows netbios-ssn\n445/tcp   open     microsoft-ds?\n554/tcp   open     rtsp?\n623/tcp   open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739\n|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739\n| http-title: Intel&reg; Active Management Technology\n|_Requested resource was /logon.htm\n2869/tcp  open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\n3031/tcp  open     http               Node.js Express framework\n|_http-title: Error\n5000/tcp  open     upnp?\n| fingerprint-strings: \n|   GetRequest: \n|     HTTP/1.1 200 OK\n|     Content-Disposition: inline; filename=index.html\n|     Content-Type: text/html; charset=utf-8\n|     Content-Length: 20937\n|     Last-Modified: Sat, 30 Aug 2025 04:50:40 GMT\n|     Cache-Control: no-cache\n|     Etag: \"1756529440.7507215-20937-3032686094\"\n|     Date: Sat, 30 Aug 2025 07:12:31 GMT\n|     Access-Control-Allow-Origin: *\n|     Connection: close\n|     <!DOCTYPE html>\n|     <html lang=\"en\">\n|     <head>\n|     <meta charset=\"UTF-8\">\n|     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n|     <title>Enhanced Nmap GUI Tool</title>\n|     <link rel=\"stylesheet\" href=\"css/main.css\">\n|     <link rel=\"stylesheet\" href=\"css/components.css\">\n|     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js\"></script>\n|     </head>\n|     <body>\n|     <div class=\"app-container\">\n|     <!-- Header -->\n|     <header class=\"app-header\">\n|     <div class=\"header-content\">\n|   RTSPRequest: \n|     <!DOCTYPE HTML>\n|     <html lang=\"en\">\n|     <head>\n|     <meta charset=\"utf-8\">\n|     <title>Error response</title>\n|     </head>\n|     <body>\n|     <h1>Error response</h1>\n|     <p>Error code: 400</p>\n|     <p>Message: Bad request version ('RTSP/1.0').</p>\n|     <p>Error code explanation: 400 - Bad request syntax or unsupported method.</p>\n|     </body>\n|_    </html>\n5040/tcp  open     unknown\n7680/tcp  open     pando-pub?\n8834/tcp  open     ssl/nessus-xmlrpc?\n| ssl-cert: Subject: commonName=DESKTOP-MLSK8OK/organizationName=Nessus Users United/stateOrProvinceName=NY/countryName=US\n| Not valid before: 2025-04-16T05:00:56\n|_Not valid after:  2029-04-15T05:00:56\n| fingerprint-strings: \n|   HTTPOptions: \n|     HTTP/1.1 405 Method not Allowed\n|     Connection: close\n|     Date: Sat, 30 Aug 2025 07:12:57 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   Help: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Sat, 30 Aug 2025 07:13:12 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   RTSPRequest: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Sat, 30 Aug 2025 07:12:57 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   SIPOptions: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Sat, 30 Aug 2025 07:13:52 GMT\n|     Content-Length: 0\n|     Server: NessusWWW\n|   TerminalServerCookie: \n|     HTTP/1.1 400 Bad Request\n|     Connection: close\n|     Date: Sat, 30 Aug 2025 07:13:17 GMT\n|     Content-Length: 0\n|_    Server: NessusWWW\n|_ssl-date: TLS randomness does not represent time\n10243/tcp open     http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)\n|_http-server-header: Microsoft-HTTPAPI/2.0\n|_http-title: Not Found\n16992/tcp open     http               Intel Active Management Technology User Notification Service httpd 11.8.97.4739\n|_http-server-header: Intel(R) Active Management Technology 11.8.97.4739\n49664/tcp open     msrpc              Microsoft Windows RPC\n49665/tcp open     msrpc              Microsoft Windows RPC\n49666/tcp open     msrpc              Microsoft Windows RPC\n49667/tcp open     msrpc              Microsoft Windows RPC\n49668/tcp open     msrpc              Microsoft Windows RPC\n49673/tcp open     msrpc              Microsoft Windows RPC\n2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port5000-TCP:V=7.95%I=7%D=8/30%Time=68B2A45F%P=i686-pc-windows-windows%\nSF:r(GetRequest,5319,\"HTTP/1\\.1\\x20200\\x20OK\\r\\nContent-Disposition:\\x20in\nSF:line;\\x20filename=index\\.html\\r\\nContent-Type:\\x20text/html;\\x20charset\nSF:=utf-8\\r\\nContent-Length:\\x2020937\\r\\nLast-Modified:\\x20Sat,\\x2030\\x20A\nSF:ug\\x202025\\x2004:50:40\\x20GMT\\r\\nCache-Control:\\x20no-cache\\r\\nEtag:\\x2\nSF:0\\\"1756529440\\.7507215-20937-3032686094\\\"\\r\\nDate:\\x20Sat,\\x2030\\x20Aug\nSF:\\x202025\\x2007:12:31\\x20GMT\\r\\nAccess-Control-Allow-Origin:\\x20\\*\\r\\nCo\nSF:nnection:\\x20close\\r\\n\\r\\n<!DOCTYPE\\x20html>\\r\\n<html\\x20lang=\\\"en\\\">\\r\nSF:\\n<head>\\r\\n\\x20\\x20\\x20\\x20<meta\\x20charset=\\\"UTF-8\\\">\\r\\n\\x20\\x20\\x20\nSF:\\x20<meta\\x20name=\\\"viewport\\\"\\x20content=\\\"width=device-width,\\x20init\nSF:ial-scale=1\\.0\\\">\\r\\n\\x20\\x20\\x20\\x20<title>Enhanced\\x20Nmap\\x20GUI\\x20\nSF:Tool</title>\\r\\n\\x20\\x20\\x20\\x20<link\\x20rel=\\\"stylesheet\\\"\\x20href=\\\"c\nSF:ss/main\\.css\\\">\\r\\n\\x20\\x20\\x20\\x20<link\\x20rel=\\\"stylesheet\\\"\\x20href=\nSF:\\\"css/components\\.css\\\">\\r\\n\\x20\\x20\\x20\\x20<script\\x20src=\\\"https://cd\nSF:njs\\.cloudflare\\.com/ajax/libs/socket\\.io/4\\.7\\.2/socket\\.io\\.js\\\"></sc\nSF:ript>\\r\\n</head>\\r\\n<body>\\r\\n\\x20\\x20\\x20\\x20<div\\x20class=\\\"app-conta\nSF:iner\\\">\\r\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20<!--\\x20Header\\x20-->\\r\\n\\x2\nSF:0\\x20\\x20\\x20\\x20\\x20\\x20\\x20<header\\x20class=\\\"app-header\\\">\\r\\n\\x20\\x\nSF:20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20<div\\x20class=\\\"header-conten\nSF:t\\\">\\r\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x2\nSF:0<h1\")%r(RTSPRequest,16C,\"<!DOCTYPE\\x20HTML>\\n<html\\x20lang=\\\"en\\\">\\n\\x\nSF:20\\x20\\x20\\x20<head>\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20<meta\\x20charset=\nSF:\\\"utf-8\\\">\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20<title>Error\\x20response</t\nSF:itle>\\n\\x20\\x20\\x20\\x20</head>\\n\\x20\\x20\\x20\\x20<body>\\n\\x20\\x20\\x20\\x2\nSF:0\\x20\\x20\\x20\\x20<h1>Error\\x20response</h1>\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x\nSF:20\\x20<p>Error\\x20code:\\x20400</p>\\n\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20<p>\nSF:Message:\\x20Bad\\x20request\\x20version\\x20\\('RTSP/1\\.0'\\)\\.</p>\\n\\x20\\x2\nSF:0\\x20\\x20\\x20\\x20\\x20\\x20<p>Error\\x20code\\x20explanation:\\x20400\\x20-\\x\nSF:20Bad\\x20request\\x20syntax\\x20or\\x20unsupported\\x20method\\.</p>\\n\\x20\\x\nSF:20\\x20\\x20</body>\\n</html>\\n\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port8834-TCP:V=7.95%T=SSL%I=7%D=8/30%Time=68B2A479%P=i686-pc-windows-wi\nSF:ndows%r(HTTPOptions,81,\"HTTP/1\\.1\\x20405\\x20Method\\x20not\\x20Allowed\\r\\\nSF:nConnection:\\x20close\\r\\nDate:\\x20Sat,\\x2030\\x20Aug\\x202025\\x2007:12:57\nSF:\\x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\")%r(RTS\nSF:PRequest,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20Request\\r\\nConnection:\\x20close\nSF:\\r\\nDate:\\x20Sat,\\x2030\\x20Aug\\x202025\\x2007:12:57\\x20GMT\\r\\nContent-Le\nSF:ngth:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\")%r(Help,7A,\"HTTP/1\\.1\\x2040\nSF:0\\x20Bad\\x20Request\\r\\nConnection:\\x20close\\r\\nDate:\\x20Sat,\\x2030\\x20A\nSF:ug\\x202025\\x2007:13:12\\x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20Nes\nSF:susWWW\\r\\n\\r\\n\")%r(TerminalServerCookie,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20\nSF:Request\\r\\nConnection:\\x20close\\r\\nDate:\\x20Sat,\\x2030\\x20Aug\\x202025\\x\nSF:2007:13:17\\x20GMT\\r\\nContent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\nSF:\\n\")%r(SIPOptions,7A,\"HTTP/1\\.1\\x20400\\x20Bad\\x20Request\\r\\nConnection:\nSF:\\x20close\\r\\nDate:\\x20Sat,\\x2030\\x20Aug\\x202025\\x2007:13:52\\x20GMT\\r\\nC\nSF:ontent-Length:\\x200\\r\\nServer:\\x20NessusWWW\\r\\n\\r\\n\");\nNo exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).\nTCP/IP fingerprint:\nOS:SCAN(V=7.95%E=4%D=8/30%OT=135%CT=1%CU=38881%PV=Y%DS=0%DC=L%G=Y%TM=68B2A4\nOS:FD%P=i686-pc-windows-windows)SEQ(SP=100%GCD=1%ISR=10B%TI=I%CI=I%II=I%SS=\nOS:S%TS=A)SEQ(SP=103%GCD=1%ISR=108%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=104%GCD=\nOS:1%ISR=109%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1%ISR=108%TI=I%CI=I%II\nOS:=I%SS=S%TS=A)SEQ(SP=FF%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=MFF\nOS:D7NW8ST11%O2=MFFD7NW8ST11%O3=MFFD7NW8NNT11%O4=MFFD7NW8ST11%O5=MFFD7NW8ST\nOS:11%O6=MFFD7ST11)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(\nOS:R=Y%DF=Y%T=80%W=FFFF%O=MFFD7NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A\nOS:S%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%\nOS:W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)\nOS:T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A\nOS:=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%D\nOS:F=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=8\nOS:0%CD=Z)\n\nNetwork Distance: 0 hops\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:11.8.97.4739\n\nHost script results:\n| smb2-security-mode: \n|   3:1:1: \n|_    Message signing enabled but not required\n| smb2-time: \n|   date: 2025-08-30T07:14:54\n|_  start_date: N/A\n\nOS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 168.92 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sC -sV -O -T4 -oX scan_10_60_152_164_1756537940.xml -oN scan_10_60_152_164_1756537940.nmap -oG scan_10_60_152_164_1756537940.gnmap 10.60.152.164",
+    "host_status": "up",
+    "open_ports": 19,
+    "services": [
+      {
+        "port": "135",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "137",
+        "protocol": "tcp",
+        "state": "filtered",
+        "service": "netbios-ns",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "139",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "netbios-ssn",
+        "version": "",
+        "product": "Microsoft Windows netbios-ssn",
+        "extrainfo": ""
+      },
+      {
+        "port": "445",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "microsoft-ds",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "554",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "rtsp",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "623",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "11.8.97.4739",
+        "product": "Intel Active Management Technology User Notification Service httpd",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Intel(R) Active Management Technology 11.8.97.4739"
+          },
+          {
+            "id": "http-title",
+            "output": "Intel&reg; Active Management Technology\nRequested resource was /logon.htm"
+          }
+        ]
+      },
+      {
+        "port": "2869",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP"
+      },
+      {
+        "port": "3031",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "Node.js Express framework",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-title",
+            "output": "Error"
+          }
+        ]
+      },
+      {
+        "port": "5000",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "upnp",
+        "version": "",
+        "product": "",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "fingerprint-strings",
+            "output": "\n  GetRequest: \n    HTTP/1.1 200 OK\n    Content-Disposition: inline; filename=index.html\n    Content-Type: text/html; charset=utf-8\n    Content-Length: 20937\n    Last-Modified: Sat, 30 Aug 2025 04:50:40 GMT\n    Cache-Control: no-cache\n    Etag: \"1756529440.7507215-20937-3032686094\"\n    Date: Sat, 30 Aug 2025 07:12:31 GMT\n    Access-Control-Allow-Origin: *\n    Connection: close\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Enhanced Nmap GUI Tool</title>\n    <link rel=\"stylesheet\" href=\"css/main.css\">\n    <link rel=\"stylesheet\" href=\"css/components.css\">\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js\"></script>\n    </head>\n    <body>\n    <div class=\"app-container\">\n    <!-- Header -->\n    <header class=\"app-header\">\n    <div class=\"header-content\">\n  RTSPRequest: \n    <!DOCTYPE HTML>\n    <html lang=\"en\">\n    <head>\n    <meta charset=\"utf-8\">\n    <title>Error response</title>\n    </head>\n    <body>\n    <h1>Error response</h1>\n    <p>Error code: 400</p>\n    <p>Message: Bad request version ('RTSP/1.0').</p>\n    <p>Error code explanation: 400 - Bad request syntax or unsupported method.</p>\n    </body>\n    </html>"
+          }
+        ]
+      },
+      {
+        "port": "5040",
+        "protocol": "tcp",
+        "state": "open"
+      },
+      {
+        "port": "7680",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "pando-pub",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "8834",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "nessus-xmlrpc",
+        "version": "",
+        "product": "",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "ssl-cert",
+            "output": "Subject: commonName=DESKTOP-MLSK8OK/organizationName=Nessus Users United/stateOrProvinceName=NY/countryName=US\nNot valid before: 2025-04-16T05:00:56\nNot valid after:  2029-04-15T05:00:56"
+          },
+          {
+            "id": "fingerprint-strings",
+            "output": "\n  HTTPOptions: \n    HTTP/1.1 405 Method not Allowed\n    Connection: close\n    Date: Sat, 30 Aug 2025 07:12:57 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  Help: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Sat, 30 Aug 2025 07:13:12 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  RTSPRequest: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Sat, 30 Aug 2025 07:12:57 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  SIPOptions: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Sat, 30 Aug 2025 07:13:52 GMT\n    Content-Length: 0\n    Server: NessusWWW\n  TerminalServerCookie: \n    HTTP/1.1 400 Bad Request\n    Connection: close\n    Date: Sat, 30 Aug 2025 07:13:17 GMT\n    Content-Length: 0\n    Server: NessusWWW"
+          },
+          {
+            "id": "ssl-date",
+            "output": "TLS randomness does not represent time"
+          }
+        ]
+      },
+      {
+        "port": "10243",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "2.0",
+        "product": "Microsoft HTTPAPI httpd",
+        "extrainfo": "SSDP/UPnP",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Microsoft-HTTPAPI/2.0"
+          },
+          {
+            "id": "http-title",
+            "output": "Not Found"
+          }
+        ]
+      },
+      {
+        "port": "16992",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "11.8.97.4739",
+        "product": "Intel Active Management Technology User Notification Service httpd",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "Intel(R) Active Management Technology 11.8.97.4739"
+          }
+        ]
+      },
+      {
+        "port": "49664",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49665",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49666",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49667",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49668",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      },
+      {
+        "port": "49673",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "msrpc",
+        "version": "",
+        "product": "Microsoft Windows RPC",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "Microsoft Windows 10 1607 - 11 23H2",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "168.92",
+      "timestr": "Sat Aug 30 12:45:09 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T4",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-08-30T12:45:09.774044"
+}

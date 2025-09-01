@@ -1,0 +1,43 @@
+{
+  "scan_session_id": "aa36e0fd-12e7-4a20-b5fd-ac5f84d850ee",
+  "project_id": "e4efa9c3",
+  "targets": [
+    {
+      "ip": "10.60.152.164",
+      "ports": [
+        "135",
+        "139",
+        "445",
+        "554",
+        "2869",
+        "10243",
+        "16992"
+      ]
+    },
+    {
+      "ip": "auriseg.com",
+      "ports": []
+    },
+    {
+      "ip": "10.60.152.164",
+      "ports": []
+    }
+  ],
+  "options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "start_time": "2025-09-01T12:06:44.597742",
+  "status": "completed",
+  "completed_targets": 3,
+  "total_targets": 3,
+  "progress": 100.0,
+  "end_time": "2025-09-01T12:13:16.475916"
+}

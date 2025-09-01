@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:38:37 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_24_1756703317.xml -oN scan_10_60_152_24_1756703317.nmap -oG scan_10_60_152_24_1756703317.gnmap 10.60.152.24 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_24_1756703317.xml -oN scan_10_60_152_24_1756703317.nmap -oG scan_10_60_152_24_1756703317.gnmap 10.60.152.24" start="1756703317" startstr="Mon Sep  1 10:38:37 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756703318"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.24" addrtype="ipv4"/>
+<address addr="70:BB:E9:5F:B2:88" addrtype="mac" vendor="Xiaomi Communications"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756703318" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756703318"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756703318"/>
+<taskbegin task="SYN Stealth Scan" time="1756703318"/>
+<taskprogress task="SYN Stealth Scan" time="1756703350" percent="7.71" remaining="383" etc="1756703733"/>
+<taskprogress task="SYN Stealth Scan" time="1756703380" percent="24.47" remaining="192" etc="1756703571"/>
+<taskprogress task="SYN Stealth Scan" time="1756703410" percent="49.95" remaining="93" etc="1756703502"/>
+<taskprogress task="SYN Stealth Scan" time="1756703440" percent="70.19" remaining="52" etc="1756703492"/>
+<taskend task="SYN Stealth Scan" time="1756703467" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756703467"/>
+<taskbegin task="NSE" time="1756703467"/>
+<taskend task="NSE" time="1756703467"/>
+<taskbegin task="NSE" time="1756703467"/>
+<taskend task="NSE" time="1756703467"/>
+<host starttime="1756703318" endtime="1756703467"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.24" addrtype="ipv4"/>
+<address addr="70:BB:E9:5F:B2:88" addrtype="mac" vendor="Xiaomi Communications"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65535">
+<extrareasons reason="reset" count="65535" proto="tcp" ports="1-65535"/>
+</extraports>
+</ports>
+<times srtt="33838" rttvar="7364" to="100000"/>
+</host>
+<runstats><finished time="1756703467" timestr="Mon Sep  1 10:41:07 2025" summary="Nmap done at Mon Sep  1 10:41:07 2025; 1 IP address (1 host up) scanned in 150.22 seconds" elapsed="150.22" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

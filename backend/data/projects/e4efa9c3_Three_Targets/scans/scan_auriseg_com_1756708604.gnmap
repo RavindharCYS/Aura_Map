@@ -1,0 +1,1 @@
+# Nmap 7.95 scan initiated Mon Sep  1 12:06:45 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_auriseg_com_1756708604.xml -oN scan_auriseg_com_1756708604.nmap -oG scan_auriseg_com_1756708604.gnmap auriseg.com

@@ -1,0 +1,35 @@
+{
+  "target_ip": "10.60.152.164",
+  "scan_result": {
+    "target_ip": "10.60.152.164",
+    "status": "failed",
+    "start_time": "2025-08-30T13:06:20.462882",
+    "end_time": "2025-08-30T13:06:20.619952",
+    "duration": "0:00:00.157070",
+    "xml_file": "scan_10_60_152_164_1756539380.xml",
+    "nmap_file": "scan_10_60_152_164_1756539380.nmap",
+    "gnmap_file": "scan_10_60_152_164_1756539380.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-30 13:06 India Standard Time\n",
+    "stderr": "You cannot use -F (fast scan) with -p (explicit port selection) but see --top-ports and --port-ratio to fast scan a range of ports\nQUITTING!\n",
+    "return_code": 1,
+    "nmap_command": "nmap -F -O -T3 -p 135,139,445 -oX scan_10_60_152_164_1756539380.xml -oN scan_10_60_152_164_1756539380.nmap -oG scan_10_60_152_164_1756539380.gnmap 10.60.152.164",
+    "host_status": "down",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {}
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": false,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-08-30T13:06:20.620316"
+}

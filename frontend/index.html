@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Nmap GUI Tool</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <style>
+        /* Enhanced Summary View Styles */
+        .stat-card.expandable {
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        .stat-card.expandable:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .expand-arrow {
+            font-size: 0.8em;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .copy-btn:hover {
+            opacity: 1;
+        }
+        
+        .host-list {
+            background: rgba(0,0,0,0.05);
+            border-radius: 4px;
+            margin-top: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 8px;
+        }
+        
+        .host-item {
+            font-family: monospace;
+            padding: 2px 4px;
+            font-size: 0.9em;
+        }
+        
+        .service-tag.expandable {
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .service-tag.expandable:hover {
+            transform: scale(1.05);
+        }
+        
+        .service-details {
+            background: rgba(0,0,0,0.05);
+            border-radius: 4px;
+            margin-top: 8px;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 8px;
+        }
+        
+        .service-item {
+            font-family: monospace;
+            padding: 2px 4px;
+            font-size: 0.9em;
+        }
+        
+        .command-preview {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        
+        .command-container {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .command-container .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .scan-status-indicator {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .scan-status-indicator.incomplete {
+            background: #fff3cd;
+            border-color: #ffc107;
+        }
+        
+        .scan-status-banner {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .resume-scan {
+            background: #ffc107;
+            color: #212529;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .resume-scan:hover {
+            background: #ffb300;
+        }
+        
+        .vulnerability-analysis {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .severity-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .severity-badge.high {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .severity-badge.critical {
+            background: #721c24;
+            color: white;
+        }
+        
+        .analysis-section {
+            margin-bottom: 16px;
+        }
+        
+        .analysis-section h5 {
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        
+        .eol-warning {
+            color: #856404;
+            background: #fff3cd;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .vulnerability-list {
+            background: #f8f9fa;
+            border-radius: 4px;
+            padding: 8px;
+        }
+        
+        .vuln-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .cve-id {
+            font-family: monospace;
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .vuln-severity {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        
+        .vuln-severity.critical {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .analysis-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>
+                    <span class="logo">🛡️</span>
+                    Auriseg Map
+                </h1>
+                <div class="header-actions">
+                    <button id="systemInfoBtn" class="btn-secondary">System Info</button>
+                    <button id="loadProjectBtn" class="btn-secondary">Load Project</button>
+                    <span class="connection-status" id="connectionStatus">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel - Configuration & Controls -->
+            <div class="left-panel" id="leftPanel">
+                <!-- Input Section -->
+                <section class="input-section">
+                    <h3>Target Input</h3>
+                    <div class="input-methods">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="manual">Manual</button>
+                            <button class="tab-btn" data-tab="file">File Upload</button>
+                            <button class="tab-btn" data-tab="range">IP Range</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="manual-tab">
+                            <textarea id="ipInput" placeholder="Enter targets (one per line):
+192.168.1.1
+192.168.1.0/24
+10.0.0.1:80,443
+192.168.1.10-20"></textarea>
+                            <div class="input-helper">
+                                <small>Supported: Single IP, CIDR, IP:PORTS, IP ranges</small>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="file-tab">
+                            <div class="file-drop-zone" id="fileDropZone">
+                                <input type="file" id="fileInput" accept=".txt,.csv" style="display: none;">
+                                <div class="drop-content">
+                                    <span class="drop-icon">📁</span>
+                                    <p>Choose file or drag here</p>
+                                    <button type="button" onclick="document.getElementById('fileInput').click()" class="btn-secondary">Select File</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="range-tab">
+                            <div class="range-inputs">
+                                <input type="text" id="startIP" placeholder="Start IP: 192.168.1.1">
+                                <input type="text" id="endIP" placeholder="End IP: 192.168.1.50">
+                                <input type="text" id="rangePorts" placeholder="Ports: 80,443,8080 (optional)">
+                                <button type="button" id="generateRange" class="btn-secondary">Generate Range</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scope-preview">
+                        <h4>Scan Scope</h4>
+                        <div class="scope-stats">
+                            <span id="totalTargets" class="stat-item">0 IPs</span>
+                            <span id="estimatedTime" class="stat-item">~0 min</span>
+                            <button id="processInput" class="btn-primary" disabled>Process Input</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Configuration -->
+                <section class="project-section">
+                    <h3>Project Configuration</h3>
+                    <div class="form-group">
+                        <label>Project</label>
+                        <div class="project-input-group">
+                            <input type="text" id="projectName" placeholder="Enter project name">
+                            <select id="projectSelect" style="display:none;">
+                                <option value="">Select existing project...</option>
+                            </select>
+                            <button type="button" id="toggleProjectMode" class="mode-toggle">New</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Project PMO</label>
+                        <input type="text" id="projectPMO" placeholder="Project Manager/Owner">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Assessment Type</label>
+                        <select id="assessmentType">
+                            <option value="network_pt">Network Penetration Test</option>
+                            <option value="retest_pt">Retest Network PT</option>
+                            <option value="vulnerability">Vulnerability Assessment</option>
+                            <option value="compliance">Compliance Check</option>
+                            <option value="discovery">Network Discovery</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="projectDescription" placeholder="Project description (optional)" rows="2"></textarea>
+                    </div>
+                </section>
+
+                <!-- Scan Configuration -->
+                <section class="scan-configuration">
+                    <h3>Scan Configuration</h3>
+                    
+                    <div class="form-group">
+                        <label>Scan Template</label>
+                        <select id="scanTemplate">
+                            <option value="">Loading templates...</option>
+                        </select>
+                        <button type="button" id="saveTemplate" class="btn-icon" title="Save current settings as template">💾</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Scan Type</label>
+                        <select id="scanPreset">
+                            <option value="fast">Fast Scan (-F)</option>
+                            <option value="top1000">Top 1000 Ports</option>
+                            <option value="allports">All Ports (-p-)</option>
+                            <option value="udp">UDP Scan (-sU)</option>
+                            <option value="stealth">Stealth SYN (-sS)</option>
+                            <option value="comprehensive">Comprehensive (-A)</option>
+                            <option value="vuln">Vulnerability Scan</option>
+                            <option value="discovery">Network Discovery</option>
+                        </select>
+                    </div>
+                    
+                    <div class="options-grid">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="enableScripts" value="-sC">
+                            <span class="checkmark"></span>
+                            Default Scripts (-sC)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="versionDetection" value="-sV">
+                            <span class="checkmark"></span>
+                            Version Detection (-sV)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="osDetection" value="-O">
+                            <span class="checkmark"></span>
+                            OS Detection (-O)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="skipPing" value="-Pn">
+                            <span class="checkmark"></span>
+                            Skip Ping (-Pn)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="pingOnly" value="-sn">
+                            <span class="checkmark"></span>
+                            Ping Only (-sn)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="aggressive" value="-A">
+                            <span class="checkmark"></span>
+                            Aggressive (-A)
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="verbose" value="-v">
+                            <span class="checkmark"></span>
+                            Verbose (-v)
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Timing Template</label>
+                        <select id="timingTemplate">
+                            <option value="-T0">Paranoid (T0) - Very Slow</option>
+                            <option value="-T1">Sneaky (T1) - Slow</option>
+                            <option value="-T2">Polite (T2) - Slower</option>
+                            <option value="-T3" selected>Normal (T3) - Default</option>
+                            <option value="-T4">Aggressive (T4) - Fast</option>
+                            <option value="-T5">Insane (T5) - Very Fast</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Custom Ports</label>
+                        <input type="text" id="customPorts" placeholder="80,443,8080,3389 (optional)">
+                        <small class="helper-text">Leave empty to use preset port selection</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Custom Nmap Options</label>
+                        <input type="text" id="customOptions" placeholder="--min-rate 1000 --max-retries 2">
+                        <small class="helper-text">Additional nmap flags (e.g., --min-rate, --max-retries)</small>
+                    </div>
+                    
+                    <!-- Command Preview Section -->
+                    <div class="command-preview-section">
+                        <div class="section-header">
+                            <h4>Command Preview</h4>
+                            <button type="button" id="toggleCommandPreview" class="btn-icon" title="Toggle preview">👁️</button>
+                        </div>
+                        <div class="command-container">
+                            <code id="commandPreview">nmap [configure options above]</code>
+                            <button class="copy-btn" onclick="resultsManager.copyCommand()" title="Copy Command">📋</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Scan Controls -->
+                <section class="scan-controls">
+                    <div class="scan-buttons">
+                        <button id="startScan" class="btn-primary btn-large" disabled>
+                            <span class="btn-icon">🚀</span>
+                            Start Scan
+                        </button>
+                        <button id="cancelScan" class="btn-danger" style="display:none;">
+                            <span class="btn-icon">⏹️</span>
+                            Cancel Scan
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Scan Status -->
+                <section class="scan-status" id="scanStatus" style="display:none;">
+                    <div class="status-header">
+                        <h3>Scan Status: <span id="scanStatusText">Ready</span></h3>
+                        <button id="viewResults" class="btn-secondary" style="display:none;">View Results</button>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="progressBar"></div>
+                            <span class="progress-text" id="progressText">0%</span>
+                        </div>
+                        
+                        <div class="scan-metrics">
+                            <div class="metric">
+                                <label>Current Target</label>
+                                <span id="currentTarget">-</span>
+                            </div>
+                            <div class="metric">
+                                <label>Completed</label>
+                                <span id="completedCount">0</span> / <span id="totalCount">0</span>
+                            </div>
+                            <div class="metric">
+                                <label>Duration</label>
+                                <span id="scanDuration">00:00</span>
+                            </div>
+                            <div class="metric">
+                                <label>ETA</label>
+                                <span id="scanETA">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="live-log">
+                        <div class="log-header">
+                            <h4>Live Results</h4>
+                            <div class="log-controls">
+                                <button id="clearLog" class="btn-sm">Clear</button>
+                                <button id="toggleAutoScroll" class="btn-sm active">Auto-scroll</button>
+                            </div>
+                        </div>
+                        <div class="log-container" id="scanLog"></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Resizable Divider -->
+            <div class="panel-divider" id="panelDivider"></div>
+
+            <!-- Right Panel - Results & Visualization -->
+            <div class="right-panel" id="rightPanel">
+                <!-- Results Dashboard -->
+                <div class="results-dashboard">
+                    <div class="dashboard-header">
+                        <h2>Scan Results</h2>
+                        <div class="dashboard-controls">
+                            <button id="openProjectFolder" class="btn-primary" disabled>
+                                <span class="btn-icon">📁</span>
+                                Open Project Folder
+                            </button>
+                            <button id="exportResults" class="btn-secondary" disabled>
+                                <span class="btn-icon">📤</span>
+                                Export Results
+                            </button>
+                            <select id="viewMode">
+                                <option value="live">Live Results</option>
+                                <option value="summary">Summary View</option>
+                                <option value="detailed">Detailed View</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Filters -->
+                    <div class="filters-bar" id="filtersBar" style="display:none;">
+                        <div class="filter-group">
+                            <input type="text" id="ipFilter" placeholder="Filter by IP...">
+                            <select id="serviceFilter">
+                                <option value="">All Services</option>
+                                <option value="http">HTTP</option>
+                                <option value="https">HTTPS</option>
+                                <option value="ssh">SSH</option>
+                                <option value="ftp">FTP</option>
+                                <option value="telnet">Telnet</option>
+                                <option value="smtp">SMTP</option>
+                                <option value="dns">DNS</option>
+                            </select>
+                            <select id="statusFilter">
+                                <option value="">All Hosts</option>
+                                <option value="up">Hosts Up</option>
+                                <option value="down">Hosts Down</option>
+                            </select>
+                            <select id="portStateFilter">
+                                <option value="">All Ports</option>
+                                <option value="open">Open Ports</option>
+                                <option value="closed">Closed Ports</option>
+                                <option value="filtered">Filtered Ports</option>
+                            </select>
+                            <button id="clearFilters" class="btn-sm">Clear Filters</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Container -->
+                    <div class="results-container" id="resultsContainer">
+                        <div class="empty-state" id="emptyState">
+                            <div class="empty-icon">🎯</div>
+                            <h3>No Scan Results Yet</h3>
+                            <p>Configure your scan settings and targets, then click "Start Scan" to begin.</p>
+                            
+                            <div class="quick-start">
+                                <h4>Quick Start Guide:</h4>
+                                <ol>
+                                    <li>Enter target IPs in the input field</li>
+                                    <li>Select or create a project</li>
+                                    <li>Choose scan configuration</li>
+                                    <li>Preview the command that will be executed</li>
+                                    <li>Click "Start Scan"</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic results will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <!-- System Info Modal -->
+        <div class="modal" id="systemInfoModal" style="display:none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>System Information</h3>
+                    <button class="modal-close" onclick="closeModal('systemInfoModal')">&times;</button>
+                </div>
+                <div class="modal-body" id="systemInfoContent">
+                    Loading system information...
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Save Modal -->
+        <div class="modal" id="templateModal" style="display:none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Save Scan Template</h3>
+                    <button class="modal-close" onclick="closeModal('templateModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Template Name</label>
+                        <input type="text" id="templateName" placeholder="My Custom Template">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="templateDescription" placeholder="Template description" rows="3"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="saveTemplateBtn" class="btn-primary">Save Template</button>
+                        <button onclick="closeModal('templateModal')" class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Selection Modal -->
+        <div class="modal" id="projectModal" style="display:none;">
+            <div class="modal-content modal-large">
+                <div class="modal-header">
+                    <h3>Select Project</h3>
+                    <button class="modal-close" onclick="closeModal('projectModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-list" id="projectList">
+                        Loading projects...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/scanner.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

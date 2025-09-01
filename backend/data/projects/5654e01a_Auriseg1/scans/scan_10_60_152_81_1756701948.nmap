@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:15:48 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_81_1756701948.xml -oN scan_10_60_152_81_1756701948.nmap -oG scan_10_60_152_81_1756701948.gnmap 10.60.152.81
+Nmap scan report for 10.60.152.81
+Host is up (0.011s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT      STATE SERVICE    VERSION
+49152/tcp open  tcpwrapped
+MAC Address: 8E:23:DC:76:18:D3 (Unknown)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:16:19 2025 -- 1 IP address (1 host up) scanned in 30.53 seconds

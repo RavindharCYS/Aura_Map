@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.28",
+  "scan_result": {
+    "target_ip": "10.60.152.28",
+    "status": "completed",
+    "start_time": "2025-09-01T10:10:54.600671",
+    "end_time": "2025-09-01T10:10:55.458398",
+    "duration": "0:00:00.857727",
+    "xml_file": "scan_10_60_152_28_1756701654.xml",
+    "nmap_file": "scan_10_60_152_28_1756701654.nmap",
+    "gnmap_file": "scan_10_60_152_28_1756701654.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:10 India Standard Time\nNmap scan report for 10.60.152.28\nHost is up (0.010s latency).\nAll 100 scanned ports on 10.60.152.28 are in ignored states.\nNot shown: 100 closed tcp ports (reset)\nMAC Address: D2:66:3A:0F:AE:FE (Unknown)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 0.80 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_28_1756701654.xml -oN scan_10_60_152_28_1756701654.nmap -oG scan_10_60_152_28_1756701654.gnmap 10.60.152.28",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "0.80",
+      "timestr": "Mon Sep  1 10:10:55 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:10:55.458810"
+}

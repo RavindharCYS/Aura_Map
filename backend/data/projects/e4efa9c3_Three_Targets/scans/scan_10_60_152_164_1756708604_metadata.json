@@ -1,0 +1,29 @@
+{
+  "target_ip": "10.60.152.164",
+  "scan_result": {
+    "target_ip": "10.60.152.164",
+    "status": "failed",
+    "start_time": "2025-09-01T12:06:44.603109",
+    "end_time": "2025-09-01T12:06:44.641564",
+    "duration": "0:00:00.038455",
+    "xml_file": null,
+    "nmap_file": null,
+    "gnmap_file": null,
+    "stdout": "",
+    "stderr": "Only 1 -p option allowed, separate multiple ranges with commas.\nQUITTING!\n",
+    "return_code": 1,
+    "nmap_command": "nmap -p- -sC -sV -O -T3 -p 135,139,445,554,2869,10243,16992 -oX scan_10_60_152_164_1756708604.xml -oN scan_10_60_152_164_1756708604.nmap -oG scan_10_60_152_164_1756708604.gnmap 10.60.152.164"
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T12:06:44.642092"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:04:58 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_1_1756701298.xml -oN scan_10_60_152_1_1756701298.nmap -oG scan_10_60_152_1_1756701298.gnmap 10.60.152.1 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_1_1756701298.xml -oN scan_10_60_152_1_1756701298.nmap -oG scan_10_60_152_1_1756701298.gnmap 10.60.152.1" start="1756701298" startstr="Mon Sep  1 10:04:58 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756701299"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.1" addrtype="ipv4"/>
+<address addr="54:77:8A:4C:47:A2" addrtype="mac" vendor="Hewlett Packard Enterprise &#xe2;&#x80;&#x93; WW Corporate Headquarters"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756701299" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756701299"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756701299"/>
+<taskbegin task="SYN Stealth Scan" time="1756701299"/>
+<taskprogress task="SYN Stealth Scan" time="1756701330" percent="5.26" remaining="559" etc="1756701888"/>
+<taskprogress task="SYN Stealth Scan" time="1756701360" percent="8.85" remaining="629" etc="1756701988"/>
+<taskprogress task="SYN Stealth Scan" time="1756701534" percent="28.43" remaining="592" etc="1756702126"/>
+<taskprogress task="SYN Stealth Scan" time="1756701600" percent="35.37" remaining="551" etc="1756702150"/>
+<taskprogress task="SYN Stealth Scan" time="1756701642" percent="40.34" remaining="508" etc="1756702149"/>
+<taskprogress task="SYN Stealth Scan" time="1756701684" percent="45.36" remaining="464" etc="1756702148"/>
+<taskprogress task="SYN Stealth Scan" time="1756701735" percent="50.85" remaining="422" etc="1756702156"/>
+<taskprogress task="SYN Stealth Scan" time="1756701783" percent="56.22" remaining="377" etc="1756702160"/>
+<taskprogress task="SYN Stealth Scan" time="1756701831" percent="61.48" remaining="334" etc="1756702164"/>
+<taskprogress task="SYN Stealth Scan" time="1756701876" percent="66.75" remaining="288" etc="1756702163"/>
+<taskprogress task="SYN Stealth Scan" time="1756701924" percent="72.11" remaining="242" etc="1756702166"/>
+<taskprogress task="SYN Stealth Scan" time="1756701972" percent="77.33" remaining="198" etc="1756702169"/>
+<taskprogress task="SYN Stealth Scan" time="1756702017" percent="82.63" remaining="151" etc="1756702168"/>
+<taskprogress task="SYN Stealth Scan" time="1756702059" percent="87.67" remaining="107" etc="1756702166"/>
+<taskprogress task="SYN Stealth Scan" time="1756702101" percent="92.74" remaining="63" etc="1756702164"/>
+<taskend task="SYN Stealth Scan" time="1756702162" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756702162"/>
+<taskprogress task="Service scan" time="1756702207" percent="50.00" remaining="46" etc="1756702252"/>
+<taskprogress task="Service scan" time="1756702291" percent="75.00" remaining="44" etc="1756702334"/>
+<taskend task="Service scan" time="1756702303" extrainfo="4 services on 1 host"/>
+<taskbegin task="NSE" time="1756702303"/>
+<taskend task="NSE" time="1756702317"/>
+<taskbegin task="NSE" time="1756702317"/>
+<taskend task="NSE" time="1756702318"/>
+<host starttime="1756701299" endtime="1756702318"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.1" addrtype="ipv4"/>
+<address addr="54:77:8A:4C:47:A2" addrtype="mac" vendor="Hewlett Packard Enterprise &#xe2;&#x80;&#x93; WW Corporate Headquarters"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65531">
+<extrareasons reason="reset" count="65531" proto="tcp" ports="1-21,24-79,81-442,444-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="255"/><service name="ssh" product="HP Comware switch sshd" version="7.1.070" extrainfo="protocol 2.0" ostype="Comware" method="probed" conf="10"><cpe>cpe:/o:hp:comware:7.1.070</cpe></service></port>
+<port protocol="tcp" portid="23"><state state="open" reason="syn-ack" reason_ttl="255"/><service name="telnet" servicefp="SF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B525D9%P=i686-pc-windows-windows%r(NULL,1C,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01Login:\x20&quot;)%r(GenericLines,32,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01Login:\x20\r\0\r\nLogin:\x20\r\0\r\nLogin:\x20&quot;)%r(tn3270,4E,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfa\x18\x01\xff\xf0\xff\xfe\x19\xff\xfc\x19\xff\xfd\0\xff\xfb\0\xff\xfb\x01&apos;ibm-3279-4-e&apos;:\x20unknown\x20terminal\x20type\.\n&quot;)%r(GetRequest,4A,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01GET\x20/\x20HTTP/1\.0\r\n\r\nLogin:\x20GET\x20/\x20HTTP/1\.0\r\0\r\nPassword:\x20&quot;)%r(RPCCheck,72,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01\x80\^@\^@\(r\xfe\^\]\^@\^@\^@\^@\^@\^@\^@\^B\^@\^A\x86\xa0\^@\^A\x97\|\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@Login:\x20\x80\(r\xfe\x86\xa0\x97\|&quot;)%r(Help,34,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01HELP\r\nLogin:\x20HELP\r\0\r\nPassword:\x20&quot;)%r(SIPOptions,11F,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01OPTIONS\x20sip:nm\x20SIP/2\.0\r\nVia:\x20SIP/2\.0/TCP\x20nm;branch=foo\r\nFrom:\x20&lt;sip:nm@nm&gt;;tag=root\r\nTo:\x20&lt;sip:nm2@nm2&gt;\r\nCall-ID:\x2050000\r\nCSeq:\x2042\x20OPTIONS\r\nMax-Forwards:\x2070\r\nContent-Length:\x200\r\nContact:\x20&lt;sip:nm@nm&gt;\r\nAccept:\x20application/sdp\r\n\r\nLogin:\x20OPTIONS\x20sip:nm\x20SIP/2\.0\r\0\r\nPassword:\x20&quot;)%r(NCP,56,&quot;\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01DmdT\^@\^@\^@\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\^@\^@\^@\^A\^@\^@\^@\^@\^@Login:\x20&quot;);" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="255"/><service name="http" product="HTTPD" servicefp="SF-Port80-TCP:V=7.95%I=7%D=9/1%Time=68B525D8%P=i686-pc-windows-windows%r(GetRequest,10E,&quot;HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nLocation:\x20/web/index\.html\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:52:57\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(HTTPOptions,F4,&quot;HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:52:58\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(RTSPRequest,FC,&quot;HTTP/1\.1\x20505\x20HTTP\x20Version\x20not\x20supported\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:52:58\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(FourOhFourRequest,EB,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:03\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(SIPOptions,ED,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:54:10\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;);" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="255"/><service name="https" product="HTTPD" servicefp="SF-Port443-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B525DE%P=i686-pc-windows-windows%r(HTTPOptions,F4,&quot;HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:04\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(FourOhFourRequest,EB,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:04\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;)%r(RTSPRequest,FC,&quot;HTTP/1\.1\x20505\x20HTTP\x20Version\x20not\x20supported\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:14\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n&quot;);" tunnel="ssl" method="probed" conf="10"/></port>
+</ports>
+<times srtt="3326" rttvar="818" to="100000"/>
+</host>
+<runstats><finished time="1756702318" timestr="Mon Sep  1 10:21:58 2025" summary="Nmap done at Mon Sep  1 10:21:58 2025; 1 IP address (1 host up) scanned in 1020.14 seconds" elapsed="1020.14" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

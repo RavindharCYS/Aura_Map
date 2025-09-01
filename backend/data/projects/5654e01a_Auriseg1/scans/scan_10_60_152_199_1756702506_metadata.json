@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.199",
+  "scan_result": {
+    "target_ip": "10.60.152.199",
+    "status": "completed",
+    "start_time": "2025-09-01T10:24:54.002836",
+    "end_time": "2025-09-01T10:25:06.081536",
+    "duration": "0:00:12.078700",
+    "xml_file": "scan_10_60_152_199_1756702494.xml",
+    "nmap_file": "scan_10_60_152_199_1756702494.nmap",
+    "gnmap_file": "scan_10_60_152_199_1756702494.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:24 India Standard Time\nNmap scan report for 10.60.152.199\nHost is up (0.10s latency).\nAll 100 scanned ports on 10.60.152.199 are in ignored states.\nNot shown: 100 filtered tcp ports (no-response)\nMAC Address: 14:AC:60:FA:57:49 (Cloud Network Technology Singapore PTE.)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 12.02 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_199_1756702494.xml -oN scan_10_60_152_199_1756702494.nmap -oG scan_10_60_152_199_1756702494.gnmap 10.60.152.199",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "12.02",
+      "timestr": "Mon Sep  1 10:25:06 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:25:06.082022"
+}

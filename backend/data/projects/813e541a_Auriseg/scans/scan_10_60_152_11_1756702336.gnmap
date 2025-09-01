@@ -1,0 +1,5 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:22:16 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_11_1756702336.xml -oN scan_10_60_152_11_1756702336.nmap -oG scan_10_60_152_11_1756702336.gnmap 10.60.152.11
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.60.152.11 ()	Status: Up
+Host: 10.60.152.11 ()	Ports: 80/open/tcp//http//nginx/, 10000/open/tcp//snet-sensor-mgmt?///	Ignored State: closed (65533)
+# Nmap done at Mon Sep  1 10:23:58 2025 -- 1 IP address (1 host up) scanned in 102.71 seconds

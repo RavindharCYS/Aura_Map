@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 09:57:43 2025 as: nmap -p- -sC -sV -O -T3 -oX scan_superapppreprod_cholainsurance_com_1756700863.xml -oN scan_superapppreprod_cholainsurance_com_1756700863.nmap -oG scan_superapppreprod_cholainsurance_com_1756700863.gnmap superapppreprod.cholainsurance.com
+Host: 13.235.126.164 (ec2-13-235-126-164.ap-south-1.compute.amazonaws.com)	Status: Up
+Host: 13.235.126.164 (ec2-13-235-126-164.ap-south-1.compute.amazonaws.com)	Ports: 80/open/tcp//http//AWS Elastic Load Balancing/, 443/open/tcp//ssl|http//nginx/, 2000/open/tcp//tcpwrapped///, 5060/open/tcp//tcpwrapped///, 8020/open/tcp//http-proxy//FortiGuard Web Filtering/	Ignored State: closed (65530)	Seq Index: 261	IP ID Seq: All zeros
+# Nmap done at Mon Sep  1 09:59:35 2025 -- 1 IP address (1 host up) scanned in 112.79 seconds

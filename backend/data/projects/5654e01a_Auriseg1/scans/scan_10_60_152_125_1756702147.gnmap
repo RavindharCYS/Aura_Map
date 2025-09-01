@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:19:07 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_125_1756702147.xml -oN scan_10_60_152_125_1756702147.nmap -oG scan_10_60_152_125_1756702147.gnmap 10.60.152.125
+Host: 10.60.152.125 ()	Status: Up
+Host: 10.60.152.125 ()	Ports: 80/open/tcp//http//Apache httpd 2.4.58 (OpenSSL|3.1.3 PHP|8.2.12)/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 443/open/tcp//ssl|http//Apache httpd 2.4.58 (OpenSSL|3.1.3 PHP|8.2.12)/, 445/open/tcp//microsoft-ds?///, 3306/open/tcp//mysql//MariaDB 10.3.23 or earlier (unauthorized)/	Ignored State: filtered (94)
+# Nmap done at Mon Sep  1 10:19:23 2025 -- 1 IP address (1 host up) scanned in 15.73 seconds

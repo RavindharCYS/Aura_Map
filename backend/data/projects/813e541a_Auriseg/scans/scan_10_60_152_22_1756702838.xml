@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:30:38 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_22_1756702838.xml -oN scan_10_60_152_22_1756702838.nmap -oG scan_10_60_152_22_1756702838.gnmap 10.60.152.22 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_22_1756702838.xml -oN scan_10_60_152_22_1756702838.nmap -oG scan_10_60_152_22_1756702838.gnmap 10.60.152.22" start="1756702838" startstr="Mon Sep  1 10:30:38 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756702839"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.22" addrtype="ipv4"/>
+<address addr="94:BB:43:85:FC:B2" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756702839" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756702839"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756702839"/>
+<taskbegin task="SYN Stealth Scan" time="1756702839"/>
+<taskprogress task="SYN Stealth Scan" time="1756702870" percent="2.02" remaining="1503" etc="1756704372"/>
+<taskprogress task="SYN Stealth Scan" time="1756702912" percent="4.88" remaining="1423" etc="1756704335"/>
+<taskprogress task="SYN Stealth Scan" time="1756702981" percent="9.54" remaining="1346" etc="1756704327"/>
+<taskprogress task="SYN Stealth Scan" time="1756703053" percent="14.43" remaining="1269" etc="1756704322"/>
+<taskprogress task="SYN Stealth Scan" time="1756703083" percent="26.13" remaining="690" etc="1756703773"/>
+<taskprogress task="SYN Stealth Scan" time="1756703113" percent="41.74" remaining="383" etc="1756703496"/>
+<taskprogress task="SYN Stealth Scan" time="1756703143" percent="56.57" remaining="234" etc="1756703376"/>
+<taskprogress task="SYN Stealth Scan" time="1756703173" percent="71.50" remaining="134" etc="1756703306"/>
+<taskprogress task="SYN Stealth Scan" time="1756703203" percent="88.31" remaining="49" etc="1756703251"/>
+<taskend task="SYN Stealth Scan" time="1756703225" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756703225"/>
+<taskprogress task="Service scan" time="1756703267" percent="37.50" remaining="70" etc="1756703337"/>
+<taskend task="Service scan" time="1756703308" extrainfo="8 services on 1 host"/>
+<taskbegin task="NSE" time="1756703308"/>
+<taskend task="NSE" time="1756703314"/>
+<taskbegin task="NSE" time="1756703314"/>
+<taskend task="NSE" time="1756703314"/>
+<host starttime="1756702839" endtime="1756703314"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.22" addrtype="ipv4"/>
+<address addr="94:BB:43:85:FC:B2" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65527">
+<extrareasons reason="no-response" count="65527" proto="tcp" ports="1-7069,7071-7679,7681-50724,50731-65535"/>
+</extraports>
+<port protocol="tcp" portid="7070"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="realserver" tunnel="ssl" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7680"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="pando-pub" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50725"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50725-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%r(NULL,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(GenericLines,40,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(Help,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50726"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50726-TCP:V=7.95%I=7%D=9/1%Time=68B52A04%P=i686-pc-windows-windows%r(GenericLines,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(Help,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50727"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50727-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%r(NULL,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(GenericLines,40,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(Help,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50728"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50728-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%r(NULL,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(GenericLines,40,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(Help,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50729"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50729-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%r(NULL,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(GenericLines,40,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(Help,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50730"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50730-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%r(NULL,20,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;)%r(GenericLines,40,&quot;\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0\x8e&apos;\xe5\xac\x05\0\x07\0\t\0\r\xc8\r\0\x0f\0\x11\0\x13\0\x15\0\x17\0\x19\0\x1b\0\x1d\0\x1f\0&quot;);" method="table" conf="3"/></port>
+</ports>
+<times srtt="47816" rttvar="6048" to="100000"/>
+</host>
+<runstats><finished time="1756703314" timestr="Mon Sep  1 10:38:34 2025" summary="Nmap done at Mon Sep  1 10:38:34 2025; 1 IP address (1 host up) scanned in 475.90 seconds" elapsed="475.90" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

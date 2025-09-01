@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:12:17 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_43_1756701736.xml -oN scan_10_60_152_43_1756701736.nmap -oG scan_10_60_152_43_1756701736.gnmap 10.60.152.43
+Host: 10.60.152.43 ()	Status: Up
+Host: 10.60.152.43 ()	Ports: 5357/open/tcp//http//Microsoft HTTPAPI httpd 2.0 (SSDP|UPnP)/, 7070/open/tcp//ssl|realserver?///	Ignored State: filtered (98)
+# Nmap done at Mon Sep  1 10:12:32 2025 -- 1 IP address (1 host up) scanned in 15.93 seconds

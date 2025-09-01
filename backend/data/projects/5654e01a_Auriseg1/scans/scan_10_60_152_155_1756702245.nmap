@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:20:45 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_155_1756702245.xml -oN scan_10_60_152_155_1756702245.nmap -oG scan_10_60_152_155_1756702245.gnmap 10.60.152.155
+Nmap scan report for 10.60.152.155
+Host is up (0.083s latency).
+Not shown: 99 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+3306/tcp open  mysql   MySQL (unauthorized)
+MAC Address: 7C:70:DB:54:1F:AF (Intel Corporate)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:20:53 2025 -- 1 IP address (1 host up) scanned in 7.47 seconds

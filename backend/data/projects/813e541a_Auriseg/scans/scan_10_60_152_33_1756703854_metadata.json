@@ -1,0 +1,30 @@
+{
+  "target_ip": "10.60.152.33",
+  "scan_result": {
+    "target_ip": "10.60.152.33",
+    "status": "failed",
+    "start_time": "2025-09-01T10:47:33.367742",
+    "end_time": "2025-09-01T10:47:34.574689",
+    "duration": "0:00:01.206947",
+    "xml_file": "scan_10_60_152_33_1756703853.xml",
+    "nmap_file": "scan_10_60_152_33_1756703853.nmap",
+    "gnmap_file": "scan_10_60_152_33_1756703853.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:47 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:47\nScanning 10.60.152.33 [1 port]\n",
+    "stderr": "",
+    "return_code": 3221225786,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_33_1756703853.xml -oN scan_10_60_152_33_1756703853.nmap -oG scan_10_60_152_33_1756703853.gnmap 10.60.152.33",
+    "parse_error": "no element found: line 10, column 0"
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:47:34.576451"
+}

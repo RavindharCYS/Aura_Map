@@ -1,0 +1,42 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:14:58 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_78_1756701898.xml -oN scan_10_60_152_78_1756701898.nmap -oG scan_10_60_152_78_1756701898.gnmap 10.60.152.78
+Nmap scan report for 10.60.152.78
+Host is up (0.0044s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+23/tcp open  telnet
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B524D0%P=i686-pc-windows-windows%r(N
+SF:ULL,5C,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x
+SF:20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on
+SF:\x20an\x20MIPS\r\n\r\(none\)\x20login:\x20")%r(GenericLines,7C,"\xff\xf
+SF:d\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x
+SF:20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\
+SF:r\n\r\(none\)\x20login:\x20\r\n\r\n\(none\)\x20login:\x20\(none\)\x20lo
+SF:gin:\x20")%r(tn3270,6D,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x0
+SF:3\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\
+SF:x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\^@IBM-3279-4-E\xfb\^Y\(none\)\x20l
+SF:ogin:\x20")%r(GetRequest,6E,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\x
+SF:fb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKe
+SF:rnel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rGET\x20/\x20HTTP/1\.0\r\n\r\n\
+SF:(none\)\x20login:\x20")%r(RPCCheck,58,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb
+SF:\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MI
+SF:PS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\r\x80\^@\^@\(r\xfe\^\
+SF:]")%r(Help,62,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWe
+SF:lcome\x20to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.
+SF:8\x20on\x20an\x20MIPS\r\n\rHELP\r\n\(none\)\x20login:\x20")%r(SIPOption
+SF:s,13B,"\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x2
+SF:0to\x20Linux\x20\(ZMM220\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\
+SF:x20an\x20MIPS\r\n\rOPTIONS\x20sip:nm\x20SIP/2\.0\r\nVia:\x20SIP/2\.0/TC
+SF:P\x20nm;branch=foo\r\nFrom:\x20<sip:nm@nm>;tag=root\r\nTo:\x20<sip:nm2@
+SF:nm2>\r\nCall-ID:\x2050000\r\nCSeq:\x2042\x20OPTIONS\r\nMax-Forwards:\x2
+SF:070\r\nContent-Length:\x200\r\nContact:\x20<sip:nm@nm>\r\nAccept:\x20ap
+SF:plication/sdp\r\n\r\n\(none\)\x20login:\x20")%r(NCP,88,"\xff\xfd\x01\xf
+SF:f\xfd\x1f\xff\xfb\x01\xff\xfb\x03\r\r\nWelcome\x20to\x20Linux\x20\(ZMM2
+SF:20\)\x20for\x20MIPS\r\n\rKernel\x203\.0\.8\x20on\x20an\x20MIPS\r\n\rDmd
+SF:T\^@\^@\^@\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\
+SF:x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\^@\^@\^@\^A
+SF:\^@\^@\^@\^@\^@");
+MAC Address: 00:17:61:11:C2:37 (Private)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:15:45 2025 -- 1 IP address (1 host up) scanned in 46.89 seconds

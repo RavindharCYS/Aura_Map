@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:09:14 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_4_1756701554.xml -oN scan_10_60_152_4_1756701554.nmap -oG scan_10_60_152_4_1756701554.gnmap 10.60.152.4
+# Nmap done at Mon Sep  1 10:09:17 2025 -- 1 IP address (0 hosts up) scanned in 2.84 seconds

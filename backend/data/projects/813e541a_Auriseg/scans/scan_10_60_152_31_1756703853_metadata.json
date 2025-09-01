@@ -1,0 +1,30 @@
+{
+  "target_ip": "10.60.152.31",
+  "scan_result": {
+    "target_ip": "10.60.152.31",
+    "status": "failed",
+    "start_time": "2025-09-01T10:47:08.042829",
+    "end_time": "2025-09-01T10:47:33.092185",
+    "duration": "0:00:25.049356",
+    "xml_file": "scan_10_60_152_31_1756703828.xml",
+    "nmap_file": "scan_10_60_152_31_1756703828.nmap",
+    "gnmap_file": "scan_10_60_152_31_1756703828.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:47 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:47\nScanning 10.60.152.31 [1 port]\nCompleted ARP Ping Scan at 10:47, 0.19s elapsed (1 total hosts)\nInitiating Parallel DNS resolution of 1 host. at 10:47\nCompleted Parallel DNS resolution of 1 host. at 10:47, 0.01s elapsed\nInitiating SYN Stealth Scan at 10:47\nScanning 10.60.152.31 [65535 ports]\nDiscovered open port 139/tcp on 10.60.152.31\nDiscovered open port 445/tcp on 10.60.152.31\nDiscovered open port 135/tcp on 10.60.152.31\nDiscovered open port 7680/tcp on 10.60.152.31\nDiscovered open port 7070/tcp on 10.60.152.31\nDiscovered open port 49667/tcp on 10.60.152.31\nDiscovered open port 912/tcp on 10.60.152.31\nDiscovered open port 53604/tcp on 10.60.152.31\nDiscovered open port 5357/tcp on 10.60.152.31\n",
+    "stderr": "",
+    "return_code": 3221225786,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_31_1756703828.xml -oN scan_10_60_152_31_1756703828.nmap -oG scan_10_60_152_31_1756703828.gnmap 10.60.152.31",
+    "parse_error": "no element found: line 20, column 0"
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:47:33.093477"
+}

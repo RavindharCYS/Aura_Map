@@ -1,0 +1,112 @@
+{
+  "target_ip": "10.60.152.22",
+  "scan_result": {
+    "target_ip": "10.60.152.22",
+    "status": "completed",
+    "start_time": "2025-09-01T10:30:38.527290",
+    "end_time": "2025-09-01T10:38:34.659251",
+    "duration": "0:07:56.131961",
+    "xml_file": "scan_10_60_152_22_1756702838.xml",
+    "nmap_file": "scan_10_60_152_22_1756702838.nmap",
+    "gnmap_file": "scan_10_60_152_22_1756702838.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:30 India Standard Time\nHappy 28th Birthday to Nmap, may it live to be 128!\nNSE: Loaded 47 scripts for scanning.\nInitiating ARP Ping Scan at 10:30\nScanning 10.60.152.22 [1 port]\nCompleted ARP Ping Scan at 10:30, 0.20s elapsed (1 total hosts)\nInitiating Parallel DNS resolution of 1 host. at 10:30\nCompleted Parallel DNS resolution of 1 host. at 10:30, 0.01s elapsed\nInitiating SYN Stealth Scan at 10:30\nScanning 10.60.152.22 [65535 ports]\nSYN Stealth Scan Timing: About 2.02% done; ETC: 10:56 (0:25:02 remaining)\nSYN Stealth Scan Timing: About 4.88% done; ETC: 10:55 (0:23:43 remaining)\nSYN Stealth Scan Timing: About 9.54% done; ETC: 10:55 (0:22:26 remaining)\nSYN Stealth Scan Timing: About 14.43% done; ETC: 10:55 (0:21:09 remaining)\nDiscovered open port 50726/tcp on 10.60.152.22\nSYN Stealth Scan Timing: About 26.13% done; ETC: 10:46 (0:11:30 remaining)\nDiscovered open port 50727/tcp on 10.60.152.22\nDiscovered open port 7680/tcp on 10.60.152.22\nDiscovered open port 50725/tcp on 10.60.152.22\nSYN Stealth Scan Timing: About 41.74% done; ETC: 10:41 (0:06:23 remaining)\nDiscovered open port 50730/tcp on 10.60.152.22\nSYN Stealth Scan Timing: About 56.57% done; ETC: 10:39 (0:03:53 remaining)\nDiscovered open port 50729/tcp on 10.60.152.22\nDiscovered open port 7070/tcp on 10.60.152.22\nSYN Stealth Scan Timing: About 71.50% done; ETC: 10:38 (0:02:13 remaining)\nSYN Stealth Scan Timing: About 88.31% done; ETC: 10:37 (0:00:48 remaining)\nDiscovered open port 50728/tcp on 10.60.152.22\nCompleted SYN Stealth Scan at 10:37, 385.95s elapsed (65535 total ports)\nInitiating Service scan at 10:37\nScanning 8 services on 10.60.152.22\nService scan Timing: About 37.50% done; ETC: 10:38 (0:01:10 remaining)\nCompleted Service scan at 10:38, 83.02s elapsed (8 services on 1 host)\nNSE: Script scanning 10.60.152.22.\nInitiating NSE at 10:38\nCompleted NSE at 10:38, 5.40s elapsed\nInitiating NSE at 10:38\nCompleted NSE at 10:38, 0.38s elapsed\nNmap scan report for 10.60.152.22\nHost is up (0.048s latency).\nNot shown: 65527 filtered tcp ports (no-response)\nPORT      STATE SERVICE         VERSION\n7070/tcp  open  ssl/realserver?\n7680/tcp  open  pando-pub?\n50725/tcp open  unknown\n50726/tcp open  unknown\n50727/tcp open  unknown\n50728/tcp open  unknown\n50729/tcp open  unknown\n50730/tcp open  unknown\n6 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50725-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%\nSF:r(NULL,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x1\nSF:5\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(GenericLines,40,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x\nSF:17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(Help,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\nSF:\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50726-TCP:V=7.95%I=7%D=9/1%Time=68B52A04%P=i686-pc-windows-windows%\nSF:r(GenericLines,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\\nSF:x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(Help,20,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50727-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%\nSF:r(NULL,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x1\nSF:5\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(GenericLines,40,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x\nSF:17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(Help,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\nSF:\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50728-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%\nSF:r(NULL,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x1\nSF:5\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(GenericLines,40,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x\nSF:17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(Help,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\nSF:\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50729-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%\nSF:r(NULL,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x1\nSF:5\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(GenericLines,40,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x\nSF:17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(Help,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\nSF:\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port50730-TCP:V=7.95%I=7%D=9/1%Time=68B529FF%P=i686-pc-windows-windows%\nSF:r(NULL,20,\"\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x1\nSF:5\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\")%r(GenericLines,40,\"\\x8e'\\xe5\\xac\\x0\nSF:5\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x17\\0\\x19\\0\\x1b\\0\\x1d\\0\nSF:\\x1f\\0\\x8e'\\xe5\\xac\\x05\\0\\x07\\0\\t\\0\\r\\xc8\\r\\0\\x0f\\0\\x11\\0\\x13\\0\\x15\\0\\x\nSF:17\\0\\x19\\0\\x1b\\0\\x1d\\0\\x1f\\0\");\nMAC Address: 94:BB:43:85:FC:B2 (AzureWave Technology)\n\nRead data files from: C:\\Program Files (x86)\\Nmap\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 475.90 seconds\n           Raw packets sent: 131188 (5.772MB) | Rcvd: 763 (33.088KB)\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_22_1756702838.xml -oN scan_10_60_152_22_1756702838.nmap -oG scan_10_60_152_22_1756702838.gnmap 10.60.152.22",
+    "host_status": "up",
+    "open_ports": 8,
+    "services": [
+      {
+        "port": "7070",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "realserver",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "7680",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "pando-pub",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50725",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50726",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50727",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50728",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50729",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "50730",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "unknown",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "475.90",
+      "timestr": "Mon Sep  1 10:38:34 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": true
+  },
+  "timestamp": "2025-09-01T10:38:34.661225"
+}

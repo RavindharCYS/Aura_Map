@@ -1,0 +1,76 @@
+{
+  "target_ip": "10.60.152.1",
+  "scan_result": {
+    "target_ip": "10.60.152.1",
+    "status": "completed",
+    "start_time": "2025-09-01T10:06:25.555762",
+    "end_time": "2025-09-01T10:09:11.146698",
+    "duration": "0:02:45.590936",
+    "xml_file": "scan_10_60_152_1_1756701385.xml",
+    "nmap_file": "scan_10_60_152_1_1756701385.nmap",
+    "gnmap_file": "scan_10_60_152_1_1756701385.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:06 India Standard Time\nNmap scan report for 10.60.152.1\nHost is up (0.21s latency).\nNot shown: 96 closed tcp ports (reset)\nPORT    STATE SERVICE   VERSION\n22/tcp  open  ssh       HP Comware switch sshd 7.1.070 (protocol 2.0)\n23/tcp  open  telnet\n80/tcp  open  http      HTTPD\n443/tcp open  ssl/https HTTPD\n3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B522D1%P=i686-pc-windows-windows%r(N\nSF:ULL,1C,\"\\xff\\xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xf\nSF:f\\xfb\\x05\\xff\\xfb\\x01Login:\\x20\")%r(GenericLines,32,\"\\xff\\xfd\\x18\\xff\\x\nSF:fd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\\xfb\\x01Login\nSF::\\x20\\r\\0\\r\\nLogin:\\x20\\r\\0\\r\\nLogin:\\x20\")%r(tn3270,4E,\"\\xff\\xfd\\x18\\x\nSF:ff\\xfd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\\xfa\\x18\\\nSF:x01\\xff\\xf0\\xff\\xfe\\x19\\xff\\xfc\\x19\\xff\\xfd\\0\\xff\\xfb\\0\\xff\\xfb\\x01'ibm\nSF:-3279-4-e':\\x20unknown\\x20terminal\\x20type\\.\\n\")%r(GetRequest,4A,\"\\xff\\\nSF:xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\nSF:\\xfb\\x01GET\\x20/\\x20HTTP/1\\.0\\r\\n\\r\\nLogin:\\x20GET\\x20/\\x20HTTP/1\\.0\\r\\\nSF:0\\r\\nPassword:\\x20\")%r(RPCCheck,72,\"\\xff\\xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\\x0\nSF:3\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\\xfb\\x01\\x80\\^@\\^@\\(r\\xfe\\^\\]\\\nSF:^@\\^@\\^@\\^@\\^@\\^@\\^@\\^B\\^@\\^A\\x86\\xa0\\^@\\^A\\x97\\|\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\\nSF:^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@\\^@Login:\\x20\\x80\\(r\\xfe\\x86\\xa0\\x97\nSF:\\|\")%r(Help,34,\"\\xff\\xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\xff\\xf\nSF:d\\x1f\\xff\\xfb\\x05\\xff\\xfb\\x01HELP\\r\\nLogin:\\x20HELP\\r\\0\\r\\nPassword:\\x2\nSF:0\")%r(SIPOptions,11F,\"\\xff\\xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\\x03\\xff\\xfd\\x01\\\nSF:xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\\xfb\\x01OPTIONS\\x20sip:nm\\x20SIP/2\\.0\\r\\nVia\nSF::\\x20SIP/2\\.0/TCP\\x20nm;branch=foo\\r\\nFrom:\\x20<sip:nm@nm>;tag=root\\r\\n\nSF:To:\\x20<sip:nm2@nm2>\\r\\nCall-ID:\\x2050000\\r\\nCSeq:\\x2042\\x20OPTIONS\\r\\n\nSF:Max-Forwards:\\x2070\\r\\nContent-Length:\\x200\\r\\nContact:\\x20<sip:nm@nm>\\\nSF:r\\nAccept:\\x20application/sdp\\r\\n\\r\\nLogin:\\x20OPTIONS\\x20sip:nm\\x20SIP\nSF:/2\\.0\\r\\0\\r\\nPassword:\\x20\")%r(NCP,56,\"\\xff\\xfd\\x18\\xff\\xfd\\x20\\xff\\xfb\nSF:\\x03\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x05\\xff\\xfb\\x01DmdT\\^@\\^@\\^@\\x08\\x\nSF:20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\\nSF:x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\^@\\^@\\^@\\^A\\^@\\^@\\^@\\^@\\^@L\nSF:ogin:\\x20\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port80-TCP:V=7.95%I=7%D=9/1%Time=68B522D1%P=i686-pc-windows-windows%r(G\nSF:etRequest,10E,\"HTTP/1\\.0\\x20301\\x20Moved\\x20Permanently\\r\\nLocation:\\x2\nSF:0/web/index\\.html\\r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\\nSF:x20Mon,\\x2001\\x20Sep\\x202025\\x2004:40:02\\x20GMT\\r\\nConnection:\\x20close\nSF:\\r\\nContent-Type:\\x20text/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\n\nSF:X-Content-Type-Options:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\\nSF:n\\r\\n\")%r(HTTPOptions,F4,\"HTTP/1\\.0\\x20405\\x20Method\\x20Not\\x20Allowed\\\nSF:r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x2001\\x20S\nSF:ep\\x202025\\x2004:40:02\\x20GMT\\r\\nConnection:\\x20close\\r\\nContent-Type:\\\nSF:x20text/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\nX-Content-Type-Opt\nSF:ions:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(RTSPRequ\nSF:est,FC,\"HTTP/1\\.1\\x20505\\x20HTTP\\x20Version\\x20not\\x20supported\\r\\nCont\nSF:ent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202\nSF:025\\x2004:40:02\\x20GMT\\r\\nConnection:\\x20close\\r\\nContent-Type:\\x20text\nSF:/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\nX-Content-Type-Options:\\x\nSF:20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(FourOhFourReque\nSF:st,EB,\"HTTP/1\\.0\\x20404\\x20Not\\x20Found\\r\\nContent-Length:\\x200\\r\\nServ\nSF:er:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:40:07\\x20GMT\\r\nSF:\\nConnection:\\x20close\\r\\nContent-Type:\\x20text/html\\r\\nX-XSS-Protectio\nSF:n:\\x201;mode-block\\r\\nX-Content-Type-Options:\\x20nosniff\\r\\nX-Frame-Opt\nSF:ions:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(SIPOptions,ED,\"HTTP/1\\.1\\x20400\\x20Bad\\\nSF:x20Request\\r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\nSF:\\x2001\\x20Sep\\x202025\\x2004:41:15\\x20GMT\\r\\nConnection:\\x20close\\r\\nCon\nSF:tent-Type:\\x20text/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\nX-Conte\nSF:nt-Type-Options:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\");\n==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============\nSF-Port443-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B522D7%P=i686-pc-windows-wind\nSF:ows%r(GetRequest,10E,\"HTTP/1\\.0\\x20301\\x20Moved\\x20Permanently\\r\\nLocat\nSF:ion:\\x20/web/index\\.html\\r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\\nSF:nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:40:09\\x20GMT\\r\\nConnection:\\x\nSF:20close\\r\\nContent-Type:\\x20text/html\\r\\nX-XSS-Protection:\\x201;mode-bl\nSF:ock\\r\\nX-Content-Type-Options:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEOR\nSF:IGIN\\r\\n\\r\\n\")%r(HTTPOptions,F4,\"HTTP/1\\.0\\x20405\\x20Method\\x20Not\\x20A\nSF:llowed\\r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x20\nSF:01\\x20Sep\\x202025\\x2004:40:09\\x20GMT\\r\\nConnection:\\x20close\\r\\nContent\nSF:-Type:\\x20text/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\nX-Content-T\nSF:ype-Options:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(F\nSF:ourOhFourRequest,EB,\"HTTP/1\\.0\\x20404\\x20Not\\x20Found\\r\\nContent-Length\nSF::\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:\nSF:40:09\\x20GMT\\r\\nConnection:\\x20close\\r\\nContent-Type:\\x20text/html\\r\\nX\nSF:-XSS-Protection:\\x201;mode-block\\r\\nX-Content-Type-Options:\\x20nosniff\\\nSF:r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(RTSPRequest,FC,\"HTTP/1\\.1\nSF:\\x20505\\x20HTTP\\x20Version\\x20not\\x20supported\\r\\nContent-Length:\\x200\\\nSF:r\\nServer:\\x20HTTPD\\r\\nDate:\\x20Mon,\\x2001\\x20Sep\\x202025\\x2004:40:19\\x\nSF:20GMT\\r\\nConnection:\\x20close\\r\\nContent-Type:\\x20text/html\\r\\nX-XSS-Pr\nSF:otection:\\x201;mode-block\\r\\nX-Content-Type-Options:\\x20nosniff\\r\\nX-Fr\nSF:ame-Options:\\x20SAMEORIGIN\\r\\n\\r\\n\")%r(SIPOptions,ED,\"HTTP/1\\.1\\x20400\\\nSF:x20Bad\\x20Request\\r\\nContent-Length:\\x200\\r\\nServer:\\x20HTTPD\\r\\nDate:\\\nSF:x20Mon,\\x2001\\x20Sep\\x202025\\x2004:41:27\\x20GMT\\r\\nConnection:\\x20close\nSF:\\r\\nContent-Type:\\x20text/html\\r\\nX-XSS-Protection:\\x201;mode-block\\r\\n\nSF:X-Content-Type-Options:\\x20nosniff\\r\\nX-Frame-Options:\\x20SAMEORIGIN\\r\\\nSF:n\\r\\n\");\nMAC Address: 54:77:8A:4C:47:A2 (Hewlett Packard Enterprise \u00e2\u20ac\u201c WW Corporate Headquarters)\nService Info: OS: Comware; CPE: cpe:/o:hp:comware:7.1.070\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 165.51 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_1_1756701385.xml -oN scan_10_60_152_1_1756701385.nmap -oG scan_10_60_152_1_1756701385.gnmap 10.60.152.1",
+    "host_status": "up",
+    "open_ports": 4,
+    "services": [
+      {
+        "port": "22",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "ssh",
+        "version": "7.1.070",
+        "product": "HP Comware switch sshd",
+        "extrainfo": "protocol 2.0"
+      },
+      {
+        "port": "23",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "telnet",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "HTTPD",
+        "extrainfo": ""
+      },
+      {
+        "port": "443",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "https",
+        "version": "",
+        "product": "HTTPD",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "165.51",
+      "timestr": "Mon Sep  1 10:09:11 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:09:11.147430"
+}

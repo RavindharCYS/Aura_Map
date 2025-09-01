@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:22:12 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_9_1756702332.xml -oN scan_10_60_152_9_1756702332.nmap -oG scan_10_60_152_9_1756702332.gnmap 10.60.152.9 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_9_1756702332.xml -oN scan_10_60_152_9_1756702332.nmap -oG scan_10_60_152_9_1756702332.gnmap 10.60.152.9" start="1756702332" startstr="Mon Sep  1 10:22:12 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756702332"/>
+<taskend task="ARP Ping Scan" time="1756702334" extrainfo="1 total hosts"/>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="10.60.152.9" addrtype="ipv4"/>
+</host>
+<runstats><finished time="1756702334" timestr="Mon Sep  1 10:22:14 2025" summary="Nmap done at Mon Sep  1 10:22:14 2025; 1 IP address (0 hosts up) scanned in 1.84 seconds" elapsed="1.84" exit="success"/><hosts up="0" down="1" total="1"/>
+</runstats>
+</nmaprun>

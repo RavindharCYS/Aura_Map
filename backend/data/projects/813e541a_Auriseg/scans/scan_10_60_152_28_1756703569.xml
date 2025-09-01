@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:42:49 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_28_1756703569.xml -oN scan_10_60_152_28_1756703569.nmap -oG scan_10_60_152_28_1756703569.gnmap 10.60.152.28 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_28_1756703569.xml -oN scan_10_60_152_28_1756703569.nmap -oG scan_10_60_152_28_1756703569.gnmap 10.60.152.28" start="1756703569" startstr="Mon Sep  1 10:42:49 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756703570"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.28" addrtype="ipv4"/>
+<address addr="D2:66:3A:0F:AE:FE" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756703570" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756703570"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756703570"/>
+<taskbegin task="SYN Stealth Scan" time="1756703570"/>
+<taskprogress task="SYN Stealth Scan" time="1756703601" percent="27.95" remaining="80" etc="1756703681"/>
+<taskprogress task="SYN Stealth Scan" time="1756703631" percent="59.60" remaining="42" etc="1756703672"/>
+<taskend task="SYN Stealth Scan" time="1756703668" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756703668"/>
+<taskend task="Service scan" time="1756703821" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1756703821"/>
+<taskend task="NSE" time="1756703821"/>
+<taskbegin task="NSE" time="1756703821"/>
+<taskend task="NSE" time="1756703822"/>
+<host starttime="1756703570" endtime="1756703822"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.28" addrtype="ipv4"/>
+<address addr="D2:66:3A:0F:AE:FE" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65534">
+<extrareasons reason="reset" count="65534" proto="tcp" ports="1-46887,46889-65535"/>
+</extraports>
+<port protocol="tcp" portid="46888"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port46888-TCP:V=7.95%I=7%D=9/1%Time=68B52BBA%P=i686-pc-windows-windows%r(NULL,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(GenericLines,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(GetRequest,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(HTTPOptions,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(RTSPRequest,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(RPCCheck,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(DNSVersionBindReqTCP,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(DNSStatusRequestTCP,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;)%r(Help,6C,&quot;\0j\x01\0\x01OAFP_B7E858CF078BBDEB3A272F73F287039\x20\r\x01\0\x02\0\0\x02\xff\xf5\x03\x03\xfe\x04&apos;\x10\x05\0\n\x06\x06EB2101\x07\x07OnePlus\x08\x0eOnePlus\x20Nord\x202\n\x08\x0b\x01\x0c\x0c\r\x01\x0eJ_\xf8\.\]R&quot;);" method="table" conf="3"/></port>
+</ports>
+<times srtt="10837" rttvar="2975" to="100000"/>
+</host>
+<runstats><finished time="1756703822" timestr="Mon Sep  1 10:47:02 2025" summary="Nmap done at Mon Sep  1 10:47:02 2025; 1 IP address (1 host up) scanned in 253.24 seconds" elapsed="253.24" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

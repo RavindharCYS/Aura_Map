@@ -1,0 +1,49 @@
+{
+  "target_ip": "10.60.152.78",
+  "scan_result": {
+    "target_ip": "10.60.152.78",
+    "status": "completed",
+    "start_time": "2025-09-01T10:14:58.122477",
+    "end_time": "2025-09-01T10:15:45.080346",
+    "duration": "0:00:46.957869",
+    "xml_file": "scan_10_60_152_78_1756701898.xml",
+    "nmap_file": "scan_10_60_152_78_1756701898.nmap",
+    "gnmap_file": "scan_10_60_152_78_1756701898.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:14 India Standard Time\nNmap scan report for 10.60.152.78\nHost is up (0.0044s latency).\nNot shown: 99 closed tcp ports (reset)\nPORT   STATE SERVICE VERSION\n23/tcp open  telnet\n1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :\nSF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B524D0%P=i686-pc-windows-windows%r(N\nSF:ULL,5C,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x03\\r\\r\\nWelcome\\x\nSF:20to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\x203\\.0\\.8\\x20on\nSF:\\x20an\\x20MIPS\\r\\n\\r\\(none\\)\\x20login:\\x20\")%r(GenericLines,7C,\"\\xff\\xf\nSF:d\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x03\\r\\r\\nWelcome\\x20to\\x20Linux\\x\nSF:20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\x203\\.0\\.8\\x20on\\x20an\\x20MIPS\\\nSF:r\\n\\r\\(none\\)\\x20login:\\x20\\r\\n\\r\\n\\(none\\)\\x20login:\\x20\\(none\\)\\x20lo\nSF:gin:\\x20\")%r(tn3270,6D,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x0\nSF:3\\r\\r\\nWelcome\\x20to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\\nSF:x203\\.0\\.8\\x20on\\x20an\\x20MIPS\\r\\n\\r\\^@IBM-3279-4-E\\xfb\\^Y\\(none\\)\\x20l\nSF:ogin:\\x20\")%r(GetRequest,6E,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\x\nSF:fb\\x03\\r\\r\\nWelcome\\x20to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKe\nSF:rnel\\x203\\.0\\.8\\x20on\\x20an\\x20MIPS\\r\\n\\rGET\\x20/\\x20HTTP/1\\.0\\r\\n\\r\\n\\\nSF:(none\\)\\x20login:\\x20\")%r(RPCCheck,58,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\nSF:\\x01\\xff\\xfb\\x03\\r\\r\\nWelcome\\x20to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MI\nSF:PS\\r\\n\\rKernel\\x203\\.0\\.8\\x20on\\x20an\\x20MIPS\\r\\n\\r\\x80\\^@\\^@\\(r\\xfe\\^\\\nSF:]\")%r(Help,62,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x03\\r\\r\\nWe\nSF:lcome\\x20to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\x203\\.0\\.\nSF:8\\x20on\\x20an\\x20MIPS\\r\\n\\rHELP\\r\\n\\(none\\)\\x20login:\\x20\")%r(SIPOption\nSF:s,13B,\"\\xff\\xfd\\x01\\xff\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x03\\r\\r\\nWelcome\\x2\nSF:0to\\x20Linux\\x20\\(ZMM220\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\x203\\.0\\.8\\x20on\\\nSF:x20an\\x20MIPS\\r\\n\\rOPTIONS\\x20sip:nm\\x20SIP/2\\.0\\r\\nVia:\\x20SIP/2\\.0/TC\nSF:P\\x20nm;branch=foo\\r\\nFrom:\\x20<sip:nm@nm>;tag=root\\r\\nTo:\\x20<sip:nm2@\nSF:nm2>\\r\\nCall-ID:\\x2050000\\r\\nCSeq:\\x2042\\x20OPTIONS\\r\\nMax-Forwards:\\x2\nSF:070\\r\\nContent-Length:\\x200\\r\\nContact:\\x20<sip:nm@nm>\\r\\nAccept:\\x20ap\nSF:plication/sdp\\r\\n\\r\\n\\(none\\)\\x20login:\\x20\")%r(NCP,88,\"\\xff\\xfd\\x01\\xf\nSF:f\\xfd\\x1f\\xff\\xfb\\x01\\xff\\xfb\\x03\\r\\r\\nWelcome\\x20to\\x20Linux\\x20\\(ZMM2\nSF:20\\)\\x20for\\x20MIPS\\r\\n\\rKernel\\x203\\.0\\.8\\x20on\\x20an\\x20MIPS\\r\\n\\rDmd\nSF:T\\^@\\^@\\^@\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\\nSF:x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\x08\\x20\\x08\\^@\\^@\\^@\\^A\nSF:\\^@\\^@\\^@\\^@\\^@\");\nMAC Address: 00:17:61:11:C2:37 (Private)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 46.89 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_78_1756701898.xml -oN scan_10_60_152_78_1756701898.nmap -oG scan_10_60_152_78_1756701898.gnmap 10.60.152.78",
+    "host_status": "up",
+    "open_ports": 1,
+    "services": [
+      {
+        "port": "23",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "telnet",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      }
+    ],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "46.89",
+      "timestr": "Mon Sep  1 10:15:45 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:15:45.080814"
+}

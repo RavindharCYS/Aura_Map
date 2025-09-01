@@ -1,0 +1,3 @@
+<nmaprun><runstats><finished time="1756539380" timestr="Sat Aug 30 13:06:20 2025" summary="Nmap done at Sat Aug 30 13:06:20 2025; 0 IP addresses (0 hosts up) scanned in 0.11 seconds" elapsed="0.11" exit="error" errormsg="You cannot use -F (fast scan) with -p (explicit port selection) but see -&#45;top-ports and -&#45;port-ratio to fast scan a range of ports"/><hosts up="0" down="0" total="0"/>
+</runstats>
+</nmaprun>

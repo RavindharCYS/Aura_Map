@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:10:59 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_31_1756701659.xml -oN scan_10_60_152_31_1756701659.nmap -oG scan_10_60_152_31_1756701659.gnmap 10.60.152.31 -->
+<nmaprun scanner="nmap" args="nmap -F -sV -Pn -T3 -oX scan_10_60_152_31_1756701659.xml -oN scan_10_60_152_31_1756701659.nmap -oG scan_10_60_152_31_1756701659.gnmap 10.60.152.31" start="1756701659" startstr="Mon Sep  1 10:10:59 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="100" services="7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.31" addrtype="ipv4"/>
+<address addr="04:D9:F5:CC:4C:BD" addrtype="mac" vendor="ASUSTek Computer"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1756701659" endtime="1756701671"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.31" addrtype="ipv4"/>
+<address addr="04:D9:F5:CC:4C:BD" addrtype="mac" vendor="ASUSTek Computer"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="95">
+<extrareasons reason="reset" count="95" proto="tcp" ports="7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,143-144,179,199,389,427,443-444,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5432,5631,5666,5800,5900,6000-6001,6646,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157"/>
+</extraports>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5357"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="7070"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="realserver" tunnel="ssl" method="table" conf="3"/></port>
+</ports>
+<times srtt="5816" rttvar="4442" to="100000"/>
+</host>
+<runstats><finished time="1756701671" timestr="Mon Sep  1 10:11:11 2025" summary="Nmap done at Mon Sep  1 10:11:11 2025; 1 IP address (1 host up) scanned in 11.91 seconds" elapsed="11.91" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

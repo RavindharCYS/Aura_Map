@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:38:37 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_24_1756703317.xml -oN scan_10_60_152_24_1756703317.nmap -oG scan_10_60_152_24_1756703317.gnmap 10.60.152.24
+Nmap scan report for 10.60.152.24
+Host is up (0.034s latency).
+All 65535 scanned ports on 10.60.152.24 are in ignored states.
+Not shown: 65535 closed tcp ports (reset)
+MAC Address: 70:BB:E9:5F:B2:88 (Xiaomi Communications)
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:41:07 2025 -- 1 IP address (1 host up) scanned in 150.22 seconds

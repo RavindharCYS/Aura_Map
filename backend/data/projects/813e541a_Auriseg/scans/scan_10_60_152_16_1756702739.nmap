@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:29:00 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_16_1756702739.xml -oN scan_10_60_152_16_1756702739.nmap -oG scan_10_60_152_16_1756702739.gnmap 10.60.152.16
+Nmap scan report for 10.60.152.16
+Host is up (0.0092s latency).
+All 65535 scanned ports on 10.60.152.16 are in ignored states.
+Not shown: 65535 closed tcp ports (reset)
+MAC Address: 46:5A:84:D9:48:F0 (Unknown)
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:30:25 2025 -- 1 IP address (1 host up) scanned in 85.21 seconds

@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:41:07 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_25_1756703467.xml -oN scan_10_60_152_25_1756703467.nmap -oG scan_10_60_152_25_1756703467.gnmap 10.60.152.25
+Nmap scan report for 10.60.152.25 [host down]
+Read data files from: C:\Program Files (x86)\Nmap
+# Nmap done at Mon Sep  1 10:41:09 2025 -- 1 IP address (0 hosts up) scanned in 2.20 seconds

@@ -1,0 +1,87 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:04:58 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_1_1756701298.xml -oN scan_10_60_152_1_1756701298.nmap -oG scan_10_60_152_1_1756701298.gnmap 10.60.152.1
+Nmap scan report for 10.60.152.1
+Host is up (0.0033s latency).
+Not shown: 65531 closed tcp ports (reset)
+PORT    STATE SERVICE   VERSION
+22/tcp  open  ssh       HP Comware switch sshd 7.1.070 (protocol 2.0)
+23/tcp  open  telnet
+80/tcp  open  http      HTTPD
+443/tcp open  ssl/https HTTPD
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port23-TCP:V=7.95%I=7%D=9/1%Time=68B525D9%P=i686-pc-windows-windows%r(N
+SF:ULL,1C,"\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xf
+SF:f\xfb\x05\xff\xfb\x01Login:\x20")%r(GenericLines,32,"\xff\xfd\x18\xff\x
+SF:fd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01Login
+SF::\x20\r\0\r\nLogin:\x20\r\0\r\nLogin:\x20")%r(tn3270,4E,"\xff\xfd\x18\x
+SF:ff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfa\x18\
+SF:x01\xff\xf0\xff\xfe\x19\xff\xfc\x19\xff\xfd\0\xff\xfb\0\xff\xfb\x01'ibm
+SF:-3279-4-e':\x20unknown\x20terminal\x20type\.\n")%r(GetRequest,4A,"\xff\
+SF:xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff
+SF:\xfb\x01GET\x20/\x20HTTP/1\.0\r\n\r\nLogin:\x20GET\x20/\x20HTTP/1\.0\r\
+SF:0\r\nPassword:\x20")%r(RPCCheck,72,"\xff\xfd\x18\xff\xfd\x20\xff\xfb\x0
+SF:3\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01\x80\^@\^@\(r\xfe\^\]\
+SF:^@\^@\^@\^@\^@\^@\^@\^B\^@\^A\x86\xa0\^@\^A\x97\|\^@\^@\^@\^@\^@\^@\^@\
+SF:^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@\^@Login:\x20\x80\(r\xfe\x86\xa0\x97
+SF:\|")%r(Help,34,"\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\xff\xf
+SF:d\x1f\xff\xfb\x05\xff\xfb\x01HELP\r\nLogin:\x20HELP\r\0\r\nPassword:\x2
+SF:0")%r(SIPOptions,11F,"\xff\xfd\x18\xff\xfd\x20\xff\xfb\x03\xff\xfd\x01\
+SF:xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01OPTIONS\x20sip:nm\x20SIP/2\.0\r\nVia
+SF::\x20SIP/2\.0/TCP\x20nm;branch=foo\r\nFrom:\x20<sip:nm@nm>;tag=root\r\n
+SF:To:\x20<sip:nm2@nm2>\r\nCall-ID:\x2050000\r\nCSeq:\x2042\x20OPTIONS\r\n
+SF:Max-Forwards:\x2070\r\nContent-Length:\x200\r\nContact:\x20<sip:nm@nm>\
+SF:r\nAccept:\x20application/sdp\r\n\r\nLogin:\x20OPTIONS\x20sip:nm\x20SIP
+SF:/2\.0\r\0\r\nPassword:\x20")%r(NCP,56,"\xff\xfd\x18\xff\xfd\x20\xff\xfb
+SF:\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfb\x01DmdT\^@\^@\^@\x08\x
+SF:20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\x08\
+SF:x20\x08\x08\x20\x08\x08\x20\x08\x08\x20\x08\^@\^@\^@\^A\^@\^@\^@\^@\^@L
+SF:ogin:\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.95%I=7%D=9/1%Time=68B525D8%P=i686-pc-windows-windows%r(G
+SF:etRequest,10E,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nLocation:\x2
+SF:0/web/index\.html\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\
+SF:x20Mon,\x2001\x20Sep\x202025\x2004:52:57\x20GMT\r\nConnection:\x20close
+SF:\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\n
+SF:X-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\
+SF:n\r\n")%r(HTTPOptions,F4,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\
+SF:r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20S
+SF:ep\x202025\x2004:52:58\x20GMT\r\nConnection:\x20close\r\nContent-Type:\
+SF:x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Opt
+SF:ions:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n")%r(RTSPRequ
+SF:est,FC,"HTTP/1\.1\x20505\x20HTTP\x20Version\x20not\x20supported\r\nCont
+SF:ent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202
+SF:025\x2004:52:58\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text
+SF:/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options:\x
+SF:20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n")%r(FourOhFourReque
+SF:st,EB,"HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServ
+SF:er:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:03\x20GMT\r
+SF:\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protectio
+SF:n:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Opt
+SF:ions:\x20SAMEORIGIN\r\n\r\n")%r(SIPOptions,ED,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nContent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,
+SF:\x2001\x20Sep\x202025\x2004:54:10\x20GMT\r\nConnection:\x20close\r\nCon
+SF:tent-Type:\x20text/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Conte
+SF:nt-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=9/1%Time=68B525DE%P=i686-pc-windows-wind
+SF:ows%r(HTTPOptions,F4,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nC
+SF:ontent-Length:\x200\r\nServer:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x
+SF:202025\x2004:53:04\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20t
+SF:ext/html\r\nX-XSS-Protection:\x201;mode-block\r\nX-Content-Type-Options
+SF::\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\n\r\n")%r(FourOhFourRe
+SF:quest,EB,"HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nS
+SF:erver:\x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:04\x20GM
+SF:T\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protec
+SF:tion:\x201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-
+SF:Options:\x20SAMEORIGIN\r\n\r\n")%r(RTSPRequest,FC,"HTTP/1\.1\x20505\x20
+SF:HTTP\x20Version\x20not\x20supported\r\nContent-Length:\x200\r\nServer:\
+SF:x20HTTPD\r\nDate:\x20Mon,\x2001\x20Sep\x202025\x2004:53:14\x20GMT\r\nCo
+SF:nnection:\x20close\r\nContent-Type:\x20text/html\r\nX-XSS-Protection:\x
+SF:201;mode-block\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options
+SF::\x20SAMEORIGIN\r\n\r\n");
+MAC Address: 54:77:8A:4C:47:A2 (Hewlett Packard Enterprise – WW Corporate Headquarters)
+Service Info: OS: Comware; CPE: cpe:/o:hp:comware:7.1.070
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:21:58 2025 -- 1 IP address (1 host up) scanned in 1020.14 seconds

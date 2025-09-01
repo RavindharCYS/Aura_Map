@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:47:08 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_31_1756703828.xml -oN scan_10_60_152_31_1756703828.nmap -oG scan_10_60_152_31_1756703828.gnmap 10.60.152.31 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_31_1756703828.xml -oN scan_10_60_152_31_1756703828.nmap -oG scan_10_60_152_31_1756703828.gnmap 10.60.152.31" start="1756703828" startstr="Mon Sep  1 10:47:08 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756703828"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.31" addrtype="ipv4"/>
+<address addr="04:D9:F5:CC:4C:BD" addrtype="mac" vendor="ASUSTek Computer"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756703828" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756703829"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756703829"/>
+<taskbegin task="SYN Stealth Scan" time="1756703829"/>

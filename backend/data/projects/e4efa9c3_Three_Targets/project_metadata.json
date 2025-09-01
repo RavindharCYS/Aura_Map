@@ -1,0 +1,11 @@
+{
+  "id": "e4efa9c3",
+  "name": "Three Targets",
+  "pmo": "Ravindhar",
+  "description": "10.60.152.164:135,139,445,554,2869,10243,16992\nauriseg.com\n10.60.152.164",
+  "assessment_type": "network_pt",
+  "created_at": "2025-09-01T12:06:44.502241",
+  "updated_at": "2025-09-01T12:06:44.502256",
+  "folder_path": "C:\\Users\\Auriseg\\Documents\\Ravindhar V\\Tool\\Nmap\\backend\\data\\projects\\e4efa9c3_Three_Targets",
+  "scan_sessions": []
+}

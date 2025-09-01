@@ -1,0 +1,14 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:21:20 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_164_1756702280.xml -oN scan_10_60_152_164_1756702280.nmap -oG scan_10_60_152_164_1756702280.gnmap 10.60.152.164
+Nmap scan report for 10.60.152.164
+Host is up (0.00019s latency).
+Not shown: 95 closed tcp ports (reset)
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+554/tcp  open  rtsp?
+5000/tcp open  http          Ajenti http control panel
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep  1 10:23:12 2025 -- 1 IP address (1 host up) scanned in 112.74 seconds

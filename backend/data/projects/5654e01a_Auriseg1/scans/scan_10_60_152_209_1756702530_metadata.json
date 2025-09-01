@@ -1,0 +1,39 @@
+{
+  "target_ip": "10.60.152.209",
+  "scan_result": {
+    "target_ip": "10.60.152.209",
+    "status": "completed",
+    "start_time": "2025-09-01T10:25:24.914863",
+    "end_time": "2025-09-01T10:25:30.751306",
+    "duration": "0:00:05.836443",
+    "xml_file": "scan_10_60_152_209_1756702524.xml",
+    "nmap_file": "scan_10_60_152_209_1756702524.nmap",
+    "gnmap_file": "scan_10_60_152_209_1756702524.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 10:25 India Standard Time\nNmap scan report for 10.60.152.209\nHost is up (0.037s latency).\nAll 100 scanned ports on 10.60.152.209 are in ignored states.\nNot shown: 100 filtered tcp ports (no-response)\nMAC Address: 50:5A:65:B9:56:FF (AzureWave Technology)\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 5.77 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -F -sV -Pn -T3 -oX scan_10_60_152_209_1756702524.xml -oN scan_10_60_152_209_1756702524.nmap -oG scan_10_60_152_209_1756702524.gnmap 10.60.152.209",
+    "host_status": "up",
+    "open_ports": 0,
+    "services": [],
+    "os_info": "",
+    "hostnames": [],
+    "scan_summary": {
+      "elapsed": "5.77",
+      "timestr": "Mon Sep  1 10:25:30 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "fast",
+    "timing": "-T3",
+    "scripts": false,
+    "version_detection": true,
+    "os_detection": false,
+    "skip_ping": true,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T10:25:30.751985"
+}

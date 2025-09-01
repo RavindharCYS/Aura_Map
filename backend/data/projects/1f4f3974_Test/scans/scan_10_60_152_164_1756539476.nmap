@@ -1,0 +1,112 @@
+# Nmap 7.95 scan initiated Sat Aug 30 13:07:57 2025 as: nmap -F -sC -sV -O -T3 -oX scan_10_60_152_164_1756539476.xml -oN scan_10_60_152_164_1756539476.nmap -oG scan_10_60_152_164_1756539476.gnmap 10.60.152.164
+Nmap scan report for 10.60.152.164
+Host is up (0.000056s latency).
+Not shown: 95 closed tcp ports (reset)
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+554/tcp  open  rtsp?
+5000/tcp open  upnp?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Content-Disposition: inline; filename=index.html
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 20937
+|     Last-Modified: Sat, 30 Aug 2025 04:50:40 GMT
+|     Cache-Control: no-cache
+|     Etag: "1756529440.7507215-20937-3032686094"
+|     Date: Sat, 30 Aug 2025 07:38:03 GMT
+|     Access-Control-Allow-Origin: *
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="UTF-8">
+|     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+|     <title>Enhanced Nmap GUI Tool</title>
+|     <link rel="stylesheet" href="css/main.css">
+|     <link rel="stylesheet" href="css/components.css">
+|     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+|     </head>
+|     <body>
+|     <div class="app-container">
+|     <!-- Header -->
+|     <header class="app-header">
+|     <div class="header-content">
+|   RTSPRequest: 
+|     <!DOCTYPE HTML>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request version ('RTSP/1.0').</p>
+|     <p>Error code explanation: 400 - Bad request syntax or unsupported method.</p>
+|     </body>
+|_    </html>
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5000-TCP:V=7.95%I=7%D=8/30%Time=68B2AA5B%P=i686-pc-windows-windows%
+SF:r(GetRequest,5319,"HTTP/1\.1\x20200\x20OK\r\nContent-Disposition:\x20in
+SF:line;\x20filename=index\.html\r\nContent-Type:\x20text/html;\x20charset
+SF:=utf-8\r\nContent-Length:\x2020937\r\nLast-Modified:\x20Sat,\x2030\x20A
+SF:ug\x202025\x2004:50:40\x20GMT\r\nCache-Control:\x20no-cache\r\nEtag:\x2
+SF:0\"1756529440\.7507215-20937-3032686094\"\r\nDate:\x20Sat,\x2030\x20Aug
+SF:\x202025\x2007:38:03\x20GMT\r\nAccess-Control-Allow-Origin:\x20\*\r\nCo
+SF:nnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\r\n<html\x20lang=\"en\">\r
+SF:\n<head>\r\n\x20\x20\x20\x20<meta\x20charset=\"UTF-8\">\r\n\x20\x20\x20
+SF:\x20<meta\x20name=\"viewport\"\x20content=\"width=device-width,\x20init
+SF:ial-scale=1\.0\">\r\n\x20\x20\x20\x20<title>Enhanced\x20Nmap\x20GUI\x20
+SF:Tool</title>\r\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href=\"c
+SF:ss/main\.css\">\r\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href=
+SF:\"css/components\.css\">\r\n\x20\x20\x20\x20<script\x20src=\"https://cd
+SF:njs\.cloudflare\.com/ajax/libs/socket\.io/4\.7\.2/socket\.io\.js\"></sc
+SF:ript>\r\n</head>\r\n<body>\r\n\x20\x20\x20\x20<div\x20class=\"app-conta
+SF:iner\">\r\n\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Header\x20-->\r\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20<header\x20class=\"app-header\">\r\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\"header-conten
+SF:t\">\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0<h1")%r(RTSPRequest,16C,"<!DOCTYPE\x20HTML>\n<html\x20lang=\"en\">\n\x
+SF:20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20charset=
+SF:\"utf-8\">\n\x20\x20\x20\x20\x20\x20\x20\x20<title>Error\x20response</t
+SF:itle>\n\x20\x20\x20\x20</head>\n\x20\x20\x20\x20<body>\n\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20<h1>Error\x20response</h1>\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20<p>Error\x20code:\x20400</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>
+SF:Message:\x20Bad\x20request\x20version\x20\('RTSP/1\.0'\)\.</p>\n\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20<p>Error\x20code\x20explanation:\x20400\x20-\x
+SF:20Bad\x20request\x20syntax\x20or\x20unsupported\x20method\.</p>\n\x20\x
+SF:20\x20\x20</body>\n</html>\n");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=8/30%OT=135%CT=7%CU=44523%PV=Y%DS=0%DC=L%G=Y%TM=68B2AA
+OS:DE%P=i686-pc-windows-windows)SEQ(SP=103%GCD=1%ISR=10B%TI=I%CI=I%II=I%SS=
+OS:S%TS=A)SEQ(SP=103%GCD=1%ISR=10D%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=106%GCD=
+OS:1%ISR=10B%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1%ISR=10C%TI=I%CI=I%II
+OS:=I%SS=S%TS=A)SEQ(SP=FE%GCD=1%ISR=10C%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=MFF
+OS:D7NW8ST11%O2=MFFD7NW8ST11%O3=MFFD7NW8NNT11%O4=MFFD7NW8ST11%O5=MFFD7NW8ST
+OS:11%O6=MFFD7ST11)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(
+OS:R=Y%DF=Y%T=80%W=FFFF%O=MFFD7NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%
+OS:W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+OS:T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A
+OS:=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%D
+OS:F=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=8
+OS:0%CD=Z)
+
+Network Distance: 0 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2025-08-30T07:40:02
+|_  start_date: N/A
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Aug 30 13:10:14 2025 -- 1 IP address (1 host up) scanned in 137.92 seconds

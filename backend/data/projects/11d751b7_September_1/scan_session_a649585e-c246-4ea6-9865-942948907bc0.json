@@ -1,0 +1,27 @@
+{
+  "scan_session_id": "a649585e-c246-4ea6-9865-942948907bc0",
+  "project_id": "11d751b7",
+  "targets": [
+    {
+      "ip": "10.60.152.164",
+      "ports": []
+    }
+  ],
+  "options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "start_time": "2025-09-01T09:45:13.657648",
+  "status": "completed",
+  "completed_targets": 1,
+  "total_targets": 1,
+  "progress": 100.0,
+  "end_time": "2025-09-01T09:48:06.973748"
+}

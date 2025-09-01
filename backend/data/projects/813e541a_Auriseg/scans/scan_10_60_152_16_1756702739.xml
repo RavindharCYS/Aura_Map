@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Sep  1 10:29:00 2025 as: nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_16_1756702739.xml -oN scan_10_60_152_16_1756702739.nmap -oG scan_10_60_152_16_1756702739.gnmap 10.60.152.16 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -Pn -v -T3 -oX scan_10_60_152_16_1756702739.xml -oN scan_10_60_152_16_1756702739.nmap -oG scan_10_60_152_16_1756702739.gnmap 10.60.152.16" start="1756702740" startstr="Mon Sep  1 10:29:00 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1756702740"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.16" addrtype="ipv4"/>
+<address addr="46:5A:84:D9:48:F0" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1756702741" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1756702741"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1756702741"/>
+<taskbegin task="SYN Stealth Scan" time="1756702741"/>
+<taskprogress task="SYN Stealth Scan" time="1756702772" percent="37.14" remaining="53" etc="1756702824"/>
+<taskend task="SYN Stealth Scan" time="1756702824" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1756702825"/>
+<taskbegin task="NSE" time="1756702825"/>
+<taskend task="NSE" time="1756702825"/>
+<taskbegin task="NSE" time="1756702825"/>
+<taskend task="NSE" time="1756702825"/>
+<host starttime="1756702741" endtime="1756702824"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.60.152.16" addrtype="ipv4"/>
+<address addr="46:5A:84:D9:48:F0" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65535">
+<extrareasons reason="reset" count="65535" proto="tcp" ports="1-65535"/>
+</extraports>
+</ports>
+<times srtt="9234" rttvar="3743" to="100000"/>
+</host>
+<runstats><finished time="1756702825" timestr="Mon Sep  1 10:30:25 2025" summary="Nmap done at Mon Sep  1 10:30:25 2025; 1 IP address (1 host up) scanned in 85.21 seconds" elapsed="85.21" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

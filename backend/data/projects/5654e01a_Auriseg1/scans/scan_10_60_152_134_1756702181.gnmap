@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Sep  1 10:19:41 2025 as: nmap -F -sV -Pn -T3 -oX scan_10_60_152_134_1756702181.xml -oN scan_10_60_152_134_1756702181.nmap -oG scan_10_60_152_134_1756702181.gnmap 10.60.152.134
+Host: 10.60.152.134 ()	Status: Up
+Host: 10.60.152.134 ()	Ports: 22/open/tcp//ssh//OpenSSH 9.7 (protocol 2.0)/	Ignored State: closed (99)
+# Nmap done at Mon Sep  1 10:19:43 2025 -- 1 IP address (1 host up) scanned in 1.98 seconds

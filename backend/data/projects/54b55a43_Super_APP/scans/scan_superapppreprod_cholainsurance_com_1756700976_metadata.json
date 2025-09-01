@@ -1,0 +1,132 @@
+{
+  "target_ip": "superapppreprod.cholainsurance.com",
+  "scan_result": {
+    "target_ip": "superapppreprod.cholainsurance.com",
+    "status": "completed",
+    "start_time": "2025-09-01T09:57:43.179848",
+    "end_time": "2025-09-01T09:59:36.092922",
+    "duration": "0:01:52.913074",
+    "xml_file": "scan_superapppreprod_cholainsurance_com_1756700863.xml",
+    "nmap_file": "scan_superapppreprod_cholainsurance_com_1756700863.nmap",
+    "gnmap_file": "scan_superapppreprod_cholainsurance_com_1756700863.gnmap",
+    "stdout": "Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 09:57 India Standard Time\nNmap scan report for superapppreprod.cholainsurance.com (13.235.126.164)\nHost is up (0.027s latency).\nOther addresses for superapppreprod.cholainsurance.com (not scanned): 35.154.251.162\nrDNS record for 13.235.126.164: ec2-13-235-126-164.ap-south-1.compute.amazonaws.com\nNot shown: 65530 closed tcp ports (reset)\nPORT     STATE SERVICE    VERSION\n80/tcp   open  http       AWS Elastic Load Balancing\n|_http-server-header: awselb/2.0\n|_http-title: Did not follow redirect to https://superapppreprod.cholainsurance.com:443/\n443/tcp  open  ssl/http   nginx\n| http-server-header: \n|   awselb/2.0\n|_  istio-envoy\n|_ssl-date: TLS randomness does not represent time\n| ssl-cert: Subject: commonName=*.cholainsurance.com/organizationName=Cholamandalam MS General Insurance Company Limited/stateOrProvinceName=Tamil N\\xC4\\x81du/countryName=IN\n| Subject Alternative Name: DNS:*.cholainsurance.com\n| Not valid before: 2025-08-21T00:00:00\n|_Not valid after:  2026-09-21T23:59:59\n|_http-title: CholaMS Admin Master\n2000/tcp open  tcpwrapped\n5060/tcp open  tcpwrapped\n8020/tcp open  http-proxy FortiGuard Web Filtering\n|_http-title: Web Filter Block Override\n| http-open-proxy: Potentially OPEN proxy.\n|_Methods supported:CONNECTION\nOS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU\nNo OS matches for host\n\nOS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 112.79 seconds\n",
+    "stderr": "",
+    "return_code": 0,
+    "nmap_command": "nmap -p- -sC -sV -O -T3 -oX scan_superapppreprod_cholainsurance_com_1756700863.xml -oN scan_superapppreprod_cholainsurance_com_1756700863.nmap -oG scan_superapppreprod_cholainsurance_com_1756700863.gnmap superapppreprod.cholainsurance.com",
+    "host_status": "up",
+    "open_ports": 5,
+    "services": [
+      {
+        "port": "80",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "AWS Elastic Load Balancing",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "awselb/2.0"
+          },
+          {
+            "id": "http-title",
+            "output": "Did not follow redirect to https://superapppreprod.cholainsurance.com:443/"
+          }
+        ]
+      },
+      {
+        "port": "443",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "",
+        "product": "nginx",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-server-header",
+            "output": "\n  awselb/2.0\n  istio-envoy"
+          },
+          {
+            "id": "ssl-date",
+            "output": "TLS randomness does not represent time"
+          },
+          {
+            "id": "ssl-cert",
+            "output": "Subject: commonName=*.cholainsurance.com/organizationName=Cholamandalam MS General Insurance Company Limited/stateOrProvinceName=Tamil N\\xC4\\x81du/countryName=IN\nSubject Alternative Name: DNS:*.cholainsurance.com\nNot valid before: 2025-08-21T00:00:00\nNot valid after:  2026-09-21T23:59:59"
+          },
+          {
+            "id": "http-title",
+            "output": "CholaMS Admin Master"
+          }
+        ]
+      },
+      {
+        "port": "2000",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "tcpwrapped",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "5060",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "tcpwrapped",
+        "version": "",
+        "product": "",
+        "extrainfo": ""
+      },
+      {
+        "port": "8020",
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http-proxy",
+        "version": "",
+        "product": "FortiGuard Web Filtering",
+        "extrainfo": "",
+        "scripts": [
+          {
+            "id": "http-title",
+            "output": "Web Filter Block Override"
+          },
+          {
+            "id": "http-open-proxy",
+            "output": "Potentially OPEN proxy.\nMethods supported:CONNECTION"
+          }
+        ]
+      }
+    ],
+    "os_info": "",
+    "hostnames": [
+      {
+        "name": "superapppreprod.cholainsurance.com",
+        "type": "user"
+      },
+      {
+        "name": "ec2-13-235-126-164.ap-south-1.compute.amazonaws.com",
+        "type": "PTR"
+      }
+    ],
+    "scan_summary": {
+      "elapsed": "112.79",
+      "timestr": "Mon Sep  1 09:59:35 2025",
+      "exit": "success"
+    }
+  },
+  "scan_options": {
+    "preset": "allports",
+    "timing": "-T3",
+    "scripts": true,
+    "version_detection": true,
+    "os_detection": true,
+    "skip_ping": false,
+    "ping_only": false,
+    "aggressive": false,
+    "verbose": false
+  },
+  "timestamp": "2025-09-01T09:59:36.093619"
+}

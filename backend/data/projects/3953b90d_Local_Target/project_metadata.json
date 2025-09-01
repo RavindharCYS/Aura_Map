@@ -1,0 +1,11 @@
+{
+  "id": "3953b90d",
+  "name": "Local_Target",
+  "pmo": "Ravindhar",
+  "description": "",
+  "assessment_type": "network_pt",
+  "created_at": "2025-08-30T12:59:42.412568",
+  "updated_at": "2025-08-30T12:59:42.412573",
+  "folder_path": "C:\\Users\\Auriseg\\Documents\\Ravindhar V\\Tool\\Nmap\\backend\\data\\projects\\3953b90d_Local_Target",
+  "scan_sessions": []
+}
