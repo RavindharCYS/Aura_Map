@@ -40,8 +40,8 @@ Installation is straightforward using the provided scripts.
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/your-username/enhanced-nmap-gui.git
-    cd enhanced-nmap-gui
+    git clone https://github.com/RavindharCYS/Aura_Map.git
+    cd Aura_Map
     ```
 
 2.  **Run the installation script for your OS:**
